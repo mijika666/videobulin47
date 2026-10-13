@@ -32,6 +32,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -39,3 +40,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local browser/build helpers
+.edge-*/
+.dev-home/
+.next-home/
+dev-server*.log
+home-*.png
+pricing-*.png
+screenshot.png
+
+# 本地遗留的嵌套 Git 仓库，不要提交到当前仓库
+/videobulin47/
