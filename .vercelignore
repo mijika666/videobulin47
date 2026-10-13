@@ -1,0 +1,10 @@
+# 本地辅助目录 / 凭据，绝不能上传到 Vercel 的构建快照
+.vercel-home/
+.build-home/
+.edge-*/
+.dev-home/
+.next-home/
+dev-server*.log
+*.png
+shot.png
+/supabase/

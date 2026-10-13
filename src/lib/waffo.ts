@@ -2,6 +2,7 @@ import "server-only";
 
 import {
   WaffoPancake,
+  TaxCategory,
   verifyWebhook,
   type WebhookEvent,
 } from "@waffo/pancake-ts";
@@ -22,6 +23,15 @@ export function getWaffoClient() {
 
 export function getWaffoProductId(pack: CreditPack) {
   return env[pack.envKey];
+}
+
+// 三个积分包共用同一个 Waffo 一次性产品时，用 priceSnapshot 在结账页覆盖单价。
+// Waffo 只会按 merchant API Key 签名的请求采用这个覆盖值。
+export function getWaffoPriceSnapshot(pack: CreditPack) {
+  return {
+    amount: (pack.priceCents / 100).toFixed(2),
+    taxCategory: TaxCategory.SaaS,
+  };
 }
 
 export function findPack(packId: string) {
@@ -49,6 +59,7 @@ export async function createWaffoCheckout({
   return client.checkout.authenticated.create({
     productId,
     currency: "USD",
+    priceSnapshot: getWaffoPriceSnapshot(pack),
     buyerIdentity: userId,
     buyerEmail: email ?? undefined,
     successUrl,
