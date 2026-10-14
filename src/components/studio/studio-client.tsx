@@ -75,7 +75,8 @@ export function StudioClient({
   const [duration, setDuration] = useState<VideoDuration>(10);
   const [resolution, setResolution] = useState<VideoResolution>("720p");
   const [modelId, setModelId] = useState(DEFAULT_MODEL_ID);
-  const [consent, setConsent] = useState(false);
+  // 授权默认勾选：用户仍可取消，但不再需要额外一步才能生成。
+  const [consent, setConsent] = useState(true);
   const [balance, setBalance] = useState(initialBalance);
   const [jobs, setJobs] = useState(initialJobs);
   const [currentJob, setCurrentJob] = useState<JobView | null>(null);
@@ -522,11 +523,7 @@ export function StudioClient({
                 </select>
                 {selectedModel.usesReferenceVideo ? (
                   <span className="text-[11px] leading-5 text-muted">
-                    Drives the motion from the reference clip
-                    {selectedModel.maxReferenceVideos > 1
-                      ? ` · up to ${selectedModel.maxReferenceVideos} clips combined`
-                      : ""}
-                    .
+                    Drives the motion from the reference clip.
                   </span>
                 ) : (
                   <span className="rounded-lg bg-orange/10 px-3 py-2 text-[11px] leading-5 text-orange">

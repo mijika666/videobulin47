@@ -17,6 +17,12 @@ export function ProductSchema() {
     url: absoluteUrl("/"),
     logo: absoluteUrl("/opengraph-image"),
     sameAs: ["https://github.com/mijika666/videobulin47"],
+    founder: {
+      "@type": "Person",
+      "@id": absoluteUrl("/author#qbit"),
+      name: "Qbit",
+      url: absoluteUrl("/author"),
+    },
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",

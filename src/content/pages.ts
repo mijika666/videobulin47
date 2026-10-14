@@ -47,7 +47,7 @@ const commonFaqs: ContentFaq[] = [
   {
     question: "Which AI models power the video generation?",
     answer:
-      "VideoBulin47 runs third-party video models served through the fal.ai inference platform: MiniMax H3 (MiniMax), Kling O3 Reference and Kling O3 Reference Pro (Kuaishou), and Seedance 1.0 Lite (ByteDance). MiniMax H3 and the Kling models use your reference clip to drive the motion. Seedance 1.0 Lite only accepts reference images, so it generates the scene from the prompt instead of the template. You pick the model in the Studio before you generate, and each job records the model that was used.",
+      "VideoBulin47 runs third-party video models served through the fal.ai inference platform: Seedance 2.5 (ByteDance), MiniMax H3 (MiniMax), Kling O3 Reference and Kling O3 Reference Pro (Kuaishou), and Seedance 1.0 Lite (ByteDance). Every model except Seedance 1.0 Lite follows your reference clip to drive the motion; Seedance 1.0 Lite only accepts reference images, so it builds the scene from the prompt. You pick the model in the Studio before you generate, and each job records the model that was used.",
   },
 ];
 
@@ -55,6 +55,7 @@ export const contentPages: Record<string, ContentPage> = {
   "how-to-make-bulin-47-ai-video": {
     slug: "how-to-make-bulin-47-ai-video",
     kind: "guide",
+    updated: "October 14, 2026",
     eyebrow: "Step-by-step guide",
     title: "How to Make a Bulin 47 AI Video From One Photo",
     description:
@@ -101,6 +102,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-ai-trend": {
     slug: "bulin-47-ai-trend",
     kind: "guide",
+    updated: "October 14, 2026",
     eyebrow: "Trend explainer",
     title: "Bulin 47 AI Trend: Why One Photo Is Enough",
     description:
@@ -141,6 +143,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-ai-video": {
     slug: "bulin-47-ai-video",
     kind: "guide",
+    updated: "October 14, 2026",
     eyebrow: "Product guide",
     title: "Bulin 47 AI Video Generator",
     description:
@@ -173,6 +176,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-template": {
     slug: "bulin-47-template",
     kind: "guide",
+    updated: "October 14, 2026",
     eyebrow: "Template guide",
     title: "Bulin 47 AI Template for TikTok and Reels",
     description:
@@ -211,6 +215,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-meme": {
     slug: "bulin-47-meme",
     kind: "guide",
+    updated: "October 14, 2026",
     eyebrow: "Ideas",
     title: "Bulin 47 AI Meme Ideas",
     description:
@@ -252,6 +257,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-ai-free": {
     slug: "bulin-47-ai-free",
     kind: "guide",
+    updated: "October 14, 2026",
     eyebrow: "Pricing",
     title: "Is Bulin 47 AI Free?",
     description:
@@ -288,6 +294,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-original-video": {
     slug: "bulin-47-original-video",
     kind: "guide",
+    updated: "October 14, 2026",
     eyebrow: "Context",
     title: "The Original Bulin 47 Video and Why AI Versions Exist",
     description:
@@ -326,6 +333,7 @@ export const contentPages: Record<string, ContentPage> = {
   "how-to-add-bulin-47-sound": {
     slug: "how-to-add-bulin-47-sound",
     kind: "guide",
+    updated: "October 14, 2026",
     eyebrow: "Audio guide",
     title: "How to Add the Bulin 47 Sound to Your AI Video",
     description:
@@ -358,6 +366,7 @@ export const contentPages: Record<string, ContentPage> = {
   "dame-hombro": {
     slug: "dame-hombro",
     kind: "guide",
+    updated: "October 14, 2026",
     eyebrow: "Search guide",
     title: "Dame Hombro Bulin 47 AI Video",
     description:
@@ -390,6 +399,7 @@ export const contentPages: Record<string, ContentPage> = {
   "higgsfield-bulin-47-ai": {
     slug: "higgsfield-bulin-47-ai",
     kind: "guide",
+    updated: "October 14, 2026",
     eyebrow: "Comparison",
     title: "Higgsfield vs VideoBulin47 for the Bulin 47 Trend",
     description:
@@ -425,6 +435,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-viral-video": {
     slug: "bulin-47-viral-video",
     kind: "guide",
+    updated: "October 14, 2026",
     eyebrow: "Viral video",
     title: "Bulin 47 Viral Video: Why the Freestyle Took Over",
     description:
@@ -463,6 +474,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-freestyle-lyrics": {
     slug: "bulin-47-freestyle-lyrics",
     kind: "guide",
+    updated: "October 14, 2026",
     eyebrow: "Freestyle guide",
     title: "Bulin 47 Freestyle Lyrics, Meaning, and Sound Guide",
     description:
@@ -501,6 +513,7 @@ export const contentPages: Record<string, ContentPage> = {
   "kevin-wai-bulin-47": {
     slug: "kevin-wai-bulin-47",
     kind: "guide",
+    updated: "October 14, 2026",
     eyebrow: "Creator context",
     title: "Kevin Wai and the Bulin 47 Freestyle Clip",
     description:
@@ -539,6 +552,7 @@ export const contentPages: Record<string, ContentPage> = {
   "quien-es-bulin-47": {
     slug: "quien-es-bulin-47",
     kind: "guide",
+    updated: "October 14, 2026",
     lang: "es",
     eyebrow: "Guía del artista",
     title: "Quién es Bulin 47: Edad, Freestyle y Video Viral",
@@ -578,6 +592,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-ai-vs-dreamina": {
     slug: "bulin-47-ai-vs-dreamina",
     kind: "guide",
+    updated: "October 14, 2026",
     eyebrow: "Comparison",
     title: "Bulin 47 AI vs Dreamina: Which Workflow Fits the Trend?",
     description:
@@ -619,6 +634,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-ai-vs-capcut": {
     slug: "bulin-47-ai-vs-capcut",
     kind: "guide",
+    updated: "October 14, 2026",
     eyebrow: "Comparison",
     title: "Bulin 47 AI vs CapCut: Generate First or Edit First?",
     description:
@@ -654,6 +670,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-ai-vs-kling": {
     slug: "bulin-47-ai-vs-kling",
     kind: "guide",
+    updated: "October 14, 2026",
     eyebrow: "Model guide",
     title: "Bulin 47 AI and Kling: The Model Behind the Motion",
     description:
@@ -676,7 +693,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Model alternatives",
         paragraphs: [
-          "MiniMax H3 is the default because it can take up to three reference clips at once. Kling O3 Reference and Kling O3 Reference Pro follow a single reference clip, and Seedance 1.0 Lite builds the scene from the prompt without following the clip at all. Every option runs through the same margin guard.",
+          "Seedance 2.5 is the default because it accepts the most reference clips and the highest output ceiling. MiniMax H3 is the balanced option, Kling O3 Reference and Kling O3 Reference Pro follow a single reference clip, and Seedance 1.0 Lite builds the scene from the prompt without following the clip at all. Every option runs through the same margin guard.",
         ],
       },
     ],
@@ -733,8 +750,8 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Models we use",
         paragraphs: [
-          "Video generation is powered by third-party video models served through the fal.ai inference platform. The current models are MiniMax H3 (built by MiniMax), Kling O3 Reference and Kling O3 Reference Pro (built by Kuaishou), and Seedance 1.0 Lite (built by ByteDance).",
-          "MiniMax H3 and the Kling models use your reference clip to drive the motion and can keep the original audio. Seedance 1.0 Lite only accepts reference images, so it builds the scene from the prompt and does not follow the template clip.",
+          "Video generation is powered by third-party video models served through the fal.ai inference platform. The current models are Seedance 2.5 (built by ByteDance), MiniMax H3 (built by MiniMax), Kling O3 Reference and Kling O3 Reference Pro (built by Kuaishou), and Seedance 1.0 Lite (built by ByteDance).",
+          "Seedance 2.5, MiniMax H3 and the Kling models use your reference clip to drive the motion and can keep the original audio. Seedance 1.0 Lite only accepts reference images, so it builds the scene from the prompt and does not follow the template clip.",
           "You choose the model in the Studio before you generate, and every job stores the model that produced it. We disclose the model names here so you know exactly which system is processing your photo, rather than only naming the inference provider.",
         ],
       },
@@ -776,7 +793,7 @@ export const contentPages: Record<string, ContentPage> = {
         paragraphs: [
           "2.1 What we provide. VideoBulin47 is a hosted interface that turns one uploaded portrait into a vertical AI-generated video using a reference video template. The Service is a digital software-as-a-service product delivered over the internet.",
           "2.2 Nature of the service. The Service is a digital, intangible product. Access is granted immediately after your payment is confirmed. Because delivery is immediate, refunds are subject to the limits in Section 7.",
-          "2.3 AI model dependency. We rely on third-party AI model providers. Video generation is performed by the MiniMax H3 model (built by MiniMax), the Kling O3 Reference and Kling O3 Reference Pro models (built by Kuaishou), and the Seedance 1.0 Lite model (built by ByteDance), each served through the fal.ai inference platform. Output quality and availability depend on those models, and the Service may be affected by their uptime and behavior. We will notify users of significant outages.",
+          "2.3 AI model dependency. We rely on third-party AI model providers. Video generation is performed by the Seedance 2.5 and Seedance 1.0 Lite models (built by ByteDance), the MiniMax H3 model (built by MiniMax), and the Kling O3 Reference and Kling O3 Reference Pro models (built by Kuaishou), each served through the fal.ai inference platform. Output quality and availability depend on those models, and the Service may be affected by their uptime and behavior. We will notify users of significant outages.",
         ],
       },
       {
@@ -833,7 +850,7 @@ export const contentPages: Record<string, ContentPage> = {
         paragraphs: [
           "9.1 Output ownership. Subject to these Terms, the AI content generated from your input (the \"Output\") belongs to you, and you may use it for any lawful purpose permitted by Section 10.",
           "9.2 Input license. By submitting content to the Service (\"Input\"), you grant VideoBulin47 a limited, non-exclusive license to use that Input only to provide the Service to you. We will not use your Input to train AI models without your explicit consent.",
-          "9.3 Third-party AI models. The Service uses third-party AI model providers, namely MiniMax, Kuaishou (Kling), and ByteDance (Seedance), served through fal.ai. Output may be influenced by those providers' models. We do not guarantee any specific output quality and are not responsible for content produced by a third-party model.",
+          "9.3 Third-party AI models. The Service uses third-party AI model providers, namely ByteDance (Seedance), MiniMax, and Kuaishou (Kling), served through fal.ai. Output may be influenced by those providers' models. We do not guarantee any specific output quality and are not responsible for content produced by a third-party model.",
           "9.4 AI output accuracy. AI-generated content may contain errors or inaccuracies. You are responsible for reviewing and verifying Output before relying on it.",
         ],
       },
@@ -948,7 +965,7 @@ export const contentPages: Record<string, ContentPage> = {
         bullets: [
           "Service providers, bound by confidentiality obligations: Supabase (authentication, database, private storage), fal.ai (model inference), Waffo Pancake (checkout, tax, payment processing), and Vercel (hosting).",
           "Payment card data is handled exclusively by our PCI-DSS compliant payment processor, Waffo Pancake, and is never stored on our servers.",
-          "AI model processing: when you generate a video, your uploaded photo and, for the models that use it, the reference template are transmitted to fal.ai and then to the underlying model provider you selected - MiniMax, Kuaishou (Kling), or ByteDance (Seedance) - solely to produce your video.",
+          "AI model processing: when you generate a video, your uploaded photo and, for the models that use it, the reference template are transmitted to fal.ai and then to the underlying model provider you selected - ByteDance (Seedance), MiniMax, or Kuaishou (Kling) - solely to produce your video.",
           "Legal and regulatory requirements: in response to a lawful request from a court or authority.",
           "Business transactions: in a merger or acquisition, with advance notice and continued protection.",
           "With your consent: for any other purpose only with your explicit prior consent.",

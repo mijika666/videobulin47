@@ -92,7 +92,13 @@ export function SiteFooter() {
       <div className="border-t border-white/10">
         <div className="container-shell flex flex-col gap-2 py-5 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 VideoBulin47. All rights reserved.</p>
-          <p>support@videobulin47.net</p>
+          <p className="flex items-center gap-3">
+            <Link className="hover:text-white" href="/author">
+              About Qbit
+            </Link>
+            <span aria-hidden="true">·</span>
+            <span>support@videobulin47.net</span>
+          </p>
         </div>
       </div>
     </footer>

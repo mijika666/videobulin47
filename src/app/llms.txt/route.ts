@@ -19,6 +19,7 @@ export function GET() {
     "",
     "## Models",
     "Generation runs on third-party models served through the fal.ai inference platform:",
+    "- Seedance 2.5 (ByteDance) - bytedance/seedance-2.5/us/reference-to-video - motion-driven, up to 10 reference clips",
     "- MiniMax H3 (MiniMax) - minimax/h3/reference-to-video - multi-reference, up to 3 clips",
     "- Kling O3 Reference (Kuaishou) - fal-ai/kling-video/o3/standard/video-to-video/reference",
     "- Kling O3 Reference Pro (Kuaishou) - fal-ai/kling-video/o3/pro/video-to-video/reference",
@@ -38,6 +39,7 @@ export function GET() {
     `- ${absoluteUrl("/")}: Bulin 47 AI video generator`,
     `- ${absoluteUrl("/pricing")}: Credit pack pricing`,
     `- ${absoluteUrl("/studio")}: Login-gated generation studio`,
+    `- ${absoluteUrl("/author")}: About Qbit, the founder of VideoBulin47`,
     ...Object.values(contentPages).map(
       (page) => `- ${absoluteUrl(`/${page.slug}`)}: ${page.description}`,
     ),

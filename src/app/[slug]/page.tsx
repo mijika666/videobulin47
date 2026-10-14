@@ -7,6 +7,7 @@ import {
   Clock3,
   FileText,
   ShieldCheck,
+  UserRound,
 } from "lucide-react";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { contentPages, type ContentPage } from "@/content/pages";
@@ -54,6 +55,11 @@ function GuideSchema({ page }: { page: ContentPage }) {
     url: absoluteUrl(`/${page.slug}`),
     dateModified: page.updated ?? "2026-10-13",
     inLanguage: page.lang ?? "en",
+    author: {
+      "@type": "Person",
+      name: "Qbit",
+      url: absoluteUrl("/author"),
+    },
     publisher: {
       "@type": "Organization",
       name: "VideoBulin47",
@@ -168,8 +174,17 @@ export default async function ContentPageRoute({ params }: PageProps) {
             <div className="mt-8 flex flex-wrap gap-4 text-xs font-bold text-white/45">
               <span className="inline-flex items-center gap-2">
                 <Clock3 className="size-4 text-acid" />
-                Updated {page.updated ?? "October 14, 2026"}
+                Last updated {page.updated ?? "October 14, 2026"}
               </span>
+              {!isLegal ? (
+                <Link
+                  href="/author"
+                  className="inline-flex items-center gap-2 transition hover:text-white"
+                >
+                  <UserRound className="size-4 text-acid" />
+                  By Qbit
+                </Link>
+              ) : null}
               <span className="inline-flex items-center gap-2">
                 {isLegal ? (
                   <ShieldCheck className="size-4 text-acid" />

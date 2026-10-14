@@ -3,6 +3,7 @@ import "server-only";
 import { createFalClient } from "@fal-ai/client";
 import { env, isFalConfigured } from "@/lib/env";
 import {
+  buildSeedance25TemplatePrompt,
   buildMinimaxTemplatePrompt,
   DEFAULT_MODEL_ID,
   KLING_MAX_REFERENCE_VIDEOS,
@@ -57,6 +58,7 @@ export function buildModelInput({
     const referenceVideos = selectReferenceVideosForDuration(
       env.templateVideoUrls,
       duration,
+      model.maxReferenceVideos,
     );
     return {
       prompt: buildMinimaxTemplatePrompt(referenceVideos.length),
@@ -68,6 +70,28 @@ export function buildModelInput({
       aspect_ratio: "9:16",
       prompt_expansion_mode: "quality",
       enable_safety_checker: true,
+    };
+  }
+
+  if (model.id === "seedance-2-5-us-r2v") {
+    // Seedance 2.5 (US) 用 @Image1 / @Video1 指代参考素材，video_urls 最多 10 个
+    // 参考视频（合计 <= 30.2 秒）。这条端点没有 enable_safety_checker 字段，
+    // 所以不要传，避免参数校验失败。
+    const referenceVideos = selectReferenceVideosForDuration(
+      env.templateVideoUrls,
+      duration,
+      model.maxReferenceVideos,
+    );
+    return {
+      prompt: buildSeedance25TemplatePrompt(referenceVideos.length),
+      task: "reference",
+      image_urls: [imageUrl],
+      video_urls: referenceVideos,
+      duration: String(duration),
+      resolution: resolution === "1080p" ? "1080p" : "720p",
+      aspect_ratio: "9:16",
+      generate_audio: true,
+      bitrate_mode: "high",
     };
   }
 
@@ -97,7 +121,8 @@ export function buildModelInput({
   //   如果换模板后报参数错误，先检查这条。
   // - 如果实测相似度不够，可以再补 image_urls: [imageUrl]（与 elements 合计不超过 4 个）。
   // - video_url 只接受 1 个参考视频（schema 里是单个 string），所以 Kling 线
-  //   无法多参考；BULIN47_TEMPLATE_VIDEO_URLS 里的额外视频只在 MiniMax 线生效。
+  //   无法多参考；BULIN47_TEMPLATE_VIDEO_URLS 里的额外视频只在 MiniMax 和
+  //   Seedance 2.5 两条线上生效。
   const klingVideo =
     env.templateVideoUrls.slice(0, KLING_MAX_REFERENCE_VIDEOS)[0] ??
     env.templateVideoUrl;

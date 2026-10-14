@@ -17,6 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
       changeFrequency: "weekly" as const,
     },
+    {
+      // E-E-A-T 作者页：向搜索引擎和 AI 引擎说明内容由谁负责。
+      url: absoluteUrl("/author"),
+      priority: 0.6,
+      changeFrequency: "monthly" as const,
+    },
   ];
 
   const content = Object.values(contentPages).map((page) => ({
