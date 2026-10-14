@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { safeInternalPath } from "@/lib/utils";
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const code = url.searchParams.get("code");
-  const next = url.searchParams.get("next") || "/studio";
+  // next 只接受站内相对路径，否则回退到 /studio，防止开放重定向。
+  const next = safeInternalPath(url.searchParams.get("next"), "/studio");
 
   if (!code) {
     return NextResponse.redirect(new URL("/login?error=missing_code", url));

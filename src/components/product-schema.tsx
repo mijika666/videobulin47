@@ -1,4 +1,4 @@
-import { absoluteUrl } from "@/lib/utils";
+import { absoluteUrl, jsonLd } from "@/lib/utils";
 import { CREDIT_PACKS } from "@/lib/constants";
 import { HOMEPAGE_ANSWERS } from "@/components/landing/answer-block";
 import { contentPages } from "@/content/pages";
@@ -52,7 +52,7 @@ export function ProductSchema() {
     featureList: [
       "Turn one portrait photo into a vertical 9:16 video",
       "Follows the motion, camera and audio of a Bulin 47 reference clip",
-      "MiniMax H3, Kling O3 Reference, Kling O3 Reference Pro and Seedance 1.0 Lite",
+      "Seedance 2.5, MiniMax H3, Kling O3 Reference and Kling O3 Reference Pro",
       "5, 10 and 15 second clips at 720p or 1080p",
       "No watermark, original sound included",
       "Credits never expire and failed renders are refunded automatically",
@@ -101,7 +101,7 @@ export function ProductSchema() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: jsonLd(data) }}
     />
   );
 }

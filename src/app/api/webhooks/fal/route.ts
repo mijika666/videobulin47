@@ -1,8 +1,18 @@
 import { NextResponse } from "next/server";
+import { timingSafeEqual } from "node:crypto";
 import { env } from "@/lib/env";
 import { finalizeFalJob } from "@/lib/fal-result";
 
 export const runtime = "nodejs";
+
+// 用固定时间比较，避免通过响应时间逐字节猜 webhook token。
+function secretMatches(provided: string | null, expected: string) {
+  if (!provided) return false;
+  const a = Buffer.from(provided);
+  const b = Buffer.from(expected);
+  if (a.length !== b.length) return false;
+  return timingSafeEqual(a, b);
+}
 
 export async function POST(request: Request) {
   const url = new URL(request.url);
@@ -15,7 +25,7 @@ export async function POST(request: Request) {
       { status: 503 },
     );
   }
-  if (token !== env.falWebhookSecret) {
+  if (!secretMatches(token, env.falWebhookSecret)) {
     return NextResponse.json({ error: "Invalid webhook token" }, { status: 401 });
   }
   if (!jobId) {

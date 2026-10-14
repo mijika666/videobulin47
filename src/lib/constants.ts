@@ -81,7 +81,6 @@ export type VideoResolution = (typeof VIDEO_RESOLUTIONS)[number];
 // - Seedance 2.5 (US)：video_urls 是数组，最多 10 个（合计时长 <= 30.2 秒）。
 // - Kling O3 Reference / Pro：video_url 是单个 string，只能 1 个。
 // - MiniMax H3：reference_video_urls 是数组，maxItems = 3。
-// - Seedance 1.0 Lite：只有 reference_image_urls，没有任何参考视频字段，所以是 0。
 export const SEEDANCE_25_MAX_REFERENCE_VIDEOS = 10;
 export const KLING_MAX_REFERENCE_VIDEOS = 1;
 export const MINIMAX_MAX_REFERENCE_VIDEOS = 3;
@@ -154,17 +153,6 @@ export const MODELS: readonly VideoModel[] = [
     maxReferenceVideos: KLING_MAX_REFERENCE_VIDEOS,
     durations: [5, 10, 15],
     resolutions: ["720p", "1080p"],
-  },
-  {
-    id: "seedance-v1-lite-r2v",
-    name: "Seedance 1.0 Lite",
-    endpoint: "fal-ai/bytedance/seedance/v1/lite/reference-to-video",
-    quality: "Photo only",
-    cost: "$0.04/s",
-    usesReferenceVideo: false,
-    maxReferenceVideos: 0,
-    durations: [5, 10],
-    resolutions: ["720p"],
   },
 ];
 
@@ -343,23 +331,6 @@ Use them in order as the motion source: Video 1 for the opening, the next clip f
 Take the scene, lighting, colour and camera style from Video 1 and keep that look consistent for the whole video.
 Follow the choreography, timing and energy of the clips, but keep one performer and one continuous take. Do not cut between the clips, do not stitch them together, and do not create scene changes.`;
 }
-
-// Seedance 1.0 Lite reference-to-video 的提示词。
-// 重要：这个端点的输入只有 reference_image_urls，没有任何参考视频字段，
-// 所以它不会跟随 Bulin 47 的动作模板，舞蹈只能靠文字描述生成。
-export const SEEDANCE_TEMPLATE_PROMPT = `
-Use the person in Image 1 as the main character. Keep their exact identity: face shape, eyes, nose, mouth, hairstyle, skin tone, age and gender presentation. The face must stay sharp, consistent and recognizable for the whole clip.
-
-Scene: a crowded nightlife event, dark club atmosphere with red neon light on the face and shadows from surrounding people. Shot as ultra-realistic vertical smartphone footage, 9:16, handheld with slight camera shake, imperfect framing, changing exposure, autofocus hunting, motion blur, low-light noise and social-media compression. Not cinematic, not studio lit, not CGI.
-
-Action: the person dances a confident freestyle routine, moving naturally, with expressive hands, head movement and footwork, interacting with the people around them.
-
-Quality: photorealistic, natural skin texture, correct human anatomy, five fingers per hand, stable limbs, no extra or missing body parts. Subject fully in frame, head not cropped.
-
-Do not add: cartoon, CGI, 3D render, plastic or airbrushed skin, beauty filter, studio lighting, fake background, distorted face, identity drift, different person, inconsistent features, extra fingers, warped body, flicker, sudden cuts, text, subtitles, captions, logos, watermarks or borders.
-
-Only one consenting adult is shown.
-`.trim();
 
 // 通用负面提示词。Kling O3 Reference 与 MiniMax H3 的端点若不接受独立的
 // negative_prompt 字段，这些禁止项已经内嵌在上面两条提示词的 DO NOT 段落里，

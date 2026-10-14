@@ -12,7 +12,7 @@ import {
 import { FaqAccordion } from "@/components/faq-accordion";
 import { contentPages, type ContentPage } from "@/content/pages";
 import { KEYWORD_MAP } from "@/config/keywords";
-import { absoluteUrl } from "@/lib/utils";
+import { absoluteUrl, jsonLd } from "@/lib/utils";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -109,17 +109,17 @@ function GuideSchema({ page }: { page: ContentPage }) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(data) }}
       />
       {faqData ? (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
+          dangerouslySetInnerHTML={{ __html: jsonLd(faqData) }}
         />
       ) : null}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbData) }}
       />
     </>
   );

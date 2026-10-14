@@ -47,7 +47,7 @@ const commonFaqs: ContentFaq[] = [
   {
     question: "Which AI models power the video generation?",
     answer:
-      "VideoBulin47 runs third-party video models served through the fal.ai inference platform: Seedance 2.5 (ByteDance), MiniMax H3 (MiniMax), Kling O3 Reference and Kling O3 Reference Pro (Kuaishou), and Seedance 1.0 Lite (ByteDance). Every model except Seedance 1.0 Lite follows your reference clip to drive the motion; Seedance 1.0 Lite only accepts reference images, so it builds the scene from the prompt. You pick the model in the Studio before you generate, and each job records the model that was used.",
+      "VideoBulin47 runs third-party video models served through the fal.ai inference platform: Seedance 2.5 (ByteDance), MiniMax H3 (MiniMax), and Kling O3 Reference and Kling O3 Reference Pro (Kuaishou). Every model follows your reference clip to drive the motion and can keep the original audio. You pick the model in the Studio before you generate, and each job records which model produced it.",
   },
 ];
 
@@ -693,7 +693,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Model alternatives",
         paragraphs: [
-          "Seedance 2.5 is the default because it accepts the most reference clips and the highest output ceiling. MiniMax H3 is the balanced option, Kling O3 Reference and Kling O3 Reference Pro follow a single reference clip, and Seedance 1.0 Lite builds the scene from the prompt without following the clip at all. Every option runs through the same margin guard.",
+          "MiniMax H3 is the default: it takes multiple reference clips at a reasonable cost. Seedance 2.5 is the highest-detail option and accepts the most reference clips, while Kling O3 Reference and Kling O3 Reference Pro follow a single reference clip each. Every option shows its exact credit reservation in the Studio before you generate.",
         ],
       },
     ],
@@ -750,8 +750,8 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Models we use",
         paragraphs: [
-          "Video generation is powered by third-party video models served through the fal.ai inference platform. The current models are Seedance 2.5 (built by ByteDance), MiniMax H3 (built by MiniMax), Kling O3 Reference and Kling O3 Reference Pro (built by Kuaishou), and Seedance 1.0 Lite (built by ByteDance).",
-          "Seedance 2.5, MiniMax H3 and the Kling models use your reference clip to drive the motion and can keep the original audio. Seedance 1.0 Lite only accepts reference images, so it builds the scene from the prompt and does not follow the template clip.",
+          "Video generation is powered by third-party video models served through the fal.ai inference platform. The current models are Seedance 2.5 (built by ByteDance), MiniMax H3 (built by MiniMax), and Kling O3 Reference and Kling O3 Reference Pro (built by Kuaishou).",
+          "Every model uses your reference clip to drive the motion and can keep the original audio. Uploads and generated videos stay in private storage buckets.",
           "You choose the model in the Studio before you generate, and every job stores the model that produced it. We disclose the model names here so you know exactly which system is processing your photo, rather than only naming the inference provider.",
         ],
       },
@@ -793,7 +793,7 @@ export const contentPages: Record<string, ContentPage> = {
         paragraphs: [
           "2.1 What we provide. VideoBulin47 is a hosted interface that turns one uploaded portrait into a vertical AI-generated video using a reference video template. The Service is a digital software-as-a-service product delivered over the internet.",
           "2.2 Nature of the service. The Service is a digital, intangible product. Access is granted immediately after your payment is confirmed. Because delivery is immediate, refunds are subject to the limits in Section 7.",
-          "2.3 AI model dependency. We rely on third-party AI model providers. Video generation is performed by the Seedance 2.5 and Seedance 1.0 Lite models (built by ByteDance), the MiniMax H3 model (built by MiniMax), and the Kling O3 Reference and Kling O3 Reference Pro models (built by Kuaishou), each served through the fal.ai inference platform. Output quality and availability depend on those models, and the Service may be affected by their uptime and behavior. We will notify users of significant outages.",
+          "2.3 AI model dependency. We rely on third-party AI model providers. Video generation is performed by the Seedance 2.5 model (built by ByteDance), the MiniMax H3 model (built by MiniMax), and the Kling O3 Reference and Kling O3 Reference Pro models (built by Kuaishou), each served through the fal.ai inference platform. Output quality and availability depend on those models, and the Service may be affected by their uptime and behavior. We will notify users of significant outages.",
         ],
       },
       {

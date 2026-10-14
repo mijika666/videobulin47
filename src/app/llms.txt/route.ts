@@ -23,7 +23,6 @@ export function GET() {
     "- MiniMax H3 (MiniMax) - minimax/h3/reference-to-video - multi-reference, up to 3 clips",
     "- Kling O3 Reference (Kuaishou) - fal-ai/kling-video/o3/standard/video-to-video/reference",
     "- Kling O3 Reference Pro (Kuaishou) - fal-ai/kling-video/o3/pro/video-to-video/reference",
-    "- Seedance 1.0 Lite (ByteDance) - fal-ai/bytedance/seedance/v1/lite/reference-to-video - reference image only, no motion clip",
     "Users choose the model in the Studio, and each job records the model that produced it.",
     "",
     "## Pricing",

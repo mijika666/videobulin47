@@ -20,7 +20,7 @@ export const HOMEPAGE_ANSWERS = [
   {
     question: "Which AI models generate the video?",
     answer:
-      "Generation runs on third-party models served through fal.ai. Seedance 2.5, MiniMax H3, Kling O3 Reference and Kling O3 Reference Pro drive the motion from your reference clip, while Seedance 1.0 Lite works from the photo alone. You pick the model in the Studio.",
+      "Generation runs on third-party models served through fal.ai: Seedance 2.5, MiniMax H3, and Kling O3 Reference or Kling O3 Reference Pro. All of them drive the motion from your reference clip and keep the original audio. You pick the model in the Studio before you generate.",
   },
 ] as const;
 

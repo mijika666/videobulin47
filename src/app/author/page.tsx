@@ -7,7 +7,7 @@ import {
   Layers,
   Sparkles,
 } from "lucide-react";
-import { absoluteUrl } from "@/lib/utils";
+import { absoluteUrl, jsonLd } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Qbit — Founder of VideoBulin47",
@@ -75,7 +75,7 @@ export default function AuthorPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(personSchema) }}
       />
 
       <section className="section-dark py-20 md:py-28">

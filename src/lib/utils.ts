@@ -38,6 +38,26 @@ export function slugify(value: string) {
     .replace(/(^-|-$)/g, "");
 }
 
+// 只允许站内相对路径。用于登录回跳等 next 参数，避免开放重定向：
+// 外部地址、协议相对地址（//evil.com）和反斜杠变体（/\evil.com）一律回退。
+export function safeInternalPath(
+  value: string | null | undefined,
+  fallback = "/",
+) {
+  if (!value) return fallback;
+  if (!value.startsWith("/")) return fallback;
+  if (value.startsWith("//")) return fallback;
+  if (value.includes("\\")) return fallback;
+  if (/[\u0000-\u001f\u007f]/.test(value)) return fallback;
+  return value;
+}
+
+// 输出 JSON-LD 时把 "<" 转义成 \u003c，防止内容里的 </script> 提前闭合标签。
+// JSON 解析结果不变，只是不再有标签注入面。
+export function jsonLd(data: unknown) {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
 export function isAdminEmail(email?: string | null) {
   if (!email) return false;
   if (process.env.ADMIN_EMAILS === undefined) return false;

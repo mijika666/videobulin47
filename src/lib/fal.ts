@@ -8,7 +8,6 @@ import {
   DEFAULT_MODEL_ID,
   KLING_MAX_REFERENCE_VIDEOS,
   MODELS,
-  SEEDANCE_TEMPLATE_PROMPT,
   selectReferenceVideosForDuration,
   TEMPLATE_PROMPT,
 } from "@/lib/constants";
@@ -95,20 +94,6 @@ export function buildModelInput({
     };
   }
 
-  if (model.id === "seedance-v1-lite-r2v") {
-    // Seedance 1.0 Lite reference-to-video 只接收 reference_image_urls，
-    // 没有任何参考视频字段，所以动作完全由提示词描述，不跟随模板视频。
-    // resolution 只支持 480p / 720p，统一按 720p 提交。
-    return {
-      prompt: SEEDANCE_TEMPLATE_PROMPT,
-      reference_image_urls: [imageUrl],
-      duration: String(duration),
-      resolution: "720p",
-      aspect_ratio: "9:16",
-      enable_safety_checker: true,
-    };
-  }
-
   // Kling O3 Reference：
   // - elements 是"角色"通道，frontal_image_url 传入用户正脸照，提示词里用 @Element1 引用。
   //   它比 image_urls（style/appearance 通道）更能锁住人物身份，是这条模型线专门为
@@ -183,20 +168,34 @@ export async function submitVideoGeneration({
   };
 }
 
+// 只接受 http/https 地址。回调里的 URL 最终会渲染成 <a href> / <video src>，
+// 如果不校验协议，javascript: 这类伪协议会被带进页面。
+function asHttpUrl(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "https:" && url.protocol !== "http:") return null;
+    return url.toString();
+  } catch {
+    return null;
+  }
+}
+
 export function extractFalVideoUrl(payload: unknown) {
   if (!payload || typeof payload !== "object") return null;
   const value = payload as Record<string, unknown>;
   const video = value.video;
 
-  if (typeof video === "string") return video;
+  const direct = asHttpUrl(video);
+  if (direct) return direct;
   if (video && typeof video === "object") {
-    const url = (video as Record<string, unknown>).url;
-    if (typeof url === "string") return url;
+    const nested = asHttpUrl((video as Record<string, unknown>).url);
+    if (nested) return nested;
   }
 
   for (const key of ["video_url", "output_url", "url"]) {
-    const candidate = value[key];
-    if (typeof candidate === "string") return candidate;
+    const candidate = asHttpUrl(value[key]);
+    if (candidate) return candidate;
   }
 
   return null;

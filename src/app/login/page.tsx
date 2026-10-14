@@ -3,7 +3,7 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import { LoginForm } from "@/components/login-form";
 import { getCurrentUser } from "@/lib/supabase/server";
-import { absoluteUrl } from "@/lib/utils";
+import { absoluteUrl, safeInternalPath } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Sign In",
@@ -12,21 +12,13 @@ export const metadata: Metadata = {
   alternates: { canonical: absoluteUrl("/login") },
 };
 
-// Only allow same-site relative paths, so `next` can never be an open redirect.
-function safeNext(value: string | undefined) {
-  if (value && value.startsWith("/") && !value.startsWith("//")) {
-    return value;
-  }
-  return "/studio";
-}
-
 export default async function LoginPage({
   searchParams,
 }: {
   searchParams: Promise<{ next?: string; error?: string }>;
 }) {
   const params = await searchParams;
-  const next = safeNext(params.next);
+  const next = safeInternalPath(params.next, "/studio");
   const user = await getCurrentUser();
   if (user) {
     redirect(next);

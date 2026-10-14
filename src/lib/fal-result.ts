@@ -12,6 +12,27 @@ type FalWebhookEnvelope = {
   request_id?: string;
 };
 
+// 只从已知的模型 CDN 拉取结果文件，避免回调被伪造时把服务端当跳板去打内网
+// （SSRF）。命中不了白名单也不会失败：直接沿用 fal 返回的原始地址。
+const ALLOWED_RENDER_HOSTS = [
+  "fal.media",
+  "fal.run",
+  "storage.googleapis.com",
+];
+
+function isAllowedRenderUrl(value: string) {
+  try {
+    const parsed = new URL(value);
+    if (parsed.protocol !== "https:") return false;
+    return ALLOWED_RENDER_HOSTS.some(
+      (host) =>
+        parsed.hostname === host || parsed.hostname.endsWith(`.${host}`),
+    );
+  } catch {
+    return false;
+  }
+}
+
 async function transferRender({
   job,
   outputUrl,
@@ -21,6 +42,9 @@ async function transferRender({
 }) {
   const admin = createSupabaseAdminClient();
   if (!admin) return { outputUrl, outputPath: null };
+  if (!isAllowedRenderUrl(outputUrl)) {
+    return { outputUrl, outputPath: null };
+  }
 
   try {
     const response = await fetch(outputUrl, { cache: "no-store" });
@@ -63,6 +87,15 @@ export async function finalizeFalJob({
   if (error || !job) throw new Error("Video job not found");
   if (job.status === "completed" || job.status === "failed") {
     return { job, changed: false };
+  }
+  // 回调里的 request_id 必须和任务记录的 fal_request_id 一致，
+  // 避免有人拿同一个 token 去伪造别的任务的完成事件。
+  if (
+    envelope.request_id &&
+    job.fal_request_id &&
+    envelope.request_id !== job.fal_request_id
+  ) {
+    throw new Error("Webhook request_id does not match the job");
   }
 
   const failed =

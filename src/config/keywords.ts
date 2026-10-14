@@ -46,7 +46,7 @@ export const KEYWORD_MAP: Record<string, KeywordTarget> = {
       "bulin-47-template",
       "how-to-make-bulin-47-ai-video",
       "bulin-47-ai-free",
-      "bulin-47-ai-vs-higgsfield",
+      "higgsfield-bulin-47-ai",
     ],
   },
   "bulin-47-viral-video": {
@@ -206,7 +206,7 @@ export const KEYWORD_MAP: Record<string, KeywordTarget> = {
     relatedSlugs: [
       "pricing",
       "bulin-47-ai-video",
-      "bulin-47-ai-vs-higgsfield",
+      "higgsfield-bulin-47-ai",
       "faq",
     ],
   },
