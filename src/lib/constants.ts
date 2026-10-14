@@ -77,13 +77,54 @@ export const VIDEO_RESOLUTIONS = ["720p", "1080p"] as const;
 export type VideoDuration = (typeof VIDEO_DURATIONS)[number];
 export type VideoResolution = (typeof VIDEO_RESOLUTIONS)[number];
 
-export const MODELS = [
+// 各端点能接收的参考视频数量上限（来自 fal 的 OpenAPI schema）：
+// - Kling O3 Reference / Pro：video_url 是单个 string，只能 1 个。
+// - MiniMax H3：reference_video_urls 是数组，maxItems = 3。
+// - Seedance 1.0 Lite：只有 reference_image_urls，没有任何参考视频字段，所以是 0。
+export const KLING_MAX_REFERENCE_VIDEOS = 1;
+export const MINIMAX_MAX_REFERENCE_VIDEOS = 3;
+
+export type VideoModel = {
+  id: string;
+  name: string;
+  endpoint: string;
+  quality: string;
+  /** 展示用的成本参考，不在 Studio 下拉里显示 */
+  cost: string;
+  /** 是否用参考视频驱动动作。false = 只吃参考图，不跟随动作模板。 */
+  usesReferenceVideo: boolean;
+  /** 端点能接收的参考视频数量上限（0 = 不支持参考视频） */
+  maxReferenceVideos: number;
+  /** 该端点支持的时长 */
+  durations: readonly VideoDuration[];
+  /** 该端点支持的分辨率 */
+  resolutions: readonly VideoResolution[];
+};
+
+// 顺序即 Studio 下拉里的展示顺序。支持多参考视频的模型排在前面，
+// 因为多参考能明显提升动作和场景的一致性。
+export const MODELS: readonly VideoModel[] = [
+  {
+    id: "minimax-h3",
+    name: "MiniMax H3",
+    endpoint: "minimax/h3/reference-to-video",
+    quality: "Up to 3 reference clips",
+    cost: "$0.13/s",
+    usesReferenceVideo: true,
+    maxReferenceVideos: MINIMAX_MAX_REFERENCE_VIDEOS,
+    durations: [5, 10, 15],
+    resolutions: ["720p", "1080p"],
+  },
   {
     id: "kling-o3-standard-v2v",
     name: "Kling O3 Reference",
     endpoint: "fal-ai/kling-video/o3/standard/video-to-video/reference",
     quality: "Fast and stable",
     cost: "$0.126/s",
+    usesReferenceVideo: true,
+    maxReferenceVideos: KLING_MAX_REFERENCE_VIDEOS,
+    durations: [5, 10, 15],
+    resolutions: ["720p", "1080p"],
   },
   {
     id: "kling-o3-pro-v2v",
@@ -91,17 +132,25 @@ export const MODELS = [
     endpoint: "fal-ai/kling-video/o3/pro/video-to-video/reference",
     quality: "Maximum likeness",
     cost: "$0.168/s",
+    usesReferenceVideo: true,
+    maxReferenceVideos: KLING_MAX_REFERENCE_VIDEOS,
+    durations: [5, 10, 15],
+    resolutions: ["720p", "1080p"],
   },
   {
-    id: "minimax-h3",
-    name: "MiniMax H3",
-    endpoint: "minimax/h3/reference-to-video",
-    quality: "2K alternative",
-    cost: "$0.13/s",
+    id: "seedance-v1-lite-r2v",
+    name: "Seedance 1.0 Lite",
+    endpoint: "fal-ai/bytedance/seedance/v1/lite/reference-to-video",
+    quality: "Photo reference only",
+    cost: "$0.04/s",
+    usesReferenceVideo: false,
+    maxReferenceVideos: 0,
+    durations: [5, 10],
+    resolutions: ["720p"],
   },
-] as const;
+];
 
-export const DEFAULT_MODEL_ID = "kling-o3-standard-v2v";
+export const DEFAULT_MODEL_ID = "minimax-h3";
 
 // Kling O3 Reference 的提示词。
 // 关键点：
@@ -112,37 +161,37 @@ export const TEMPLATE_PROMPT = `
 Shot type: customize. @Video1 is the motion, scene and audio reference. @Element1 is the performer identity.
 
 TASK
-Replace the original performer in @Video1 with the person shown in @Element1. Keep the reference clip's choreography, camera work, environment, timing and audio exactly.
+Replace the original performer in @Video1 with the person in @Element1. Keep the clip's choreography, camera work, environment, timing and audio exactly.
 
-MOTION FIDELITY - highest priority
-- Reproduce the dance moves, gesture timing, body rotation, head bobbing and footwork of @Video1 frame by frame.
-- Keep the original camera angle, camera movement, framing, focal length, zoom and handheld shake.
-- Keep the original scene unchanged: crowd, floor, walls, lighting, neon colours, signs, equipment and props.
+MOTION - highest priority
+- Reproduce the moves, gesture timing, body rotation, head bobbing and footwork of @Video1 frame by frame.
+- Keep the original camera angle, movement, framing, focal length, zoom and handheld shake.
+- Keep the scene unchanged: crowd, floor, walls, neon lighting, signs, equipment and props.
 - Keep the original length, beat and audio so the output stays in sync.
-- The performer talks and gestures with their hands, and interacts naturally with the people around them, exactly like the original.
+- The performer talks, gestures with their hands and interacts with people exactly like the original.
 
-IDENTITY FIDELITY
+IDENTITY
 - The performer must clearly look like @Element1: face shape, eyes, nose, mouth, hairstyle, facial hair, skin tone, age and gender presentation.
 - Preserve body build and height proportions relative to the scene.
-- Keep the clothing, hairstyle and accessories from @Video1 unless @Element1 clearly shows a distinctive outfit the user would expect to keep.
-- The face must stay sharp and consistent for the whole clip. No identity drift, no face morphing, no melting or blurring features.
+- Keep the clothing and accessories from @Video1 unless @Element1 shows a distinctive outfit to keep.
+- The face must stay sharp and consistent. No identity drift, morphing, melting or blurring.
 
 REALISM - match the reference look
-- Ultra-realistic vertical smartphone footage, 9:16, captured on a phone inside a crowded nightlife event.
-- Dark club atmosphere, red neon light reflecting on the face, shadows from surrounding people, realistic skin texture and natural facial expressions.
-- Authentic leaked-phone-video feeling: slight camera shake, imperfect framing, changing exposure, autofocus hunting, natural motion blur, low-light noise and social-media compression artifacts.
-- Not cinematic, not studio lit, not CGI, not a polished commercial.
+- Ultra-realistic vertical smartphone footage, 9:16, shot on a phone in a crowded nightlife event.
+- Dark club atmosphere, red neon light on the face, shadows from surrounding people, realistic skin texture and natural expressions.
+- Authentic leaked-phone feel: slight camera shake, imperfect framing, changing exposure, autofocus hunting, motion blur, low-light noise, social-media compression.
+- Not cinematic, not studio lit, not CGI.
 
 QUALITY
-- Five fingers per hand, stable limbs, correct human anatomy, no extra or missing body parts.
-- Match the light direction and colour temperature of @Video1 so the replacement looks native to the scene.
-- Subject fully inside the frame, head not cropped.
+- Five fingers per hand, stable limbs, correct anatomy, no extra or missing body parts.
+- Match the light direction and colour temperature of @Video1.
+- Subject fully in frame, head not cropped.
 
 DO NOT
-- cartoon, CGI, 3D render, plastic or airbrushed skin, beauty filter, perfect studio lighting, fake background.
-- distorted face, changing identity, different person, inconsistent facial features, extra fingers, warped body, flicker, sudden cuts.
-- No text, subtitles, captions, logos, watermarks, UI overlays, borders or letterboxing.
-- Do not change the music, do not replace or mute the original audio.
+- cartoon, CGI, 3D render, plastic or airbrushed skin, beauty filter, studio lighting, fake background.
+- distorted face, changing identity, different person, inconsistent features, extra fingers, warped body, flicker, sudden cuts.
+- No text, subtitles, captions, logos, watermarks, UI overlays or borders.
+- Do not change or mute the original audio.
 
 Only one consenting adult is shown.
 `.trim();
@@ -164,6 +213,45 @@ The performer talks and gestures naturally and interacts with nearby people. Kee
 Correct anatomy, five fingers per hand, stable limbs, no extra or missing body parts. Subject fully in frame, head not cropped.
 
 Do not produce: cartoon, CGI, 3D render, plastic or airbrushed skin, beauty filter, perfect studio lighting, fake background, distorted face, identity drift, different person, extra fingers, warped body, flicker, sudden cuts, text, subtitles, captions, logos, watermarks or borders. Do not change or mute the music.
+
+Only one consenting adult is shown.
+`.trim();
+
+// MiniMax H3 支持最多 3 个参考视频。多个视频时，在基础提示词后追加一段
+// 多片段说明，明确主参考片和辅助参考片各自的作用，并要求输出为一条连续表演。
+export function buildMinimaxTemplatePrompt(videoCount: number) {
+  const count = Math.max(
+    1,
+    Math.min(videoCount, MINIMAX_MAX_REFERENCE_VIDEOS),
+  );
+  if (count === 1) return MINIMAX_TEMPLATE_PROMPT;
+
+  const labels = Array.from(
+    { length: count },
+    (_, index) => `Video ${index + 1}`,
+  ).join(", ");
+
+  return `${MINIMAX_TEMPLATE_PROMPT}
+
+MULTI-CLIP MOTION REFERENCE
+You are given ${count} motion reference clips: ${labels}.
+Treat Video 1 as the primary choreography, timing and scene reference. Use the remaining clips only as extra references for body movement, energy, camera handling and crowd interaction.
+Blend them into one continuous performance. Do not cut between the clips, do not stitch them together, and do not introduce scene changes.`;
+}
+
+// Seedance 1.0 Lite reference-to-video 的提示词。
+// 重要：这个端点的输入只有 reference_image_urls，没有任何参考视频字段，
+// 所以它不会跟随 Bulin 47 的动作模板，舞蹈只能靠文字描述生成。
+export const SEEDANCE_TEMPLATE_PROMPT = `
+Use the person in Image 1 as the main character. Keep their exact identity: face shape, eyes, nose, mouth, hairstyle, skin tone, age and gender presentation. The face must stay sharp, consistent and recognizable for the whole clip.
+
+Scene: a crowded nightlife event, dark club atmosphere with red neon light on the face and shadows from surrounding people. Shot as ultra-realistic vertical smartphone footage, 9:16, handheld with slight camera shake, imperfect framing, changing exposure, autofocus hunting, motion blur, low-light noise and social-media compression. Not cinematic, not studio lit, not CGI.
+
+Action: the person dances a confident freestyle routine, moving naturally, with expressive hands, head movement and footwork, interacting with the people around them.
+
+Quality: photorealistic, natural skin texture, correct human anatomy, five fingers per hand, stable limbs, no extra or missing body parts. Subject fully in frame, head not cropped.
+
+Do not add: cartoon, CGI, 3D render, plastic or airbrushed skin, beauty filter, studio lighting, fake background, distorted face, identity drift, different person, inconsistent features, extra fingers, warped body, flicker, sudden cuts, text, subtitles, captions, logos, watermarks or borders.
 
 Only one consenting adult is shown.
 `.trim();

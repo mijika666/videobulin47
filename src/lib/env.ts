@@ -1,5 +1,12 @@
 const value = (name: string) => process.env[name]?.trim() ?? "";
 
+// 逗号或换行分隔的列表，用于额外的参考视频等场景。
+const list = (name: string) =>
+  value(name)
+    .split(/[\n,]+/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+
 export const env = {
   appUrl:
     value("NEXT_PUBLIC_APP_URL") ||
@@ -22,6 +29,11 @@ export const env = {
     value("FAL_VIDEO_MODEL") ||
     "fal-ai/kling-video/o3/standard/video-to-video/reference",
   templateVideoUrl: value("BULIN47_TEMPLATE_VIDEO_URL"),
+  // 第 1 个是主参考视频，后面是来自 BULIN47_TEMPLATE_VIDEO_URLS 的额外参考视频。
+  templateVideoUrls: [
+    value("BULIN47_TEMPLATE_VIDEO_URL"),
+    ...list("BULIN47_TEMPLATE_VIDEO_URLS"),
+  ].filter(Boolean),
   templateAudioUrl: value("BULIN47_TEMPLATE_AUDIO_URL"),
   cronSecret: value("CRON_SECRET"),
   adminEmails: value("ADMIN_EMAILS")

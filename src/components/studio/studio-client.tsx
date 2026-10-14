@@ -47,9 +47,6 @@ type JobView = Partial<VideoJob> & {
   preview?: boolean;
 };
 
-const durations: VideoDuration[] = [5, 10, 15];
-const resolutions: VideoResolution[] = ["720p", "1080p"];
-
 function statusLabel(status?: string) {
   if (status === "queued") return "Queued";
   if (status === "processing") return "Generating";
@@ -100,6 +97,20 @@ export function StudioClient({
   });
   const selectedModel =
     MODELS.find((model) => model.id === modelId) ?? MODELS[0];
+  // 时长和分辨率跟着所选模型走：各端点的支持范围不同。
+  const durations = selectedModel.durations;
+  const resolutions = selectedModel.resolutions;
+
+  function chooseModel(nextId: string) {
+    const next = MODELS.find((model) => model.id === nextId) ?? MODELS[0];
+    setModelId(next.id);
+    if (!next.durations.includes(duration)) {
+      setDuration(next.durations[next.durations.length - 1]);
+    }
+    if (!next.resolutions.includes(resolution)) {
+      setResolution(next.resolutions[0]);
+    }
+  }
 
   useEffect(() => {
     return () => {
@@ -500,7 +511,7 @@ export function StudioClient({
                 <span className="text-sm font-black">Generation model</span>
                 <select
                   value={modelId}
-                  onChange={(event) => setModelId(event.target.value)}
+                  onChange={(event) => chooseModel(event.target.value)}
                   className="h-12 rounded-lg border border-line bg-white px-3 text-sm outline-none focus:border-ink"
                 >
                   {MODELS.map((model) => (
@@ -509,6 +520,21 @@ export function StudioClient({
                     </option>
                   ))}
                 </select>
+                {selectedModel.usesReferenceVideo ? (
+                  <span className="text-[11px] leading-5 text-muted">
+                    Drives the motion from the reference clip
+                    {selectedModel.maxReferenceVideos > 1
+                      ? ` · up to ${selectedModel.maxReferenceVideos} clips combined`
+                      : ""}
+                    .
+                  </span>
+                ) : (
+                  <span className="rounded-lg bg-orange/10 px-3 py-2 text-[11px] leading-5 text-orange">
+                    {selectedModel.name} uses your photo as a reference image
+                    only. It does not follow the motion clip, so the dance comes
+                    from the prompt instead of the template video.
+                  </span>
+                )}
               </label>
 
               <label

@@ -82,10 +82,12 @@ export default function PricingPage() {
             Powered by named AI models.
           </h2>
           <p className="mt-5 max-w-3xl text-sm leading-7 text-muted">
-            Video generation runs on third-party reference-to-video models
-            served through the fal.ai inference platform. You pick the model in
-            the Studio before you generate, and every job records which model
-            was used.
+            Video generation runs on third-party models served through the
+            fal.ai inference platform. MiniMax H3, Kling O3 Reference and Kling
+            O3 Reference Pro drive the motion from your reference clip.
+            Seedance 1.0 Lite uses your photo as a reference image only. You
+            pick the model in the Studio before you generate, and every job
+            records which model was used.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {MODELS.map((model) => (

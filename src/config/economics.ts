@@ -12,16 +12,21 @@ export const TARGET_GROSS_MARGIN = 0.55;
 export const MIN_PUBLIC_PRICE_CENTS = 990;
 
 // fal.ai 公开价格。模型调价时，这里的成本值也要同步更新。
+// Seedance 1.0 Lite reference-to-video 按 token 计费（$1.8 / 1M tokens），
+// tokens = (宽 x 高 x fps x 秒) / 1024。按 720x1280、24fps 折算约 $0.0389/s，
+// 向上取整到 4 美分/秒，避免低估成本、让利润护栏失效。
 export const MODEL_COST_CENTS_PER_SECOND: Record<string, number> = {
   "kling-o3-standard-v2v": 12.6,
   "kling-o3-pro-v2v": 16.8,
   "minimax-h3": 13,
+  "seedance-v1-lite-r2v": 4,
 };
 
 export const MODEL_CREDIT_MULTIPLIER: Record<string, number> = {
   "kling-o3-standard-v2v": 1,
   "kling-o3-pro-v2v": 1.35,
   "minimax-h3": 1.2,
+  "seedance-v1-lite-r2v": 1,
 };
 
 export const BASE_CREDIT_COST: Record<

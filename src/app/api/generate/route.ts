@@ -63,6 +63,21 @@ export async function POST(request: Request) {
   if (!model) {
     return NextResponse.json({ error: "Unknown model" }, { status: 400 });
   }
+  // 每个端点的时长/分辨率支持范围不同（例如 Seedance 只到 10 秒、只有 720p），
+  // 这里先挡住，避免把无效参数发到 fal 再报错。
+  if (
+    !model.durations.includes(input.duration) ||
+    !model.resolutions.includes(input.resolution)
+  ) {
+    return NextResponse.json(
+      {
+        error: `${model.name} supports ${model.durations.join(
+          "/",
+        )} second clips at ${model.resolutions.join("/")}.`,
+      },
+      { status: 422 },
+    );
+  }
 
   let credits: number;
   let margin: ReturnType<typeof assertProfitable>;
