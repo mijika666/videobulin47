@@ -1,22 +1,40 @@
 import { contentPages } from "@/content/pages";
+import { CREDIT_PACKS } from "@/lib/constants";
 import { absoluteUrl } from "@/lib/utils";
 
 export function GET() {
   const lines = [
     "# VideoBulin47",
     "",
-    "VideoBulin47 is an independent one-photo AI video tool for the Bulin 47 freestyle trend.",
-    "It creates a vertical MP4 from one portrait and a reference video template.",
+    "> VideoBulin47 is a video bulin 47 generator: it turns one uploaded portrait into a vertical 9:16 video that follows a Bulin 47 freestyle reference clip.",
+    "",
+    "VideoBulin47 is an independent, fan-made web app. It is not affiliated with Bulin 47, Kevin Wai, their labels, or any social platform. The product is sold as one-time credit packs with no subscription.",
+    "",
+    "## What it does",
+    "- Input: one portrait photo (JPG, PNG or WebP, up to 10MB).",
+    "- Motion source: a licensed Bulin 47 freestyle reference clip.",
+    "- Output: a vertical 9:16 MP4, 5, 10 or 15 seconds, at 720p or 1080p.",
+    "- No watermark. The original sound is kept.",
+    "- Failed renders return the reserved credits automatically; purchased credits never expire.",
     "",
     "## Models",
-    "Video generation uses third-party reference-to-video models served through the fal.ai inference platform:",
+    "Generation runs on third-party models served through the fal.ai inference platform:",
     "- MiniMax H3 (MiniMax) - minimax/h3/reference-to-video - multi-reference, up to 3 clips",
     "- Kling O3 Reference (Kuaishou) - fal-ai/kling-video/o3/standard/video-to-video/reference",
     "- Kling O3 Reference Pro (Kuaishou) - fal-ai/kling-video/o3/pro/video-to-video/reference",
     "- Seedance 1.0 Lite (ByteDance) - fal-ai/bytedance/seedance/v1/lite/reference-to-video - reference image only, no motion clip",
     "Users choose the model in the Studio, and each job records the model that produced it.",
     "",
-    "## Pages",
+    "## Pricing",
+    `Machine-readable version: ${absoluteUrl("/pricing.md")}`,
+    "One-time credit packs, no subscription, prices in USD:",
+    ...CREDIT_PACKS.map(
+      (pack) =>
+        `- ${pack.name}: ${pack.priceLabel} for ${pack.credits} credits`,
+    ),
+    "Credits never expire. Failed generations are refunded automatically. Waffo Pancake is the merchant of record and handles applicable tax.",
+    "",
+    "## Key pages",
     `- ${absoluteUrl("/")}: Bulin 47 AI video generator`,
     `- ${absoluteUrl("/pricing")}: Credit pack pricing`,
     `- ${absoluteUrl("/studio")}: Login-gated generation studio`,
@@ -28,6 +46,12 @@ export function GET() {
     "- Only consenting adults may be uploaded.",
     "- Outputs must be labeled as AI-generated when posted.",
     "- The service is not affiliated with Bulin 47, Kevin Wai, their labels, or social platforms.",
+    "- Only consenting adults may be uploaded. Minors, celebrities and public figures are not allowed.",
+    "",
+    "## Contact",
+    "- Support and takedown requests: support@videobulin47.net",
+    `- Robots policy: ${absoluteUrl("/robots.txt")}`,
+    `- Sitemap: ${absoluteUrl("/sitemap.xml")}`,
   ];
 
   return new Response(lines.join("\n"), {

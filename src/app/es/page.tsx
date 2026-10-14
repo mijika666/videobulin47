@@ -11,7 +11,7 @@ import { PricingCards } from "@/components/pricing-cards";
 import { absoluteUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Generador de Video Bulin 47 AI Desde Una Foto",
+  title: "Video Bulin 47 AI Desde Una Foto",
   description:
     "Crea tu video de Bulin 47 AI desde una foto. Mantén el movimiento original, el sonido y el formato vertical para TikTok, Reels y Shorts.",
   keywords: [
@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     languages: {
       en: absoluteUrl("/"),
       es: absoluteUrl("/es"),
+      "x-default": absoluteUrl("/"),
     },
   },
 };

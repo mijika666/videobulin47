@@ -11,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       changeFrequency: "weekly" as const,
     },
+    {
+      // 机器可读价格文件，方便 AI 代理直接解析定价。
+      url: absoluteUrl("/pricing.md"),
+      priority: 0.5,
+      changeFrequency: "weekly" as const,
+    },
   ];
 
   const content = Object.values(contentPages).map((page) => ({

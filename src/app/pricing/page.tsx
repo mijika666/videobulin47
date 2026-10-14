@@ -72,6 +72,12 @@ export default function PricingPage() {
               </div>
             ))}
           </div>
+          <p className="mt-6 text-xs text-white/40">
+            Machine-readable pricing for AI agents and procurement tools:{" "}
+            <a className="underline hover:text-white" href="/pricing.md">
+              /pricing.md
+            </a>
+          </p>
         </div>
       </section>
 

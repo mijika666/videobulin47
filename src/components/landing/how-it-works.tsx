@@ -34,7 +34,7 @@ export function HowItWorks() {
           <div>
             <p className="eyebrow text-orange">How it works</p>
             <h2 className="display mt-5 text-[clamp(2.5rem,5vw,4.5rem)]">
-              A trend video in three steps.
+              Make a video bulin 47 in three steps.
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-muted lg:ml-auto">

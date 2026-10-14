@@ -22,11 +22,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(absoluteUrl("/")),
   title: {
-    default: "Bulin 47 AI Video Generator From One Photo | VideoBulin47",
+    default: "Video Bulin 47 AI Generator From One Photo | VideoBulin47",
     template: `%s | ${APP_NAME}`,
   },
   description:
-    "Create a Bulin 47 AI video from one photo. Upload a portrait, keep the original freestyle motion and sound, and download a vertical MP4 for TikTok, Reels, or Shorts.",
+    "Make a video bulin 47 clip from one photo. Keep the original freestyle motion and sound, then download a vertical MP4 for TikTok, Reels, or Shorts.",
   applicationName: APP_NAME,
   keywords: TRENDING_SEARCHES.map((item) => item.label),
   alternates: {
@@ -34,13 +34,14 @@ export const metadata: Metadata = {
     languages: {
       en: "/",
       es: "/es",
+      "x-default": "/",
     },
   },
   openGraph: {
     type: "website",
     url: absoluteUrl("/"),
     siteName: APP_NAME,
-    title: "Bulin 47 AI Video Generator From One Photo",
+    title: "Video Bulin 47 AI Generator From One Photo",
     description:
       "One photo. One vertical freestyle video. Built for TikTok, Reels, and Shorts.",
   },

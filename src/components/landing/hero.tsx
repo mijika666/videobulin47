@@ -19,16 +19,16 @@ export function Hero() {
       <div className="container-shell grid min-h-[680px] items-center gap-14 py-14 lg:min-h-[760px] lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
         <div className="relative z-10">
           <p className="eyebrow text-acid">
-            Bulin 47 AI video from one photo
+            Video Bulin 47 generator
           </p>
           <h1 className="display mt-6 max-w-3xl text-[clamp(3rem,6.2vw,5.8rem)] text-white">
-            Put yourself in the
-            <span className="block text-acid">Bulin 47 freestyle.</span>
+            Video Bulin 47{" "}
+            <span className="block text-acid">from one photo.</span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-8 text-white/65 md:text-lg">
-            Upload one clear portrait. Keep the original motion, camera, crowd,
-            and rhythm. Download a vertical AI video built for TikTok, Reels,
-            and Shorts.
+            Upload one clear portrait and get a video bulin 47 clip that keeps
+            the original freestyle motion, camera, crowd, and sound. Download a
+            vertical MP4 built for TikTok, Reels, and Shorts.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/studio" className="btn btn-primary">

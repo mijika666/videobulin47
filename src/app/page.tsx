@@ -1,4 +1,5 @@
 import { Hero } from "@/components/landing/hero";
+import { AnswerBlock } from "@/components/landing/answer-block";
 import { HowItWorks } from "@/components/landing/how-it-works";
 import { Features } from "@/components/landing/features";
 import { VideoShowcase } from "@/components/landing/video-showcase";
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <AnswerBlock />
       <VideoShowcase />
       <HowItWorks />
       <Features />
