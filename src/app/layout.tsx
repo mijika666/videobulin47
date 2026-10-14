@@ -60,9 +60,13 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  // globals.css 里设了 scroll-behavior: smooth。Next.js 16 默认不再在路由切换
+  // 时覆盖它，加上 data-scroll-behavior="smooth" 可以保留「跳转瞬间置顶、
+  // 页内锚点平滑滚动」的原有行为。
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">

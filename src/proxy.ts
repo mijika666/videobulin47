@@ -2,7 +2,9 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { env, isSupabaseConfigured } from "@/lib/env";
 
-export async function middleware(request: NextRequest) {
+// Next.js 16 起 middleware 更名为 proxy（默认 Node.js runtime）。
+// 这里只做 Supabase 会话刷新：读取请求 cookie，把刷新后的 cookie 写回响应。
+export async function proxy(request: NextRequest) {
   if (!isSupabaseConfigured) {
     return NextResponse.next({ request });
   }

@@ -17,16 +17,21 @@ const links = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState<string | null>(null);
-  const [authReady, setAuthReady] = useState(false);
+  // 没配置 Supabase 时永远不可能有登录态，直接把 authReady 初始化成 true。
+  // 这样 effect 里就不需要同步 setState（会触发级联渲染）。
+  const [authReady, setAuthReady] = useState(
+    () =>
+      !(
+        process.env.NEXT_PUBLIC_SUPABASE_URL &&
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      ),
+  );
 
   // Header stays a client component so the shared layout keeps rendering
   // statically for every SEO page. Auth state is resolved after hydration.
   useEffect(() => {
     const supabase = createSupabaseBrowserClient();
-    if (!supabase) {
-      setAuthReady(true);
-      return;
-    }
+    if (!supabase) return;
 
     let active = true;
     supabase.auth
