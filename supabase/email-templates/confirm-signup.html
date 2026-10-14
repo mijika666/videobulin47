@@ -1,0 +1,104 @@
+<!--
+  Supabase → Authentication → Emails → "Confirm signup" 模板正文（HTML）。
+  建议主题：Confirm your VideoBulin47 account
+
+  变量说明：
+    {{ .ConfirmationURL }} 确认链接（必填）
+    {{ .Email }}           收件人邮箱
+    {{ .SiteURL }}         站点地址
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Confirm your VideoBulin47 account</title>
+  </head>
+  <body style="margin:0;padding:0;background:#f4f0e8;">
+    <div style="display:none;max-height:0;overflow:hidden;opacity:0;">
+      Confirm your email address to finish setting up VideoBulin47.
+    </div>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f4f0e8;">
+      <tr>
+        <td align="center" style="padding:32px 16px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;background:#fffdf8;border:1px solid #d8d3c7;border-radius:12px;">
+
+            <tr>
+              <td style="background:#090a09;padding:20px 28px;border-radius:12px 12px 0 0;font-family:Arial,Helvetica,sans-serif;">
+                <span style="display:inline-block;width:10px;height:10px;border-radius:3px;background:#c9ff3f;vertical-align:middle;"></span>
+                <span style="color:#ffffff;font-size:14px;font-weight:bold;letter-spacing:1px;vertical-align:middle;">&nbsp;VIDEOBULIN47</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:32px 28px 0;font-family:Arial,Helvetica,sans-serif;">
+                <h1 style="margin:0;color:#10120e;font-size:24px;line-height:32px;font-weight:bold;">Confirm your email</h1>
+                <p style="margin:14px 0 0;color:#66695f;font-size:15px;line-height:24px;">
+                  One more step: confirm
+                  <strong style="color:#10120e;">{{ .Email }}</strong>
+                  to activate your VideoBulin47 account.
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:26px 28px 0;font-family:Arial,Helvetica,sans-serif;">
+                <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#090a09;color:#ffffff;text-decoration:none;font-size:15px;font-weight:bold;padding:15px 30px;border-radius:8px;">
+                  Confirm my email
+                </a>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:18px 28px 0;font-family:Arial,Helvetica,sans-serif;">
+                <p style="margin:0;color:#66695f;font-size:13px;line-height:21px;">
+                  This link is single-use and expires in 24 hours.
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:18px 28px 0;font-family:Arial,Helvetica,sans-serif;">
+                <p style="margin:0;color:#66695f;font-size:13px;line-height:21px;">
+                  Button not working? Copy and paste this address into your browser:
+                </p>
+                <p style="margin:8px 0 0;font-size:13px;line-height:20px;word-break:break-all;">
+                  <a href="{{ .ConfirmationURL }}" style="color:#ff5722;">{{ .ConfirmationURL }}</a>
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:24px 28px 0;">
+                <div style="height:1px;background:#d8d3c7;line-height:1px;font-size:1px;">&nbsp;</div>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:20px 28px 28px;font-family:Arial,Helvetica,sans-serif;">
+                <p style="margin:0;color:#66695f;font-size:13px;line-height:21px;">
+                  If you did not create a VideoBulin47 account, ignore this email
+                  and the address will stay unconfirmed.
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="background:#f4f0e8;padding:20px 28px;border-top:1px solid #d8d3c7;border-radius:0 0 12px 12px;font-family:Arial,Helvetica,sans-serif;">
+                <p style="margin:0;color:#66695f;font-size:12px;line-height:19px;">
+                  VideoBulin47 &middot;
+                  <a href="https://www.videobulin47.net" style="color:#66695f;">videobulin47.net</a><br />
+                  Need help? Write to
+                  <a href="mailto:support@videobulin47.net" style="color:#66695f;">support@videobulin47.net</a>.
+                </p>
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
