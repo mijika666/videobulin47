@@ -11,7 +11,7 @@
 //   NEXT_PUBLIC_SUPABASE_URL
 //   SUPABASE_SERVICE_ROLE_KEY
 // 可选：
-//   TEMPLATE_BUCKET（默认 templates）
+//   TEMPLATE_BUCKET（默认 video）
 
 import { existsSync, readdirSync, statSync } from "node:fs";
 import { readFile } from "node:fs/promises";
@@ -65,7 +65,7 @@ if (!supabaseUrl || !serviceRoleKey) {
   process.exit(1);
 }
 
-const bucket = process.env.TEMPLATE_BUCKET || "templates";
+const bucket = process.env.TEMPLATE_BUCKET || "video";
 const supabase = createClient(supabaseUrl, serviceRoleKey, {
   auth: { autoRefreshToken: false, persistSession: false },
 });

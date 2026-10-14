@@ -6,9 +6,9 @@ import {
   buildMinimaxTemplatePrompt,
   DEFAULT_MODEL_ID,
   KLING_MAX_REFERENCE_VIDEOS,
-  MINIMAX_MAX_REFERENCE_VIDEOS,
   MODELS,
   SEEDANCE_TEMPLATE_PROMPT,
+  selectReferenceVideosForDuration,
   TEMPLATE_PROMPT,
 } from "@/lib/constants";
 
@@ -53,9 +53,10 @@ export function buildModelInput({
     // MiniMax H3 用 "Image 1 / Video 1 / Audio 1" 指代参考素材，
     // prompt_expansion_mode=quality 会让它在生成前先把提示词扩写成更细的描述。
     // 只有这条线支持多参考视频：reference_video_urls 是数组，最多 3 个。
-    const referenceVideos = env.templateVideoUrls.slice(
-      0,
-      MINIMAX_MAX_REFERENCE_VIDEOS,
+    // 参考片段的数量跟输出时长匹配，见 selectReferenceVideosForDuration。
+    const referenceVideos = selectReferenceVideosForDuration(
+      env.templateVideoUrls,
+      duration,
     );
     return {
       prompt: buildMinimaxTemplatePrompt(referenceVideos.length),

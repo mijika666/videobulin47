@@ -175,6 +175,7 @@ IDENTITY
 - Preserve body build and height proportions relative to the scene.
 - Keep the clothing and accessories from @Video1 unless @Element1 shows a distinctive outfit to keep.
 - The face must stay sharp and consistent. No identity drift, morphing, melting or blurring.
+- Never copy the identity of the performer in @Video1. Only the person in @Element1 is shown.
 
 REALISM - match the reference look
 - Ultra-realistic vertical smartphone footage, 9:16, shot on a phone in a crowded nightlife event.
@@ -219,6 +220,19 @@ Only one consenting adult is shown.
 
 // MiniMax H3 支持最多 3 个参考视频。多个视频时，在基础提示词后追加一段
 // 多片段说明，明确主参考片和辅助参考片各自的作用，并要求输出为一条连续表演。
+// 按时长挑选参考片段：5 秒给 1 个、10 秒给 2 个、15 秒给 3 个。
+// 给多了会让模型在短输出里硬塞动作，给少了它要靠想象补动作。
+export function selectReferenceVideosForDuration(
+  urls: readonly string[],
+  duration: number,
+) {
+  const wanted = Math.max(
+    1,
+    Math.min(Math.round(duration / 5), MINIMAX_MAX_REFERENCE_VIDEOS),
+  );
+  return urls.slice(0, Math.min(wanted, urls.length));
+}
+
 export function buildMinimaxTemplatePrompt(videoCount: number) {
   const count = Math.max(
     1,
@@ -234,9 +248,10 @@ export function buildMinimaxTemplatePrompt(videoCount: number) {
   return `${MINIMAX_TEMPLATE_PROMPT}
 
 MULTI-CLIP MOTION REFERENCE
-You are given ${count} motion reference clips: ${labels}.
-Treat Video 1 as the primary choreography, timing and scene reference. Use the remaining clips only as extra references for body movement, energy, camera handling and crowd interaction.
-Blend them into one continuous performance. Do not cut between the clips, do not stitch them together, and do not introduce scene changes.`;
+You are given ${count} motion reference clips: ${labels}. They are consecutive segments of the same kind of performance.
+Use them in order as the motion source: Video 1 for the opening, the next clip for the following beat, and so on across the full output length.
+Take the scene, lighting, colour and camera style from Video 1 and keep that look consistent for the whole video.
+Follow the choreography, timing and energy of the clips, but keep one performer and one continuous take. Do not cut between the clips, do not stitch them together, and do not create scene changes.`;
 }
 
 // Seedance 1.0 Lite reference-to-video 的提示词。
