@@ -86,8 +86,10 @@ export function StudioClient({
   const [message, setMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [polling, setPolling] = useState(false);
+  const [consentWarning, setConsentWarning] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const fileUrlRef = useRef<string | null>(null);
+  const consentRef = useRef<HTMLLabelElement>(null);
 
   const demoMode =
     !services.supabase || !services.fal || !services.template;
@@ -193,7 +195,14 @@ export function StudioClient({
       return;
     }
     if (!consent) {
-      setError("Confirm that you have permission to use this photo.");
+      setError(
+        "Tick the permission box in step 2, then press Generate video again.",
+      );
+      setConsentWarning(true);
+      consentRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
       return;
     }
     if (demoMode) {
@@ -502,14 +511,28 @@ export function StudioClient({
                 </select>
               </label>
 
-              <label className="mt-6 flex cursor-pointer items-start gap-3 rounded-lg border border-line bg-black/[0.02] p-4">
+              <label
+                ref={consentRef}
+                className={cn(
+                  "mt-6 flex cursor-pointer items-start gap-3 rounded-lg border bg-black/[0.02] p-4 transition",
+                  consentWarning
+                    ? "border-orange ring-2 ring-orange/40"
+                    : "border-line",
+                )}
+              >
                 <input
                   type="checkbox"
                   checked={consent}
-                  onChange={(event) => setConsent(event.target.checked)}
+                  onChange={(event) => {
+                    setConsent(event.target.checked);
+                    if (event.target.checked) setConsentWarning(false);
+                  }}
                   className="mt-1 size-4 accent-orange"
                 />
                 <span className="text-xs leading-6 text-muted">
+                  <span className="font-bold text-ink">
+                    Required before you can generate.
+                  </span>{" "}
                   I confirm that this is my photo or I have permission from the
                   person shown. They are 18 or older, not a celebrity or public
                   figure, and the video will be labeled as AI-generated when I
