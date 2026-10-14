@@ -168,7 +168,7 @@ export default async function ContentPageRoute({ params }: PageProps) {
             <div className="mt-8 flex flex-wrap gap-4 text-xs font-bold text-white/45">
               <span className="inline-flex items-center gap-2">
                 <Clock3 className="size-4 text-acid" />
-                Updated October 13, 2026
+                Updated {page.updated ?? "October 14, 2026"}
               </span>
               <span className="inline-flex items-center gap-2">
                 {isLegal ? (

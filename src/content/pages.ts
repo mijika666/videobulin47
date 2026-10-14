@@ -42,7 +42,12 @@ const commonFaqs: ContentFaq[] = [
   {
     question: "Are credits refundable?",
     answer:
-      "Unused credit packs can be requested for review within 14 days. Spent credits are not refundable once a video has completed. See the Refund Policy for the full process.",
+      "Unused credit packs can be refunded in full within 7 days of purchase. Credits spent on a completed video are not refundable. EU, UK, and Australian first-time buyers keep their statutory withdrawal rights. See the Refund Policy for the full process.",
+  },
+  {
+    question: "Which AI models power the video generation?",
+    answer:
+      "VideoBulin47 runs reference-to-video models served through the fal.ai inference platform: Kling O3 Reference and Kling O3 Reference Pro (Kuaishou), and MiniMax H3 (MiniMax). You can pick the model in the Studio before you generate, and each job records the model that was used.",
   },
 ];
 
@@ -726,6 +731,13 @@ export const contentPages: Record<string, ContentPage> = {
         ],
       },
       {
+        heading: "Models we use",
+        paragraphs: [
+          "Video generation is powered by third-party reference-to-video models served through the fal.ai inference platform. The current models are Kling O3 Reference and Kling O3 Reference Pro, built by Kuaishou, and MiniMax H3, built by MiniMax.",
+          "You choose the model in the Studio before you generate, and every job stores the model that produced it. We disclose the model names here so you know exactly which system is processing your photo, rather than only naming the inference provider.",
+        ],
+      },
+      {
         heading: "Independence",
         paragraphs: [
           "VideoBulin47 is not affiliated with Bulin 47, Kevin Wai, their labels, TikTok, Instagram, or YouTube. Names and trademarks belong to their respective owners.",
@@ -745,45 +757,141 @@ export const contentPages: Record<string, ContentPage> = {
     eyebrow: "Legal",
     title: "Terms of Service",
     description:
-      "The terms governing access to VideoBulin47, accounts, credit purchases, AI generation, and acceptable use.",
+      "The terms governing access to VideoBulin47, accounts, credit purchases, the underlying AI models, AI generation, and acceptable use.",
     intro:
       "By using VideoBulin47, you agree to these terms. If you do not agree, do not use the service.",
-    updated: "October 13, 2026",
+    updated: "October 14, 2026",
     sections: [
       {
-        heading: "The service",
+        heading: "1. Acceptance of terms",
         paragraphs: [
-          "VideoBulin47 provides a hosted interface for submitting a portrait to an AI video generation provider and receiving a generated output. The service is offered as-is and may change or stop.",
+          "Welcome to VideoBulin47 (\"VideoBulin47\", \"we\", \"us\" or \"our\"). VideoBulin47 is an independent business operated by an individual operator based in Nanning, Guangxi, China. These Terms of Service (\"Terms\") govern your access to and use of our AI video service, available at https://www.videobulin47.net (the \"Service\").",
+          "By creating an account, buying credits, or otherwise using the Service, you confirm that: (a) you are at least 18 years old; (b) you have read, understood, and agree to be bound by these Terms; (c) you agree to our Privacy Policy; and (d) you have authority to enter into this agreement on your own behalf or on behalf of the organization you represent.",
+          "Important: if you do not agree to these Terms, stop using the Service. Continuing to use the Service after an update means you accept the revised Terms.",
         ],
       },
       {
-        heading: "Accounts",
+        heading: "2. The service",
         paragraphs: [
-          "You are responsible for the activity on your account, for keeping your login secure, and for providing accurate contact information. You must be at least 18 years old to purchase credits.",
+          "2.1 What we provide. VideoBulin47 is a hosted interface that turns one uploaded portrait into a vertical AI-generated video using a reference video template. The Service is a digital software-as-a-service product delivered over the internet.",
+          "2.2 Nature of the service. The Service is a digital, intangible product. Access is granted immediately after your payment is confirmed. Because delivery is immediate, refunds are subject to the limits in Section 7.",
+          "2.3 AI model dependency. We rely on third-party AI model providers. Video generation is performed by the Kling O3 Reference and Kling O3 Reference Pro models (built by Kuaishou) and the MiniMax H3 model (built by MiniMax), each served through the fal.ai inference platform. Output quality and availability depend on those models, and the Service may be affected by their uptime and behavior. We will notify users of significant outages.",
         ],
       },
       {
-        heading: "Credits and payments",
+        heading: "3. Accounts",
         paragraphs: [
-          "Credit packs are one-time digital purchases. Credits have no cash value, cannot be transferred, and are used to reserve generation jobs. Waffo Pancake processes payments as the Merchant of Record and handles applicable taxes.",
+          "3.1 Account creation. Using the Service requires an account created with accurate and complete information. You are responsible for keeping your login credentials confidential and for all activity under your account.",
+          "3.2 Account security. If you discover unauthorized use, contact support@videobulin47.net immediately. Do not share your login credentials with anyone. Keep the email address on your account current and reachable.",
+          "3.3 Business accounts. If you register on behalf of a company or organization, you confirm that you are authorized to enter into this agreement for that entity.",
         ],
       },
       {
-        heading: "AI outputs",
+        heading: "4. Credits and top-up packs",
         paragraphs: [
-          "AI outputs can be inaccurate, unexpected, or visually imperfect. You are responsible for reviewing the result before posting it and for following platform rules on synthetic media and music.",
+          "The Service is credit-based. You buy one-time credit packs and spend credits to run generation jobs. Credits are used to access the Service, and a job reserves credits from your wallet before it is submitted.",
+          "Credits are not a subscription. You are never charged on a recurring basis. You can buy another pack at any time. Current packs and prices are listed at https://www.videobulin47.net/pricing.",
+          "Credits do not expire, have no cash value, and cannot be transferred or exchanged.",
         ],
       },
       {
-        heading: "Prohibited use",
+        heading: "5. Billing and payment",
         paragraphs: [
-          "You may not upload minors, public figures, non-consenting people, illegal content, sexual content, hateful content, or material intended to impersonate or deceive. The Acceptable Use Policy is part of these terms.",
+          "5.1 Single top-up authorization. Every top-up is a one-time transaction. Completing a purchase authorizes VideoBulin47 to charge the amount shown at checkout to your payment method.",
+          "5.2 Auto-recharge. We do not currently offer auto-recharge. If we introduce it, we will first update these Terms and ask for your explicit authorization.",
+          "5.3 Taxes. Prices shown do not include applicable taxes unless stated otherwise. Waffo Pancake acts as the Merchant of Record, handles checkout, and collects and remits applicable taxes where required by law.",
         ],
       },
       {
-        heading: "Limitation of liability",
+        heading: "6. Credit validity and account termination",
         paragraphs: [
-          "To the maximum extent permitted by law, VideoBulin47 is not liable for indirect or consequential damages. Our total liability is limited to the amount paid for the affected credit pack.",
+          "6.1 Credit validity. Purchased credits do not expire. Because credits never lapse, no expiry reminder is required.",
+          "6.2 Account termination. If your account is terminated, unused credits remain available for 30 days. After that period they expire and are non-refundable, unless applicable law requires otherwise.",
+        ],
+      },
+      {
+        heading: "7. Refund policy",
+        paragraphs: [
+          "Spent credits are non-refundable in principle. The following are exceptions:",
+        ],
+        bullets: [
+          "Unused credits within 7 days of purchase: full refund.",
+          "Duplicate charges caused by a billing error: full refund.",
+          "Failed generations: reserved credits are returned to your wallet automatically, with no support ticket required.",
+          "Statutory rights (EU, UK, and Australia): first-time buyers keep their 14-day withdrawal right; it no longer applies once credits have been used.",
+        ],
+      },
+      {
+        heading: "8. Billing disputes",
+        paragraphs: [
+          "If you believe a charge is wrong, email support@videobulin47.net before opening a dispute with your bank. We aim to reply within 2 business days and to resolve confirmed billing errors within 5 business days.",
+        ],
+      },
+      {
+        heading: "9. AI content and intellectual property",
+        paragraphs: [
+          "9.1 Output ownership. Subject to these Terms, the AI content generated from your input (the \"Output\") belongs to you, and you may use it for any lawful purpose permitted by Section 10.",
+          "9.2 Input license. By submitting content to the Service (\"Input\"), you grant VideoBulin47 a limited, non-exclusive license to use that Input only to provide the Service to you. We will not use your Input to train AI models without your explicit consent.",
+          "9.3 Third-party AI models. The Service uses third-party AI model providers, namely Kling (Kuaishou) and MiniMax, served through fal.ai. Output may be influenced by those providers' models. We do not guarantee any specific output quality and are not responsible for content produced by a third-party model.",
+          "9.4 AI output accuracy. AI-generated content may contain errors or inaccuracies. You are responsible for reviewing and verifying Output before relying on it.",
+        ],
+      },
+      {
+        heading: "10. Acceptable use",
+        paragraphs: [
+          "10.1 Allowed use. You may use the Service only for lawful purposes consistent with these Terms and the Acceptable Use Policy, which forms part of these Terms.",
+        ],
+        bullets: [
+          "Do not generate illegal, defamatory, harassing, or fraudulent content.",
+          "Do not create deepfakes or synthetic media that impersonates a real person or misleads viewers about its origin or authenticity.",
+          "Do not generate sexualized content involving minors or content that violates child protection laws.",
+          "Do not create malware, phishing content, or attack tooling.",
+          "Do not infringe any third party's intellectual property, publicity, or privacy rights.",
+          "Do not bypass or interfere with the Service's security features.",
+          "Do not resell or sublicense access without prior written approval.",
+          "Do not violate any applicable law, regulation, or card network rule.",
+          "Do not use the Input, Output, model responses, or derived data to train, fine-tune, benchmark, distill, or otherwise develop a competing AI or machine learning model.",
+          "Do not systematically scrape or harvest model outputs for any purpose beyond your own authorized use.",
+          "Do not present AI-generated content as the work of a licensed human professional such as a doctor, lawyer, or financial adviser.",
+        ],
+      },
+      {
+        heading: "11. Data, privacy, and security",
+        paragraphs: [
+          "Your use of the Service is governed by our Privacy Policy at https://www.videobulin47.net/privacy. Payment card data is handled exclusively by our PCI-DSS compliant payment processor, Waffo Pancake, and is never stored on our servers. Account data is retained for 90 days after cancellation and is then deleted.",
+        ],
+      },
+      {
+        heading: "12. Disclaimers and limitation of liability",
+        paragraphs: [
+          "12.1 Disclaimer. The Service is provided \"as is\" and \"as available\", without warranties of any kind, whether express or implied, including merchantability, fitness for a particular purpose, or accuracy of AI output.",
+          "12.2 AI content disclaimer. AI Output may be inaccurate, incomplete, or outdated. Do not rely on it for legal, medical, financial, or other professional advice. Always verify with a qualified professional before acting on AI content.",
+          "12.3 Limitation of liability. To the maximum extent permitted by law, VideoBulin47 is not liable for any indirect, incidental, consequential, or punitive damages. Our total liability is limited to the amount you paid us in the 12 months before the event giving rise to the claim.",
+        ],
+      },
+      {
+        heading: "13. Term and termination",
+        paragraphs: [
+          "These Terms remain in effect while you use the Service. We may suspend or terminate your account if you materially breach these Terms, if we suspect fraud, or if the law requires it. If we terminate the Service for reasons that are not your fault, we will refund the unused prepaid portion on a pro-rata basis. You may delete your account at any time by emailing support@videobulin47.net.",
+        ],
+      },
+      {
+        heading: "14. Governing law and dispute resolution",
+        paragraphs: [
+          "These Terms are governed by the laws of the People's Republic of China, without regard to conflict-of-law rules. Before starting formal proceedings, please email support@videobulin47.net to try to resolve the issue informally.",
+        ],
+      },
+      {
+        heading: "15. General",
+        paragraphs: [
+          "We may update these Terms at any time. For material changes we will give at least 14 days' notice by email before the effective date. Continuing to use the Service means you accept the update. If any provision is found unenforceable, the remaining provisions stay in full force. These Terms and the Privacy Policy together form the entire agreement between you and VideoBulin47.",
+        ],
+      },
+      {
+        heading: "16. Contact",
+        paragraphs: [
+          "For any question about these Terms or billing, contact support@videobulin47.net with a clear subject line: Billing, Refund, Account, Privacy, or Legal. We are an email-only support operation and monitor messages on business days.",
+          "By using the Service, you confirm that you have read and agree to these Terms. Last updated: October 14, 2026.",
         ],
       },
     ],
@@ -794,43 +902,112 @@ export const contentPages: Record<string, ContentPage> = {
     eyebrow: "Legal",
     title: "Privacy Policy",
     description:
-      "How VideoBulin47 collects, uses, stores, and deletes account, payment, upload, and generation data.",
+      "How VideoBulin47 collects, uses, stores, shares, and deletes account, payment, upload, and generation data, including the AI models that process your photo.",
     intro:
-      "We collect only the data needed to run the account, process payments, generate videos, and keep the service safe.",
-    updated: "October 13, 2026",
+      "VideoBulin47 respects your privacy. This policy explains what we collect when you use the service, how we use and share it, and the rights you have.",
+    updated: "October 14, 2026",
     sections: [
       {
-        heading: "Data we collect",
+        heading: "1. Data controller",
+        paragraphs: [
+          "The data controller for the service is VideoBulin47, operated by an individual operator based in Nanning, Guangxi, China, contactable at support@videobulin47.net. A separate Data Protection Officer has not been appointed; privacy requests are handled through the same support address.",
+        ],
+      },
+      {
+        heading: "2. Information we collect",
+        paragraphs: [
+          "2.1 Information you provide. Account information such as your email address and authentication identifiers. Payment information such as the transaction amount and payment status; we never store full card numbers, which are handled by our payment processor (see Section 5). Content you submit, including the photo you upload and the video we generate from it. Support messages and content reports you send us.",
+          "2.2 Information collected automatically. Device and network data such as IP address, device type, operating system, browser type, and timezone. Usage and log data such as pages visited, actions taken, session duration, request times, error logs, and performance data.",
+          "2.3 Third-party sign-in. If you sign in with Google, we receive basic profile information authorized by you, such as your email address and account identifier. Email magic-link sign-in does not share data with a third party beyond our email provider.",
+        ],
+      },
+      {
+        heading: "3. How we use your information",
         bullets: [
-          "Account email and authentication information",
-          "Credit wallet, order, and transaction records",
-          "Uploaded photos and generated video files",
-          "Device, browser, and security logs",
-          "Support messages and content reports",
+          "Provide and maintain the service - performance of a contract.",
+          "Process credits, orders, and payments - performance of a contract.",
+          "Customer support - performance of a contract or legitimate interest.",
+          "Service notices such as billing, security, and policy updates - legitimate interest.",
+          "Security and fraud prevention - legitimate interest.",
+          "Product analysis and improvement - legitimate interest.",
+          "Legal compliance - legal obligation.",
         ],
       },
       {
-        heading: "How we use data",
+        heading: "4. Cookies and tracking",
         paragraphs: [
-          "We use the data to authenticate you, deliver credits, submit generation jobs, display your history, prevent abuse, provide support, and meet legal or payment-provider obligations.",
+          "We use strictly necessary cookies to keep you signed in and to operate core features; these cannot be disabled. We use Plausible Analytics for privacy-friendly, aggregate usage statistics; Plausible does not use cookies and does not build a personal profile of you. We do not run advertising or cross-site tracking pixels. You can restrict cookies through your browser settings, though disabling essential cookies will prevent sign-in.",
         ],
       },
       {
-        heading: "Subprocessors",
+        heading: "5. Sharing and disclosure",
         paragraphs: [
-          "Supabase provides authentication, database, and storage. fal.ai provides model inference. Waffo Pancake provides checkout, tax handling, and payment processing. Email and analytics providers may process limited operational data.",
+          "We do not sell your personal information, including as \"sale\" is defined under laws such as the CCPA. We share information only as follows:",
+        ],
+        bullets: [
+          "Service providers, bound by confidentiality obligations: Supabase (authentication, database, private storage), fal.ai (model inference), Waffo Pancake (checkout, tax, payment processing), and Vercel (hosting).",
+          "Payment card data is handled exclusively by our PCI-DSS compliant payment processor, Waffo Pancake, and is never stored on our servers.",
+          "AI model processing: when you generate a video, your uploaded photo and the reference template are transmitted to fal.ai and then to the underlying model providers, Kling (Kuaishou) and MiniMax, solely to produce your video.",
+          "Legal and regulatory requirements: in response to a lawful request from a court or authority.",
+          "Business transactions: in a merger or acquisition, with advance notice and continued protection.",
+          "With your consent: for any other purpose only with your explicit prior consent.",
         ],
       },
       {
-        heading: "Retention",
-        paragraphs: [
-          "Uploads and outputs are kept for as long as needed to provide the service or until you delete them. Some payment and security records must be retained longer to meet legal and fraud-prevention requirements.",
+        heading: "6. Data security",
+        bullets: [
+          "Transport encryption: TLS / HTTPS for all traffic.",
+          "Storage security: uploaded photos and generated videos are stored in a private storage bucket and served through expiring signed URLs.",
+          "Access control: least-privilege access, with secrets held in the hosting platform rather than in source code.",
+          "Payment isolation: card data never reaches our servers.",
         ],
       },
       {
-        heading: "Your choices",
+        heading: "7. Data retention",
         paragraphs: [
-          "You can request access, correction, deletion, or a copy of your account data by emailing support@videobulin47.net. Deletion may be limited by legal retention requirements.",
+          "Account data is retained while your account is active and for up to 90 days after cancellation, after which it is deleted. Uploaded photos and generated videos are retained while your account is active or until you delete them. Order, transaction, and security records may be retained longer where tax, accounting, or fraud-prevention law requires. Support records are kept only as long as needed to resolve and document the request.",
+        ],
+      },
+      {
+        heading: "8. Your rights",
+        paragraphs: [
+          "You can request access to, correction of, deletion of, or a copy of your personal data, and you can object to or restrict certain processing, by emailing support@videobulin47.net. We will respond within 30 calendar days. Deletion may be limited by legal retention requirements. If you believe we have handled your data improperly, you have the right to complain to your local data protection authority.",
+        ],
+      },
+      {
+        heading: "9. Marketing communications",
+        paragraphs: [
+          "We currently send only transactional and service emails, such as payment confirmations, generation finished notices, and security or policy alerts. We do not send marketing email. If we ever do, it will be opt-in, with an unsubscribe link in every message and a toggle in your account settings, separate from service notices.",
+        ],
+      },
+      {
+        heading: "10. International data transfers",
+        paragraphs: [
+          "Our service providers may store and process data in countries other than yours, including the United States. Where required, transfers are protected by appropriate safeguards such as standard contractual clauses or an adequacy decision, and we only transfer to recipients that provide a comparable level of protection.",
+        ],
+      },
+      {
+        heading: "11. Children's privacy",
+        paragraphs: [
+          "The service is for users aged 18 and over. We do not knowingly collect information from anyone under 18. If you believe a minor has provided us with information, contact us and we will delete it promptly.",
+        ],
+      },
+      {
+        heading: "12. Third-party links and services",
+        paragraphs: [
+          "The service may link to or integrate with third-party services, including checkout and sign-in providers. This policy applies only to information we collect directly. We are not responsible for the data practices of third parties, and we encourage you to review their policies.",
+        ],
+      },
+      {
+        heading: "13. Changes to this policy",
+        paragraphs: [
+          "If we make a material change, we will give at least 15 days' notice by site notice or email and update the \"last updated\" date at the top of this page. Continuing to use the service after the effective date means you accept the change.",
+        ],
+      },
+      {
+        heading: "14. Contact us",
+        paragraphs: [
+          "Privacy and data requests: support@videobulin47.net (subject line: Privacy). General support: support@videobulin47.net. VideoBulin47, https://www.videobulin47.net. This policy is provided for information and is not legal advice. Last updated: October 14, 2026.",
         ],
       },
     ],
@@ -841,33 +1018,50 @@ export const contentPages: Record<string, ContentPage> = {
     eyebrow: "Legal",
     title: "Refund Policy",
     description:
-      "Refund rules for digital credit packs, failed generations, duplicate charges, and unused credits.",
+      "Refund rules for credit packs: unused credits, failed generations, duplicate charges, and statutory withdrawal rights.",
     intro:
-      "We want the credit system to be clear. Failed generations are refunded automatically. Unused packs can be reviewed manually.",
-    updated: "October 13, 2026",
+      "We want the credit system to be clear. Failed generations are refunded automatically, and unused credits can be refunded in full within 7 days of purchase.",
+    updated: "October 14, 2026",
     sections: [
       {
-        heading: "Failed generations",
-        paragraphs: [
-          "If the provider reports a failed, canceled, moderated, or invalid generation, the reserved credits are returned to your wallet automatically. No support ticket is required for the automatic refund.",
+        heading: "1. Refundable situations",
+        bullets: [
+          "Unused credits within 7 days of purchase: full refund.",
+          "Duplicate charges caused by a billing error: full refund.",
+          "Failed, canceled, moderated, or invalid generations: the reserved credits are returned to your wallet automatically.",
+          "Statutory rights (EU, UK, and Australia): first-time buyers keep their 14-day withdrawal right; it no longer applies once credits have been used.",
         ],
       },
       {
-        heading: "Unused credits",
+        heading: "2. Failed generations",
         paragraphs: [
-          "You may request a refund for an unused credit pack within 14 days of purchase. Credits that have been spent on a completed video are not refundable.",
+          "If the provider reports a failed, canceled, moderated, or invalid generation, the reserved credits are returned to your wallet automatically. This includes failures caused by the underlying AI model or inference provider. No support ticket is required for the automatic refund.",
         ],
       },
       {
-        heading: "Duplicate or unauthorized charges",
+        heading: "3. How to request a refund",
         paragraphs: [
-          "Contact support@videobulin47.net with the order email, payment reference, and purchase date. We will investigate the payment record and coordinate any approved refund through Waffo Pancake.",
+          "Email support@videobulin47.net with the subject line Refund. Include your account email and the transaction ID or order reference. We aim to confirm your request within 2 business days.",
         ],
       },
       {
-        heading: "Digital delivery",
+        heading: "4. Duplicate or unauthorized charges",
         paragraphs: [
-          "Credits are delivered immediately after verified payment. In the EU and UK, requesting immediate delivery may affect the statutory withdrawal right once credits are used.",
+          "Contact support@videobulin47.net with the order email, payment reference, and purchase date before opening a dispute with your bank. We will investigate the payment record and coordinate any approved refund through Waffo Pancake, the Merchant of Record. We reply within 2 business days and resolve confirmed billing errors within 5 business days.",
+        ],
+      },
+      {
+        heading: "5. Not refundable",
+        bullets: [
+          "Credits that have been spent on a completed video.",
+          "Unused-credit requests made more than 7 days after purchase, unless a statutory withdrawal right applies.",
+          "Accounts closed for violating the Terms of Service or Acceptable Use Policy.",
+        ],
+      },
+      {
+        heading: "6. Digital delivery",
+        paragraphs: [
+          "Credits are delivered immediately after verified payment. Because the service is digital and delivered instantly, requesting immediate access may affect the statutory withdrawal right once credits are used. Refunds are processed back to the original payment method.",
         ],
       },
     ],
@@ -881,10 +1075,10 @@ export const contentPages: Record<string, ContentPage> = {
       "Content and behavior rules for AI video generation, including consent, likeness, deepfakes, copyright, and enforcement.",
     intro:
       "This policy applies to uploads, prompts, generated outputs, account names, and any use of the service.",
-    updated: "October 13, 2026",
+    updated: "October 14, 2026",
     sections: [
       {
-        heading: "Prohibited content",
+        heading: "1. Prohibited content",
         bullets: [
           "Pornography, sexual content, or nudity",
           "Violence, gore, or threats",
@@ -895,19 +1089,28 @@ export const contentPages: Record<string, ContentPage> = {
         ],
       },
       {
-        heading: "Consent and likeness",
+        heading: "2. Consent and likeness",
         paragraphs: [
           "Only upload a photo if you are the person shown or have documented permission from that person. Public figures, celebrities, politicians, and minors may not be used. You must not use the result to deceive viewers or damage another person.",
         ],
       },
       {
-        heading: "Moderation",
+        heading: "3. AI-specific prohibitions",
+        bullets: [
+          "Do not use inputs, outputs, model responses, or any derived data to train, fine-tune, benchmark, distill, or otherwise develop a competing AI or machine learning model.",
+          "Do not scrape or harvest model outputs at scale for any purpose beyond your own authorized use.",
+          "Do not present AI-generated content as the work of a licensed human professional, such as a doctor, lawyer, or financial adviser.",
+          "Do not remove or hide the AI-generated label that platform rules or applicable law require.",
+        ],
+      },
+      {
+        heading: "4. Moderation and enforcement",
         paragraphs: [
           "We may screen prompts, uploads, and outputs with automated tools. A request may be blocked before generation or removed after review. Repeated violations can lead to suspension and credit forfeiture.",
         ],
       },
       {
-        heading: "Reporting",
+        heading: "5. Reporting",
         paragraphs: [
           "Reports can be sent to support@videobulin47.net. Include the video ID or page URL, the reason for the report, and your relationship to the person or rights holder.",
         ],
@@ -923,13 +1126,13 @@ export const contentPages: Record<string, ContentPage> = {
       "Submit a copyright or likeness removal request for content hosted or generated through VideoBulin47.",
     intro:
       "If you believe your rights are being infringed, send a complete notice so we can review and act.",
-    updated: "October 13, 2026",
+    updated: "October 14, 2026",
     sections: [
       {
         heading: "What to include",
         bullets: [
           "Your name, address, phone number, and email",
-          "Identification of the protected work or right",
+          "Identification of the protected work or the right that is being infringed, including your relationship to the person or rights holder",
           "The URL or video ID of the disputed material",
           "A statement that the use is unauthorized",
           "A statement that your notice is accurate",
@@ -939,7 +1142,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Where to send it",
         paragraphs: [
-          "Email support@videobulin47.net with the subject line DMCA Notice. We may ask for additional information before removing content.",
+          "Email support@videobulin47.net with the subject line DMCA Notice. We may ask for additional information before removing content, and we aim to acknowledge complete notices within 2 business days.",
         ],
       },
       {
@@ -969,7 +1172,19 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Billing and refunds",
         paragraphs: [
-          "Use the subject line Billing. Include the order email, payment date, amount, and payment reference. Do not send full card numbers or passwords.",
+          "Use the subject line Billing or Refund. Include the order email, payment date, amount, and payment reference. Do not send full card numbers or passwords. Refund requests follow the Refund Policy.",
+        ],
+      },
+      {
+        heading: "Privacy and data requests",
+        paragraphs: [
+          "Use the subject line Privacy to request access, correction, deletion, or a copy of your data. We respond within 30 calendar days. See the Privacy Policy for details.",
+        ],
+      },
+      {
+        heading: "Legal and security",
+        paragraphs: [
+          "Use the subject line Legal for terms or licensing questions, or Security to report a vulnerability or an account compromise. For copyright or likeness removal, use the subject line DMCA Notice and follow the DMCA and Content Removal page.",
         ],
       },
       {
@@ -982,6 +1197,12 @@ export const contentPages: Record<string, ContentPage> = {
         heading: "Business",
         paragraphs: [
           "For licensing, media, or partnership inquiries, email support@videobulin47.net with the subject line Business.",
+        ],
+      },
+      {
+        heading: "Response times",
+        paragraphs: [
+          "Every address above is the same monitored support inbox, staffed on business days. We aim to reply to billing issues within 2 business days. VideoBulin47 is an independent business operated by an individual operator based in Nanning, Guangxi, China.",
         ],
       },
     ],

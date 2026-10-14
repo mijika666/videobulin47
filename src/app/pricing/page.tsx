@@ -4,6 +4,7 @@ import { FaqAccordion } from "@/components/faq-accordion";
 import { PricingCards } from "@/components/pricing-cards";
 import { contentPages } from "@/content/pages";
 import { KEYWORD_MAP } from "@/config/keywords";
+import { MODELS } from "@/lib/constants";
 import { absoluteUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -67,6 +68,34 @@ export default function PricingPage() {
                 </p>
                 <p className="mt-2 text-xs leading-5 text-white/50">
                   {item.note}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-line py-16">
+        <div className="container-shell">
+          <p className="eyebrow text-orange">Models you can choose</p>
+          <h2 className="display mt-5 text-[clamp(2rem,4.5vw,3.4rem)]">
+            Powered by named AI models.
+          </h2>
+          <p className="mt-5 max-w-3xl text-sm leading-7 text-muted">
+            Video generation runs on third-party reference-to-video models
+            served through the fal.ai inference platform. You pick the model in
+            the Studio before you generate, and every job records which model
+            was used.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {MODELS.map((model) => (
+              <div key={model.id} className="panel p-5">
+                <p className="text-sm font-black">{model.name}</p>
+                <p className="mt-1 text-[11px] font-bold uppercase text-muted">
+                  {model.quality}
+                </p>
+                <p className="mt-3 break-all text-[11px] leading-5 text-muted">
+                  {model.endpoint}
                 </p>
               </div>
             ))}
