@@ -40,6 +40,11 @@ const commonFaqs: ContentFaq[] = [
       "Reserved credits are refunded automatically when the provider reports a failed, canceled, or moderated generation.",
   },
   {
+    question: "What content is not allowed?",
+    answer:
+      "No pornography or nudity, violence, hate speech, content involving minors, deepfakes or impersonation, copyright infringement, or non-consensual intimate imagery (NCII). NCII is a zero-tolerance violation: reported material is blocked or removed on a priority basis and the account behind it is terminated without refund.",
+  },
+  {
     question: "Are credits refundable?",
     answer:
       "Unused credit packs can be refunded in full within 7 days of purchase. Credits spent on a completed video are not refundable. EU, UK, and Australian first-time buyers keep their statutory withdrawal rights. See the Refund Policy for the full process.",
@@ -726,6 +731,7 @@ export const contentPages: Record<string, ContentPage> = {
         heading: "Safety",
         paragraphs: [
           "Do not upload minors, public figures, celebrities, or people who have not consented. Do not use the service to impersonate or deceive.",
+          "Non-consensual intimate imagery (NCII) is banned outright. Do not create, alter, or share sexual or intimate depictions of a real person without their consent, including nonconsensual sexual deepfakes, nudified images, revenge imagery, or sextortion material. Reports of NCII are removed on a priority basis and the account behind them is terminated.",
         ],
       },
     ],
@@ -862,6 +868,7 @@ export const contentPages: Record<string, ContentPage> = {
         bullets: [
           "Do not generate illegal, defamatory, harassing, or fraudulent content.",
           "Do not create deepfakes or synthetic media that impersonates a real person or misleads viewers about its origin or authenticity.",
+          "Do not create, alter, or distribute non-consensual intimate imagery (NCII), including nonconsensual sexual deepfakes, nudified images, revenge imagery, or sextortion material.",
           "Do not generate sexualized content involving minors or content that violates child protection laws.",
           "Do not create malware, phishing content, or attack tooling.",
           "Do not infringe any third party's intellectual property, publicity, or privacy rights.",
@@ -1102,18 +1109,27 @@ export const contentPages: Record<string, ContentPage> = {
           "Violence, gore, or threats",
           "Hate speech, harassment, or discrimination",
           "Child-unsafe content or any content involving minors",
+          "Non-consensual intimate imagery (NCII), including sexual deepfakes and revenge imagery",
           "Deepfakes, impersonation, or misleading identity use",
           "Copyright or trademark infringement",
         ],
       },
       {
-        heading: "2. Consent and likeness",
+        heading: "2. Non-consensual intimate imagery (NCII)",
+        paragraphs: [
+          "Non-consensual intimate imagery is strictly prohibited. You must not use the Service to create, alter, request, or distribute sexual or intimate depictions of any real person without that person's explicit consent.",
+          "This covers nonconsensual sexual deepfakes, digitally undressed or nudified images, and any intimate image or video made or shared to harass, humiliate, coerce, or extort someone, including revenge imagery and sextortion.",
+          "This ban applies even when the person is not named or identifiable in the prompt, and even when you are the person shown.",
+        ],
+      },
+      {
+        heading: "3. Consent and likeness",
         paragraphs: [
           "Only upload a photo if you are the person shown or have documented permission from that person. Public figures, celebrities, politicians, and minors may not be used. You must not use the result to deceive viewers or damage another person.",
         ],
       },
       {
-        heading: "3. AI-specific prohibitions",
+        heading: "4. AI-specific prohibitions",
         bullets: [
           "Do not use inputs, outputs, model responses, or any derived data to train, fine-tune, benchmark, distill, or otherwise develop a competing AI or machine learning model.",
           "Do not scrape or harvest model outputs at scale for any purpose beyond your own authorized use.",
@@ -1122,15 +1138,16 @@ export const contentPages: Record<string, ContentPage> = {
         ],
       },
       {
-        heading: "4. Moderation and enforcement",
+        heading: "5. Moderation and enforcement",
         paragraphs: [
           "We may screen prompts, uploads, and outputs with automated tools. A request may be blocked before generation or removed after review. Repeated violations can lead to suspension and credit forfeiture.",
+          "Non-consensual intimate imagery is treated as a zero-tolerance violation. Reported NCII is removed or blocked as a priority, the account behind it is terminated without notice or refund, uploaded material is preserved only as long as needed to handle the report and any legal obligation, and we cooperate with law enforcement requests.",
         ],
       },
       {
-        heading: "5. Reporting",
+        heading: "6. Reporting",
         paragraphs: [
-          "Reports can be sent to support@videobulin47.net. Include the video ID or page URL, the reason for the report, and your relationship to the person or rights holder.",
+          "Reports can be sent to support@videobulin47.net. Include the video ID or page URL, the reason for the report, and your relationship to the person or rights holder. Reports involving intimate imagery, minors, or an immediate safety risk are handled first.",
         ],
       },
     ],
@@ -1141,7 +1158,7 @@ export const contentPages: Record<string, ContentPage> = {
     eyebrow: "Legal",
     title: "DMCA and Content Removal",
     description:
-      "Submit a copyright or likeness removal request for content hosted or generated through VideoBulin47.",
+      "Submit a copyright, likeness, or non-consensual intimate imagery removal request for content hosted or generated through VideoBulin47.",
     intro:
       "If you believe your rights are being infringed, send a complete notice so we can review and act.",
     updated: "October 14, 2026",
@@ -1161,6 +1178,13 @@ export const contentPages: Record<string, ContentPage> = {
         heading: "Where to send it",
         paragraphs: [
           "Email support@videobulin47.net with the subject line DMCA Notice. We may ask for additional information before removing content, and we aim to acknowledge complete notices within 2 business days.",
+        ],
+      },
+      {
+        heading: "Non-consensual intimate imagery",
+        paragraphs: [
+          "If the material is a sexual or intimate depiction of you created or shared without your consent, use the subject line NCII Report instead. You do not need to be the copyright owner and you do not need to identify yourself publicly.",
+          "These reports are handled on a priority basis: we block or remove the material, terminate the account responsible, and keep the evidence only as long as needed to handle the report and any legal obligation.",
         ],
       },
       {
@@ -1209,6 +1233,7 @@ export const contentPages: Record<string, ContentPage> = {
         heading: "Content reports",
         paragraphs: [
           "Use the subject line Content Report. Include the video ID or page URL and the reason for the report.",
+          "If the content is a sexual or intimate image of you made or shared without your consent, use the subject line NCII Report instead. Those reports are prioritised, and you do not need to be the copyright owner to send one.",
         ],
       },
       {
