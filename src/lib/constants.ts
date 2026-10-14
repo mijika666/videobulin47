@@ -109,32 +109,39 @@ export const DEFAULT_MODEL_ID = "kling-o3-standard-v2v";
 // 2. 动作保真优先级最高——用户买的就是"原版舞蹈 + 我自己的脸"。
 // 3. 明确列出禁止项，抵消模型常见的多手、糊脸、加字幕等劣化。
 export const TEMPLATE_PROMPT = `
-Shot type: customize. @Video1 is the motion reference. @Element1 is the performer identity.
+Shot type: customize. @Video1 is the motion, scene and audio reference. @Element1 is the performer identity.
 
 TASK
-Replace the original performer in @Video1 with the person shown in @Element1, keeping the exact choreography.
+Replace the original performer in @Video1 with the person shown in @Element1. Keep the reference clip's choreography, camera work, environment, timing and audio exactly.
 
 MOTION FIDELITY - highest priority
 - Reproduce the dance moves, gesture timing, body rotation, head bobbing and footwork of @Video1 frame by frame.
-- Keep the original camera angle, camera movement, framing, focal length and zoom.
-- Keep the original scene unchanged: crowd, floor, walls, lighting, signs, equipment and props.
-- Keep the original length and beat so the output stays in sync with the original audio.
+- Keep the original camera angle, camera movement, framing, focal length, zoom and handheld shake.
+- Keep the original scene unchanged: crowd, floor, walls, lighting, neon colours, signs, equipment and props.
+- Keep the original length, beat and audio so the output stays in sync.
+- The performer talks and gestures with their hands, and interacts naturally with the people around them, exactly like the original.
 
 IDENTITY FIDELITY
 - The performer must clearly look like @Element1: face shape, eyes, nose, mouth, hairstyle, facial hair, skin tone, age and gender presentation.
 - Preserve body build and height proportions relative to the scene.
-- Keep the clothing, hairstyle and accessories from @Video1 unless @Element1 clearly shows a distinctive outfit that the user would expect to keep.
+- Keep the clothing, hairstyle and accessories from @Video1 unless @Element1 clearly shows a distinctive outfit the user would expect to keep.
 - The face must stay sharp and consistent for the whole clip. No identity drift, no face morphing, no melting or blurring features.
 
-IMAGE QUALITY
-- Photorealistic result with natural skin texture and correct human anatomy.
-- Five fingers per hand, stable limbs, no extra or missing body parts.
+REALISM - match the reference look
+- Ultra-realistic vertical smartphone footage, 9:16, captured on a phone inside a crowded nightlife event.
+- Dark club atmosphere, red neon light reflecting on the face, shadows from surrounding people, realistic skin texture and natural facial expressions.
+- Authentic leaked-phone-video feeling: slight camera shake, imperfect framing, changing exposure, autofocus hunting, natural motion blur, low-light noise and social-media compression artifacts.
+- Not cinematic, not studio lit, not CGI, not a polished commercial.
+
+QUALITY
+- Five fingers per hand, stable limbs, correct human anatomy, no extra or missing body parts.
 - Match the light direction and colour temperature of @Video1 so the replacement looks native to the scene.
-- Vertical 9:16 framing, subject fully inside the frame, head not cropped.
+- Subject fully inside the frame, head not cropped.
 
 DO NOT
+- cartoon, CGI, 3D render, plastic or airbrushed skin, beauty filter, perfect studio lighting, fake background.
+- distorted face, changing identity, different person, inconsistent facial features, extra fingers, warped body, flicker, sudden cuts.
 - No text, subtitles, captions, logos, watermarks, UI overlays, borders or letterboxing.
-- No extra people, no duplicated limbs, no distorted hands, no flicker, no sudden cuts.
 - Do not change the music, do not replace or mute the original audio.
 
 Only one consenting adult is shown.
@@ -145,12 +152,25 @@ Only one consenting adult is shown.
 export const MINIMAX_TEMPLATE_PROMPT = `
 Replace the performer in Video 1 with the person shown in Image 1.
 
-Keep Video 1's choreography, gesture timing, camera movement, framing and rhythm exactly.
-Keep the original scene, crowd, background and lighting unchanged.
-The performer must match Image 1's face, hairstyle, skin tone, age and gender presentation, and keep a sharp consistent face for the whole clip.
-Photorealistic, natural skin texture, correct anatomy, five fingers per hand.
-Vertical 9:16 framing with the subject fully in frame.
-Keep the original audio and stay in sync with the beat.
-No text, subtitles, captions, logos, watermarks or borders. No extra people, no distorted hands, no flicker.
+Keep Video 1's choreography, gesture timing, camera movement, framing, handheld shake and rhythm exactly.
+Keep the original scene, crowd, background, lighting and neon colours unchanged.
+The performer must match Image 1's face, hairstyle, skin tone, age and gender presentation, and keep a sharp, consistent, recognizable face for the whole clip.
+Preserve the exact identity from Image 1: do not redesign the person, keep facial proportions, eyes, nose, mouth and unique features.
+
+Realism: ultra-realistic vertical smartphone footage, 9:16, shot on a phone inside a crowded nightlife event. Dark club atmosphere, red neon light reflecting on the face, natural skin texture, realistic expressions, authentic leaked-phone-video feeling with slight camera shake, imperfect framing, changing exposure, autofocus hunting, motion blur, low-light noise and social-media compression. Not cinematic, not studio lit, not CGI.
+
+The performer talks and gestures naturally and interacts with nearby people. Keep the original audio and stay in sync with the beat.
+
+Correct anatomy, five fingers per hand, stable limbs, no extra or missing body parts. Subject fully in frame, head not cropped.
+
+Do not produce: cartoon, CGI, 3D render, plastic or airbrushed skin, beauty filter, perfect studio lighting, fake background, distorted face, identity drift, different person, extra fingers, warped body, flicker, sudden cuts, text, subtitles, captions, logos, watermarks or borders. Do not change or mute the music.
+
 Only one consenting adult is shown.
+`.trim();
+
+// 通用负面提示词。Kling O3 Reference 与 MiniMax H3 的端点若不接受独立的
+// negative_prompt 字段，这些禁止项已经内嵌在上面两条提示词的 DO NOT 段落里，
+// 效果等价；如果确认某个端点支持 negative_prompt，可以直接把这段传进去。
+export const NEGATIVE_PROMPT = `
+cartoon, CGI, 3D render, artificial face, plastic skin, beauty filter, unrealistic lighting, perfect studio quality, fake background, distorted face, changing identity, different person, inconsistent facial features, extra fingers, unnatural movement, blurry face, warped body, low quality AI artifacts, text, subtitles, captions, logos, watermarks
 `.trim();

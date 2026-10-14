@@ -33,6 +33,42 @@ export type Wallet = {
   lifetime_purchased: number;
 };
 
+export type OrderStatus = "pending" | "completed" | "failed" | "refunded";
+
+export type Order = {
+  id: string;
+  user_id: string;
+  provider: string;
+  provider_order_id: string | null;
+  provider_session_id: string | null;
+  pack_id: string;
+  credits: number;
+  amount_cents: number;
+  currency: string;
+  status: OrderStatus;
+  created_at: string;
+  updated_at: string;
+};
+
+export type CreditTransactionType =
+  | "purchase"
+  | "reserve"
+  | "refund"
+  | "bonus"
+  | "admin_adjustment";
+
+export type CreditTransaction = {
+  id: string;
+  user_id: string;
+  amount: number;
+  type: CreditTransactionType;
+  status: "pending" | "settled" | "reversed";
+  job_id: string | null;
+  order_id: string | null;
+  description: string | null;
+  created_at: string;
+};
+
 export type GenerateInput = {
   assetPath: string;
   duration: number;

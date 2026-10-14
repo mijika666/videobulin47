@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import { LoginForm } from "@/components/login-form";
+import { getCurrentUser } from "@/lib/supabase/server";
 import { absoluteUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -10,7 +12,26 @@ export const metadata: Metadata = {
   alternates: { canonical: absoluteUrl("/login") },
 };
 
-export default function LoginPage() {
+// Only allow same-site relative paths, so `next` can never be an open redirect.
+function safeNext(value: string | undefined) {
+  if (value && value.startsWith("/") && !value.startsWith("//")) {
+    return value;
+  }
+  return "/studio";
+}
+
+export default async function LoginPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ next?: string; error?: string }>;
+}) {
+  const params = await searchParams;
+  const next = safeNext(params.next);
+  const user = await getCurrentUser();
+  if (user) {
+    redirect(next);
+  }
+
   return (
     <section className="py-14 md:py-20">
       <div className="container-shell grid gap-8 lg:grid-cols-[1fr_0.85fr]">
@@ -39,7 +60,7 @@ export default function LoginPage() {
           </div>
         </div>
         <div className="panel flex items-center p-6 md:p-10">
-          <LoginForm />
+          <LoginForm nextPath={next} />
         </div>
       </div>
     </section>

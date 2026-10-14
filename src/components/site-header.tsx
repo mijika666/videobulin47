@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { Menu, Sparkles, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Menu, Sparkles, UserRound, X } from "lucide-react";
 import { Logo } from "@/components/logo";
+import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -15,6 +16,43 @@ const links = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [email, setEmail] = useState<string | null>(null);
+  const [authReady, setAuthReady] = useState(false);
+
+  // Header stays a client component so the shared layout keeps rendering
+  // statically for every SEO page. Auth state is resolved after hydration.
+  useEffect(() => {
+    const supabase = createSupabaseBrowserClient();
+    if (!supabase) {
+      setAuthReady(true);
+      return;
+    }
+
+    let active = true;
+    supabase.auth
+      .getUser()
+      .then((result: { data: { user: { email?: string | null } | null } }) => {
+        if (!active) return;
+        setEmail(result.data.user?.email ?? null);
+        setAuthReady(true);
+      });
+
+    const { data: listener } = supabase.auth.onAuthStateChange(
+      (
+        _event: string,
+        session: { user: { email?: string | null } | null } | null,
+      ) => {
+        setEmail(session?.user?.email ?? null);
+      },
+    );
+
+    return () => {
+      active = false;
+      listener.subscription.unsubscribe();
+    };
+  }, []);
+
+  const signedIn = authReady && email !== null;
 
   return (
     <header className="sticky top-0 z-40 border-b border-black/10 bg-paper/90 backdrop-blur-xl">
@@ -32,9 +70,21 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
-          <Link href="/login" className="text-sm font-bold text-ink">
-            Sign in
-          </Link>
+          {signedIn ? (
+            <Link
+              href="/account"
+              className="inline-flex items-center gap-2 text-sm font-bold text-ink"
+            >
+              <span className="grid size-8 place-items-center rounded-full border border-line bg-white">
+                <UserRound className="size-4" />
+              </span>
+              Account
+            </Link>
+          ) : (
+            <Link href="/login" className="text-sm font-bold text-ink">
+              Sign in
+            </Link>
+          )}
           <Link href="/studio" className="btn btn-dark">
             <Sparkles className="size-4" />
             Create video
@@ -74,6 +124,24 @@ export function SiteHeader() {
             <Sparkles className="size-4" />
             Create video
           </Link>
+          {signedIn ? (
+            <Link
+              href="/account"
+              onClick={() => setOpen(false)}
+              className="btn btn-outline"
+            >
+              <UserRound className="size-4" />
+              Account
+            </Link>
+          ) : (
+            <Link
+              href="/login"
+              onClick={() => setOpen(false)}
+              className="btn btn-outline"
+            >
+              Sign in
+            </Link>
+          )}
         </nav>
       </div>
     </header>

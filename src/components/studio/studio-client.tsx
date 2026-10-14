@@ -505,7 +505,7 @@ export function StudioClient({
                 >
                   {MODELS.map((model) => (
                     <option key={model.id} value={model.id}>
-                      {model.name} · {model.quality} · {model.cost}
+                      {model.name} · {model.quality}
                     </option>
                   ))}
                 </select>

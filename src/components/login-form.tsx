@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ArrowRight, LoaderCircle, Mail, ShieldCheck } from "lucide-react";
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
-export function LoginForm() {
+export function LoginForm({ nextPath = "/studio" }: { nextPath?: string }) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
@@ -14,6 +14,12 @@ export function LoginForm() {
     process.env.NEXT_PUBLIC_SUPABASE_URL &&
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
   );
+
+  function buildCallbackUrl() {
+    return `${window.location.origin}/auth/callback?next=${encodeURIComponent(
+      nextPath,
+    )}`;
+  }
 
   async function signInWithGoogle() {
     setError("");
@@ -27,7 +33,7 @@ export function LoginForm() {
     const { error: authError } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/auth/callback?next=/studio`,
+        redirectTo: buildCallbackUrl(),
       },
     });
     if (authError) {
@@ -49,7 +55,7 @@ export function LoginForm() {
     const { error: authError } = await supabase.auth.signInWithOtp({
       email,
       options: {
-        emailRedirectTo: `${window.location.origin}/auth/callback?next=/studio`,
+        emailRedirectTo: buildCallbackUrl(),
       },
     });
     if (authError) {

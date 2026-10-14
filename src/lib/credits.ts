@@ -2,7 +2,12 @@ import "server-only";
 
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
-import type { VideoJob, Wallet } from "@/lib/types";
+import type {
+  CreditTransaction,
+  Order,
+  VideoJob,
+  Wallet,
+} from "@/lib/types";
 
 export async function getCurrentWallet(userId: string) {
   const supabase = await createSupabaseServerClient();
@@ -27,6 +32,30 @@ export async function getRecentJobs(userId: string, limit = 12) {
     .order("created_at", { ascending: false })
     .limit(limit);
   return (data ?? []) as VideoJob[];
+}
+
+export async function getRecentOrders(userId: string, limit = 20) {
+  const supabase = await createSupabaseServerClient();
+  if (!supabase) return [] as Order[];
+  const { data } = await supabase
+    .from("orders")
+    .select("*")
+    .eq("user_id", userId)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+  return (data ?? []) as Order[];
+}
+
+export async function getRecentTransactions(userId: string, limit = 20) {
+  const supabase = await createSupabaseServerClient();
+  if (!supabase) return [] as CreditTransaction[];
+  const { data } = await supabase
+    .from("credit_transactions")
+    .select("*")
+    .eq("user_id", userId)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+  return (data ?? []) as CreditTransaction[];
 }
 
 export async function createJobRecord({
