@@ -973,7 +973,7 @@ export const contentPages: Record<string, ContentPage> = {
           "Service providers, bound by confidentiality obligations: Supabase (authentication, database, private storage), fal.ai (model inference), Waffo Pancake (checkout, tax, payment processing), and Vercel (hosting).",
           "Payment card data is handled exclusively by our PCI-DSS compliant payment processor, Waffo Pancake, and is never stored on our servers.",
           "AI model processing: when you generate a video, your uploaded photo and, for the models that use it, the reference template are transmitted to fal.ai and then to the underlying model provider you selected - ByteDance (Seedance), MiniMax, or Kuaishou (Kling) - solely to produce your video.",
-          "Legal and regulatory requirements: in response to a lawful request from a court or authority.",
+          "Legal and regulatory requirements: in response to a lawful request from a court or authority, including cooperation on reports of non-consensual intimate imagery (NCII) or child-safety concerns.",
           "Business transactions: in a merger or acquisition, with advance notice and continued protection.",
           "With your consent: for any other purpose only with your explicit prior consent.",
         ],
