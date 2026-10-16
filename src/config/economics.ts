@@ -9,8 +9,9 @@ import {
 export const PAYMENT_FEE_RATE = 0.039;
 export const PAYMENT_FEE_FIXED_CENTS = 50;
 
-// Studio 包是最差积分单价：
-// $69.99 / 100 credits，约等于 $0.70 / credit。
+// 最差积分单价来自 Crew 包：$59.99 / 80 credits ≈ $0.75 / credit。
+// 这里仍按 70 美分计算 —— 故意略低于实际，会让最低积分要求算得更保守，
+// 不会低估成本。改价时同步检查这里。
 export const MIN_REVENUE_PER_CREDIT_CENTS = 70;
 export const TARGET_GROSS_MARGIN = 0.55;
 export const MIN_PUBLIC_PRICE_CENTS = 990;

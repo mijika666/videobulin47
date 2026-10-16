@@ -56,5 +56,8 @@ shot.png
 # 本地遗留的嵌套 Git 仓库，不要提交到当前仓库
 /videobulin47/
 
+# 竞品调研资料，只留在本地，不要推到公开仓库
+/competitor-profiles/
+
 .vercel
 .env*

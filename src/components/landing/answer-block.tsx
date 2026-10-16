@@ -15,7 +15,7 @@ export const HOMEPAGE_ANSWERS = [
   {
     question: "How much does a video bulin 47 cost?",
     answer:
-      "Credit packs are one-time purchases: $9.99 for 10 credits, $24.99 for 30 credits and $69.99 for 100 credits. Credits never expire and failed renders are refunded automatically. There is no subscription and no recurring charge.",
+      "Credit packs are one-time purchases: $9.99 for 10 credits, $22.99 for 30 credits and $59.99 for 80 credits. A 10-second 720p clip costs 10 credits on the default model, so the packs cover roughly 1, 3 and 8 clips. Credits never expire, failed renders are refunded automatically, and there is no subscription.",
   },
   {
     question: "Which AI models generate the video?",

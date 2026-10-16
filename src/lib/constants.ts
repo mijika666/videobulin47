@@ -14,57 +14,61 @@ export type CreditPack = {
 };
 
 export const CREDIT_PACKS: CreditPack[] = [
-  // 竞品参考：一条 15 到 19 秒视频约 $9.90-$9.99。
+  // 积分换算基准：默认模型（MiniMax H3）在 720p 下的实际扣费是
+  // 5 秒 = 5 积分、10 秒 = 10 积分、15 秒 = 12 积分。
+  // 下面每档的「About N clips」都按这个基准写。改价、改默认模型或改
+  // economics.ts 里的成本表时，这几句话必须同步更新，否则会前后矛盾。
   {
     id: "starter",
     name: "Single",
     credits: 10,
     priceCents: 999,
     priceLabel: "$9.99",
-    description: "Try one video. Billed once. Credits never expire.",
+    description: "One 10-second clip. Billed once. Credits never expire.",
     includes: [
-      "Includes 10 credits",
-      "About 1 video at 720p",
-      "Credits never expire",
-      "Original sound + silent copy",
+      "10 credits",
+      "About 2 clips at 5s, or 1 at 10s",
+      "720p or 1080p, 9:16 vertical MP4",
+      "Original sound kept",
       "No watermark",
+      "Credits never expire",
       "Failed renders refunded automatically",
     ],
     envKey: "waffoProductSingle",
   },
-  // 竞品参考：三条约 $19.90-$24.99。
   {
     id: "creator",
     name: "Trio",
     credits: 30,
-    priceCents: 2499,
-    priceLabel: "$24.99",
-    description: "$8.33 a video. Billed once. Credits never expire.",
+    priceCents: 2299,
+    priceLabel: "$22.99",
+    description: "$7.66 per 10-second clip. Billed once. Credits never expire.",
     includes: [
-      "Includes 30 credits",
-      "About 3 videos at 720p or 1 in 1080p HD",
-      "Credits never expire",
-      "Original sound + silent copy",
+      "30 credits",
+      "About 6 clips at 5s, 3 at 10s, or 2 at 15s",
+      "720p or 1080p, 9:16 vertical MP4",
+      "Original sound kept",
       "No watermark",
+      "Credits never expire",
       "Failed renders refunded automatically",
     ],
     badge: "Recommended",
     envKey: "waffoProductTrio",
   },
-  // 竞品参考：五到十条约 $29.90-$69.99。
   {
     id: "studio",
     name: "Crew",
-    credits: 100,
-    priceCents: 6999,
-    priceLabel: "$69.99",
-    description: "$7.00 a video. Billed once. Credits never expire.",
+    credits: 80,
+    priceCents: 5999,
+    priceLabel: "$59.99",
+    description: "$7.50 per 10-second clip. Billed once. Credits never expire.",
     includes: [
-      "Includes 100 credits",
-      "About 10 videos at 720p or 4 in 1080p HD",
-      "Credits never expire",
-      "Original sound + silent copy",
+      "80 credits",
+      "About 16 clips at 5s, 8 at 10s, or 6 at 15s",
+      "720p or 1080p, 9:16 vertical MP4",
+      "Original sound kept",
       "No watermark",
+      "Credits never expire",
       "Failed renders refunded automatically",
     ],
     envKey: "waffoProductCrew",
