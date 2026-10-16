@@ -16,8 +16,8 @@ export function VideoShowcase() {
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-7 text-white/45">
-            Preview the vertical format before you generate. Replace these
-            project samples with your newest renders whenever you want.
+            Preview the vertical format before you generate. Every clip is 9:16
+            and built to drop straight into a feed.
           </p>
         </div>
 

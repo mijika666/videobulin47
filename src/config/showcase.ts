@@ -19,8 +19,8 @@ export type ShowcaseVideo = {
 export const SHOWCASE_VIDEOS: ShowcaseVideo[] = [
   {
     id: "freestyle-1",
-    label: "Generated result",
-    note: "One image in, the freestyle rhythm out.",
+    label: "Costume character",
+    note: "One image in, a full vertical clip out.",
     src: "/showcase/1.mp4",
     sourceLabel: "Open the Studio",
     sourceUrl: "/studio",
@@ -28,8 +28,8 @@ export const SHOWCASE_VIDEOS: ShowcaseVideo[] = [
   },
   {
     id: "freestyle-2",
-    label: "Group chat cut",
-    note: "A 15-second vertical clip for the chat.",
+    label: "Pet subject",
+    note: "A 5-second vertical clip, ready for the chat.",
     src: "/showcase/2.mp4",
     sourceLabel: "Open the Studio",
     sourceUrl: "/studio",
@@ -37,8 +37,8 @@ export const SHOWCASE_VIDEOS: ShowcaseVideo[] = [
   },
   {
     id: "freestyle-3",
-    label: "TikTok ready",
-    note: "9:16, sound included, no timeline.",
+    label: "Character subject",
+    note: "9:16 vertical, no timeline.",
     src: "/showcase/3.mp4",
     sourceLabel: "Open the Studio",
     sourceUrl: "/studio",
