@@ -26,9 +26,9 @@ export function Hero() {
             <span className="block text-acid">into a vertical video.</span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-8 text-white/65 md:text-lg">
-            Upload a photo of yourself, your pet, an animal, or a virtual
-            character. We animate it into a vertical 9:16 MP4, and every other
-            person in the shot is newly generated.
+            Upload a photo of a pet, an animal, or a virtual character. We
+            animate it into a vertical 9:16 MP4, and every other person in the
+            shot is newly generated.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/studio" className="btn btn-primary">
@@ -47,7 +47,7 @@ export function Hero() {
             {[
               "Image to video",
               "Vertical 9:16",
-              "Your own image only",
+              "Non-human subjects only",
               "Failure refunds",
             ].map((item) => (
               <span key={item} className="inline-flex items-center gap-2">
@@ -64,10 +64,10 @@ export function Hero() {
               Input
             </p>
             <p className="mt-2 text-sm font-bold text-white">
-              1 image you own
+              1 pet or character image
             </p>
             <p className="mt-1 text-xs leading-5 text-white/45">
-              Yourself, a pet, an animal, or a character.
+              Non-human subjects only.
             </p>
           </div>
           <div className="phone-frame">
@@ -144,7 +144,7 @@ export function Hero() {
                 {[
                   "ONE IMAGE",
                   "VIRTUAL CAST",
-                  "YOUR OWN IMAGE",
+                  "NON-HUMAN SUBJECTS",
                   "VERTICAL 9:16",
                   "NO EDITING",
                   "AI VIDEO",

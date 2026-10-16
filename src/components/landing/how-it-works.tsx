@@ -9,8 +9,8 @@ const steps = [
   {
     icon: ImagePlus,
     number: "01",
-    title: "Upload your own image",
-    copy: "Use a clear photo of yourself, or of a pet, an animal, or a virtual character that you own. Never upload a photo of another person.",
+    title: "Upload one image",
+    copy: "Choose a clear image of a pet, an animal, or a virtual character. Non-human subjects only.",
   },
   {
     icon: Sparkles,
@@ -38,9 +38,10 @@ export function HowItWorks() {
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-muted lg:ml-auto">
-            No timeline, no editing, no camera work. You bring one image, we
-            animate it into a stylised vertical scene, and nobody from the
-            source footage appears in the result.
+            No timeline, no editing, no camera work. You bring one image of a
+            pet, an animal, or a virtual character, we animate it into a
+            stylised vertical scene, and nobody from the source footage appears
+            in the result.
           </p>
         </div>
 

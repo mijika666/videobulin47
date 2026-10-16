@@ -32,7 +32,7 @@ const commonFaqs: ContentFaq[] = [
   {
     question: "What image works best?",
     answer:
-      "Use one sharp, well-lit image that is yours: a photo of yourself, or of a pet, an animal, or a virtual character you own. The subject should fill most of the frame. Avoid heavy filters, cluttered backgrounds, and photographs of other people.",
+      "Use one sharp, well-lit image of a pet, an animal, a virtual character, or an object. The subject should fill most of the frame. Avoid heavy filters, cluttered backgrounds, and any photograph of a real person.",
   },
   {
     question: "What happens if a generation fails?",
@@ -64,15 +64,15 @@ export const contentPages: Record<string, ContentPage> = {
     eyebrow: "Step-by-step guide",
     title: "How to Make a Bulin 47 AI Video From One Photo",
     description:
-      "Learn how to make a Bulin 47 AI video from one image. Upload your own photo, a pet, an animal, or a virtual character, choose the clip length, generate the video, and post it to TikTok, Reels, or Shorts.",
+      "Learn how to make a Bulin 47 AI video from one image. Upload a pet, an animal, or a virtual character, choose the clip length, generate the video, and post it to TikTok, Reels, or Shorts.",
     intro:
       "The fastest way to join the trend is to start with one clear image. VideoBulin47 keeps the freestyle motion, camera movement, and rhythm, then animates the subject you uploaded inside that scene.",
     sections: [
       {
         heading: "1. Pick the right image",
         paragraphs: [
-          "Use one clear image that is yours - a photo of yourself, or of a pet, an animal, or a virtual character you own. The best results come from a sharp image with even lighting where the subject fills most of the frame.",
-          "Do not upload a photograph of anyone else, including family, friends, celebrities, politicians, and minors. You must be 18 or older to use the Service.",
+          "Use one clear image of a pet, an animal, or a virtual character. The best results come from a sharp image with even lighting where the subject fills most of the frame. Avoid busy filters and images where another subject overlaps yours.",
+          "This service does not accept photographs of real people, including yourself, celebrities, politicians, and minors. You must be 18 or older to use the Service.",
         ],
       },
       {
@@ -113,7 +113,7 @@ export const contentPages: Record<string, ContentPage> = {
     description:
       "Understand the Bulin 47 AI trend, the original freestyle format, and why creators animate one image into their own version for TikTok and Reels.",
     intro:
-      "The Bulin 47 AI trend keeps the recognizable freestyle rhythm while swapping in a subject you supply - yourself, your pet, an animal, or a virtual character. Nobody from the source footage is reused.",
+      "The Bulin 47 AI trend keeps the recognizable freestyle rhythm while swapping in a subject you supply. Because that subject is always a pet, an animal, or a virtual character, no real performer is copied.",
     sections: [
       {
         heading: "What the trend is",
@@ -138,7 +138,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Use it responsibly",
         paragraphs: [
-          "Upload only images you own: your own photo, or a pet, an animal, or a virtual character. Never upload a photograph of another person, and never use a result to impersonate or mislead anyone. Label synthetic media when you post it.",
+          "Upload non-human subjects only: pets, animals, virtual characters, or objects. Photographs of real people are not accepted, and results must never be used to impersonate or mislead anyone. Label synthetic media when you post it.",
         ],
       },
     ],
@@ -152,7 +152,7 @@ export const contentPages: Record<string, ContentPage> = {
     eyebrow: "Product guide",
     title: "Bulin 47 AI Video Generator",
     description:
-      "Create a Bulin 47 AI video online. Upload one image you own, drive the movement from the built-in motion template, and download a vertical MP4 for TikTok, Reels, and Shorts.",
+      "Create a Bulin 47 AI video online. Upload one image of a non-human subject, drive the movement from the built-in motion template, and download a vertical MP4 for TikTok, Reels, and Shorts.",
     intro:
       "VideoBulin47 is a one-image AI video generator for the Bulin 47 freestyle trend. It removes the need to film, learn choreography, or edit a timeline.",
     sections: [
@@ -211,7 +211,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Rights and permissions",
         paragraphs: [
-          "Before publishing a public template, the operator needs the rights required for the source video and music. Users confirm that each image they upload is their own, and that any person shown in it is the uploader.",
+          "Before publishing a public template, the operator needs the rights required for the source video and music. Users confirm that each image they upload is their own material, and that it shows no real person.",
         ],
       },
     ],
@@ -225,7 +225,7 @@ export const contentPages: Record<string, ContentPage> = {
     eyebrow: "Ideas",
     title: "Bulin 47 AI Meme Ideas",
     description:
-      "Get clean Bulin 47 AI meme ideas for pets, virtual characters, and short-form video. Keep the joke easy to read and use only images you own.",
+      "Get clean Bulin 47 AI meme ideas for pets, virtual characters, and short-form video. Keep the joke easy to read and the subject non-human.",
     intro:
       "The best versions of this trend are easy to understand without setup. The reveal does the work. Keep the joke short and make your subject the star.",
     sections: [
@@ -250,8 +250,8 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Safety rules",
         bullets: [
-          "Upload only images you own",
-          "Never upload photographs of other people, minors, celebrities, or public figures",
+          "Upload images of non-human subjects only",
+          "Never upload photographs of real people, minors, celebrities, or public figures",
           "Label the video as AI-generated",
           "Do not use the result to impersonate or mislead",
         ],
@@ -329,7 +329,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Make your own version",
         paragraphs: [
-          "If you have a clear image you own, the Studio can create a new vertical video from the motion template.",
+          "If you have a clear image of a pet, an animal, or a virtual character, the Studio can create a new vertical video from the motion template.",
         ],
       },
     ],
@@ -389,7 +389,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Create with one image",
         paragraphs: [
-          "Upload one clear image you own, select the clip length, and generate a vertical video. The template supplies the motion and rhythm.",
+          "Upload one clear image of a non-human subject, select the clip length, and generate a vertical video. The template supplies the motion and rhythm.",
         ],
       },
       {
@@ -509,7 +509,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Create the video",
         paragraphs: [
-          "Upload one clear image you own, choose the clip length, and let the template handle the motion and rhythm. The result is a vertical AI video made for short-form feeds.",
+          "Upload one clear image of a non-human subject, choose the clip length, and let the template handle the motion and rhythm. The result is a vertical AI video made for short-form feeds.",
         ],
       },
     ],
@@ -548,7 +548,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Create your own version",
         paragraphs: [
-          "Upload an image you own, keep the movement of the template, and label the output as AI-generated when you post it.",
+          "Upload an image of a non-human subject, keep the movement of the template, and label the output as AI-generated when you post it.",
         ],
       },
     ],
@@ -719,7 +719,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Product",
         paragraphs: [
-          "VideoBulin47 creates a vertical AI video from one image you own and a built-in motion template. The completed MP4 is available in your account.",
+          "VideoBulin47 creates a vertical AI video from one image of a non-human subject and a built-in motion template. The completed MP4 is available in your account.",
         ],
       },
       {
@@ -731,7 +731,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Safety",
         paragraphs: [
-          "Upload only your own image. Photographs of other people, minors, public figures, and celebrities are not accepted, and nobody who appears in the source footage is reused. Do not use the service to impersonate or deceive.",
+          "Photographs of real people are not accepted. That includes minors, public figures, celebrities, and yourself. Nobody who appears in the source footage is reused. Do not use the service to impersonate or deceive.",
           "Non-consensual intimate imagery (NCII) is banned outright. Do not create, alter, or share sexual or intimate depictions of a real person without their consent, including nonconsensual sexual deepfakes, nudified images, revenge imagery, or sextortion material. Reports of NCII are removed on a priority basis and the account behind them is terminated.",
         ],
       },
@@ -744,7 +744,7 @@ export const contentPages: Record<string, ContentPage> = {
     eyebrow: "About",
     title: "About VideoBulin47",
     description:
-      "VideoBulin47 is an independent fan-made AI video tool for animating one image into a Bulin 47 freestyle clip.",
+      "VideoBulin47 is an independent fan-made AI video tool for animating one image of a pet, an animal, or a virtual character into a Bulin 47 freestyle clip.",
     intro:
       "VideoBulin47 is a small web app for a specific trend. It is not an official artist page, music service, or social network.",
     sections: [
@@ -798,7 +798,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "2. The service",
         paragraphs: [
-          "2.1 What we provide. VideoBulin47 is a hosted interface that turns one uploaded image into a vertical AI-generated video using a built-in motion template. The Service is a digital software-as-a-service product delivered over the internet.",
+          "2.1 What we provide. VideoBulin47 is a hosted interface that turns one uploaded image of a non-human subject into a vertical AI-generated video using a built-in motion template. The Service is a digital software-as-a-service product delivered over the internet.",
           "2.2 Nature of the service. The Service is a digital, intangible product. Access is granted immediately after your payment is confirmed. Because delivery is immediate, refunds are subject to the limits in Section 7.",
           "2.3 AI model dependency. We rely on third-party AI model providers. Video generation is performed by the Seedance 2.5 model (built by ByteDance), the MiniMax H3 model (built by MiniMax), and the Kling O3 Reference and Kling O3 Reference Pro models (built by Kuaishou), each served through the fal.ai inference platform. Output quality and availability depend on those models, and the Service may be affected by their uptime and behavior. We will notify users of significant outages.",
         ],
@@ -1100,7 +1100,7 @@ export const contentPages: Record<string, ContentPage> = {
     description:
       "Content standards, moderation, reporting and enforcement for the VideoBulin47 image-to-video service, including the zero-tolerance list, source-of-material rules and the deepfake prohibition.",
     intro:
-      "VideoBulin47 animates the subject of an image you upload. This policy sets out what you may not generate, how we moderate content, how to report a problem, and what happens when the rules are broken.",
+      "VideoBulin47 is an image-to-video generator for non-human subjects. This policy sets out what you may not generate, how we moderate content, how to report a problem, and what happens when the rules are broken.",
     updated: "October 16, 2026",
     sections: [
       {
@@ -1162,19 +1162,17 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "2.4 Source of uploaded material",
         paragraphs: [
-          "You may upload: (a) a photograph of yourself; or (b) a photograph of a pet, an animal, or a virtual character that you own or otherwise have the right to use.",
-          "Uploading a photograph of any other person - a friend, a family member, a public figure, a celebrity, or a minor - is prohibited. You must be 18 or older to use the Service.",
-          "Before you upload, you must confirm in the Studio that the image is yours and that, if a person appears in it, that person is you. Uploading someone else's photograph is prohibited even if you believe you have their permission.",
+          "The Service is built for non-human subjects: pets, animals, virtual characters, and objects. Uploading a photograph of a real person - including yourself, a public figure, a celebrity, or a minor - is prohibited.",
+          "Before you upload, you must confirm that the image is your own material, or that you hold documented permission from whoever owns it. Uploading someone else's photograph without permission is prohibited.",
           "Holding permission does not make deepfake content allowable. The zero-tolerance list in section 2.1 applies regardless of consent.",
         ],
       },
       {
         heading: "2.5 Deepfake prohibition",
         paragraphs: [
-          "The Service animates the subject of your image into a motion template. That output is a synthetic depiction, and it is permitted only for the person who uploaded it: you may place yourself into a scene, and nobody else.",
-          "Nobody who appears in the template footage is reproduced. Every other person in the output is newly generated, and no face from the source footage is carried into the result.",
-          "Placing anyone other than yourself into the scene - by uploading their photograph, or by prompting the model toward a specific real individual - is a deepfake and is prohibited. It results in account termination.",
-          "The Service does not accept reference video uploads.",
+          "The Service has no face-swap feature, no swap entry point, and no swap menu item. It does not accept reference video uploads. It cannot replace one real person's face or identity with another's.",
+          "Nobody who appears in the motion template is reproduced. Every other person in the output is newly generated, and no face from the source footage is carried into the result.",
+          "Using the Service to create a deepfake - by uploading a real person's photograph, or by prompting the model toward a specific real individual - violates this policy and results in account termination.",
         ],
       },
       {
@@ -1182,7 +1180,7 @@ export const contentPages: Record<string, ContentPage> = {
         paragraphs: [
           "We run a layered moderation process: automated screening at the model endpoint, a self-declaration check before every generation, and human review of reports and appeals.",
           "3.1 Automated screening. Every generation request runs through the safety checker built into the model endpoint we call. If the checker flags the output, the generation is cancelled and the reserved credits are returned to you.",
-          "3.2 Source confirmation. Before a job is submitted you must confirm, in the Studio, that the image is yours and that anyone shown in it is you. A submission cannot proceed without that confirmation.",
+          "3.2 Source confirmation. Before a job is submitted you must confirm, in the Studio, that the image is your own material or used with documented permission, and that the subject is not a real person. A submission cannot proceed without that confirmation.",
           "3.3 Human review. Content reported by a user or a rights holder is reviewed by a person. Reviewers are bound by confidentiality.",
           "3.4 Severity levels. L1 critical - child safety and terrorism: immediate ban and referral to authorities. L2 high risk: priority review, removal, account suspension. L3 medium risk: human review, warning, removal. L4 low risk: report-driven, warning and a request to change the content.",
         ],

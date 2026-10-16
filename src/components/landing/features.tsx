@@ -11,7 +11,7 @@ const features = [
   {
     icon: ImageUp,
     title: "One-image workflow",
-    copy: "A single image is enough - yourself, your pet, an animal, or a virtual character. No prompt engineering and no shot list.",
+    copy: "A single image of a pet, an animal, or a virtual character is enough. No prompt engineering and no shot list.",
   },
   {
     icon: AudioLines,

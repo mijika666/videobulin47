@@ -56,7 +56,7 @@ export default function Image() {
               maxWidth: 980,
             }}
           >
-            Animate your image in the Bulin 47 freestyle.
+            Animate your pet in the Bulin 47 freestyle.
           </div>
           <div
             style={{

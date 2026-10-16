@@ -414,9 +414,8 @@ export function StudioClient({
                       Drop an image here or click to choose
                     </span>
                     <span className="mt-2 block text-xs leading-5 text-muted">
-                      JPG, PNG, or WebP. Max 10MB. Your own photo, or a pet,
-                      animal, or virtual character you own — never a photo of
-                      another person.
+                      JPG, PNG, or WebP. Max 10MB. Pets, animals, and virtual
+                      characters only.
                     </span>
                   </span>
                 </button>
@@ -432,7 +431,7 @@ export function StudioClient({
                 {[
                   "One subject, clearly visible",
                   "Good light, no heavy filters",
-                  "Your own image only, 18+",
+                  "No real people, no minors",
                 ].map((tip) => (
                   <div
                     key={tip}
@@ -467,10 +466,11 @@ export function StudioClient({
                   <span className="font-bold text-ink">
                     Confirm the image source.
                   </span>{" "}
-                  This image is mine. If a person appears in it, that person is{" "}
-                  <span className="font-bold text-ink">me</span>, I am 18 or
-                  older, and I consent to this AI-generated video. It is not a
-                  photo of anyone else, and not an image of a minor.
+                  This image is my own material, or I have documented permission
+                  to use it. The subject is a pet, an animal, a virtual
+                  character, or an object —{" "}
+                  <span className="font-bold text-ink">not a real person</span>
+                  , and not a minor.
                 </span>
               </label>
             </div>
@@ -603,11 +603,11 @@ export function StudioClient({
                   <span className="font-bold text-ink">
                     Required before you can generate.
                   </span>{" "}
-                  I confirm the image is mine: it shows me, or a pet, an animal,
-                  or a virtual character I own. It is not a photo of anyone
-                  else. I will not use the result to impersonate, forge, or
-                  mislead anyone, I will label it as AI-generated when I
-                  publish it, and I accept the Acceptable Use Policy.
+                  I confirm the subject is a pet, an animal, a virtual
+                  character, or an object - not a real person. I will not use
+                  the result to impersonate, forge, or mislead anyone, I will
+                  label it as AI-generated when I publish it, and I accept the
+                  Acceptable Use Policy.
                 </span>
               </label>
 
@@ -786,9 +786,8 @@ export function StudioClient({
               </p>
               <p className="mt-3 text-xs leading-6 text-muted">
                 Uploads are stored in a private bucket. Generated videos are
-                returned through signed URLs. Upload only images you own: your
-                own photo, or a pet, animal, or virtual character. Never upload
-                a photo of another person.
+                returned through signed URLs. This service accepts non-human
+                subjects only - pets, animals, virtual characters, and objects.
               </p>
               <div className="mt-4 flex items-center gap-2 text-xs font-bold text-muted">
                 <ShieldCheck className="size-4 text-orange" />

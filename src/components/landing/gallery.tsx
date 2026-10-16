@@ -28,8 +28,9 @@ export function Gallery() {
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-7 text-muted">
-            Concept previews show how a single image becomes a full-frame
-            social clip. Real renders appear in your private account.
+            Concept previews show how a single image of a non-human subject
+            becomes a full-frame social clip. Real renders appear in your
+            private account.
           </p>
         </div>
         <div className="mt-12 grid gap-5 md:grid-cols-3">
