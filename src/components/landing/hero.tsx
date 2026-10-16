@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 const heroImage =
-  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=88";
+  "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=88";
 
 export function Hero() {
   return (
@@ -19,16 +19,16 @@ export function Hero() {
       <div className="container-shell grid min-h-[680px] items-center gap-14 py-14 lg:min-h-[760px] lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
         <div className="relative z-10">
           <p className="eyebrow text-acid">
-            Video Bulin 47 generator
+            Image-to-video generator
           </p>
           <h1 className="display mt-6 max-w-3xl text-[clamp(3rem,6.2vw,5.8rem)] text-white">
-            Video Bulin 47{" "}
-            <span className="block text-acid">from one photo.</span>
+            Turn one image{" "}
+            <span className="block text-acid">into a vertical video.</span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-8 text-white/65 md:text-lg">
-            Upload one clear portrait and get a video bulin 47 clip that keeps
-            the original freestyle motion, camera, crowd, and sound. Download a
-            vertical MP4 built for TikTok, Reels, and Shorts.
+            Upload a photo of a pet, an animal, or a virtual character. We
+            animate it and return a vertical 9:16 MP4 with sound — no reference
+            video to upload, and no photographs of real people accepted.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/studio" className="btn btn-primary">
@@ -45,9 +45,9 @@ export function Hero() {
           </div>
           <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-xs font-bold text-white/55">
             {[
-              "No video editing",
-              "Original sound included",
-              "Private MP4",
+              "Image to video",
+              "Vertical 9:16",
+              "Non-human subjects only",
               "Failure refunds",
             ].map((item) => (
               <span key={item} className="inline-flex items-center gap-2">
@@ -64,16 +64,16 @@ export function Hero() {
               Input
             </p>
             <p className="mt-2 text-sm font-bold text-white">
-              1 portrait photo
+              1 pet or character image
             </p>
             <p className="mt-1 text-xs leading-5 text-white/45">
-              Face and upper body visible.
+              Non-human subjects only.
             </p>
           </div>
           <div className="phone-frame">
             <Image
               src={heroImage}
-              alt="Illustrative portrait used in the Bulin 47 AI video workflow"
+              alt="Illustrative pet image used in the image-to-video workflow"
               fill
               priority
               sizes="(max-width: 768px) 260px, 310px"
@@ -96,9 +96,9 @@ export function Hero() {
                     AI generated preview
                   </p>
                   <p className="mt-1 text-xl font-black leading-tight text-white">
-                    Your photo.
+                    Your character.
                     <br />
-                    The full freestyle.
+                    Brought to life.
                   </p>
                 </div>
                 <span className="grid size-12 shrink-0 place-items-center rounded-full bg-white text-ink">
@@ -142,7 +142,7 @@ export function Hero() {
             {[0, 1].map((set) => (
               <div key={set} className="flex shrink-0">
                 {[
-                  "ONE PHOTO",
+                  "ONE IMAGE",
                   "ORIGINAL MOTION",
                   "ORIGINAL SOUND",
                   "VERTICAL 9:16",
@@ -172,7 +172,7 @@ export function HeroFloatingNote() {
   return (
     <div className="fixed bottom-5 left-1/2 z-30 hidden -translate-x-1/2 items-center gap-3 rounded-full border border-white/10 bg-ink px-4 py-3 text-xs font-bold text-white shadow-2xl lg:flex">
       <LockKeyhole className="size-4 text-acid" />
-      Photos are stored in a private bucket.
+      Uploads are stored in a private bucket.
     </div>
   );
 }

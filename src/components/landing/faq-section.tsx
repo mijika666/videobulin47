@@ -12,7 +12,7 @@ export function FaqSection() {
             Before you upload.
           </h2>
           <p className="mt-5 max-w-sm text-sm leading-7 text-muted">
-            The main rules are simple: one consenting adult, one clear photo,
+            The main rules are simple: one non-human subject, one clear image,
             and a clear AI label when you post.
           </p>
         </div>

@@ -41,9 +41,10 @@ export default async function LoginPage({
           <div className="absolute -bottom-20 -right-24 hidden w-[460px] rotate-[-8deg] md:block">
             <div className="phone-frame ml-auto">
               <Image
-                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=88"
-                alt="Account preview for a Bulin 47 AI video"
+                src="/subjects/virtual-character.svg"
+                alt="Account preview: a virtual character animated into a vertical video"
                 fill
+                unoptimized
                 sizes="310px"
                 className="object-cover"
               />

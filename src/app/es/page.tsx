@@ -13,7 +13,7 @@ import { absoluteUrl } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Video Bulin 47 AI Desde Una Foto",
   description:
-    "Crea tu video de Bulin 47 AI desde una foto. Mantén el movimiento original, el sonido y el formato vertical para TikTok, Reels y Shorts.",
+    "Crea tu video de Bulin 47 AI desde una imagen de una mascota, un animal o un personaje virtual. Mantén el movimiento, el sonido y el formato vertical para TikTok, Reels y Shorts.",
   keywords: [
     "video de bulin 47",
     "bulin 47 ai",
@@ -37,14 +37,15 @@ export default function SpanishHome() {
       <section className="section-dark">
         <div className="container-shell grid min-h-[680px] items-center gap-12 py-16 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <p className="eyebrow text-acid">Bulin 47 AI desde una foto</p>
+            <p className="eyebrow text-acid">Bulin 47 AI desde una imagen</p>
             <h1 className="display mt-6 text-[clamp(3.2rem,8vw,6.5rem)] text-white">
-              Tu foto en el
+              Tu personaje en el
               <span className="block text-acid">freestyle de Bulin 47.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-8 text-white/60">
-              Sube un retrato, conserva el movimiento y el sonido original, y
-              descarga un video vertical para TikTok, Reels y Shorts.
+              Sube una imagen de una mascota, un animal o un personaje virtual,
+              conserva el movimiento y el sonido original, y descarga un video
+              vertical para TikTok, Reels y Shorts.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/studio" className="btn btn-primary">
@@ -76,9 +77,10 @@ export default function SpanishHome() {
           <div className="flex justify-center">
             <div className="phone-frame">
               <Image
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85"
-                alt="Vista previa de un video Bulin 47 AI"
+                src="/subjects/animal.svg"
+                alt="Vista previa de un personaje no humano animado en un video Bulin 47 AI"
                 fill
+                unoptimized
                 priority
                 sizes="310px"
                 className="object-cover"
@@ -89,7 +91,7 @@ export default function SpanishHome() {
                   Vista previa IA
                 </p>
                 <p className="mt-1 text-xl font-black text-white">
-                  Una foto.
+                  Una imagen.
                   <br />
                   Todo el freestyle.
                 </p>
@@ -110,7 +112,7 @@ export default function SpanishHome() {
           </h2>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {[
-              ["01", "Sube una foto", "Usa un retrato claro de un adulto que haya dado su consentimiento."],
+              ["01", "Sube una imagen", "Usa una imagen clara de una mascota, un animal o un personaje virtual. No se aceptan fotos de personas reales."],
               ["02", "Genera el video", "Elige duración y calidad. El modelo conserva el movimiento y el ritmo."],
               ["03", "Descarga y publica", "Recibe un MP4 vertical listo para TikTok, Reels o Shorts."],
             ].map(([number, title, copy]) => (

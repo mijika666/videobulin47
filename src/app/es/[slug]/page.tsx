@@ -8,13 +8,13 @@ const pages = {
   "como-hacer-video-bulin-47-ia": {
     title: "Cómo Hacer un Video de Bulin 47 AI Desde Una Foto",
     description:
-      "Guía paso a paso para crear un video de Bulin 47 AI. Sube una foto, elige duración y descarga un MP4 vertical.",
+      "Guía paso a paso para crear un video de Bulin 47 AI. Sube una imagen de un sujeto no humano, elige duración y descarga un MP4 vertical.",
     intro:
-      "El flujo es sencillo: una foto clara, una plantilla de referencia y una salida vertical. No necesitas editar ni grabar la coreografía.",
+      "El flujo es sencillo: una imagen clara, una plantilla de movimiento y una salida vertical. No necesitas editar ni grabar la coreografía.",
     sections: [
       {
-        heading: "1. Elige una buena foto",
-        body: "Usa una foto frontal de un adulto que haya dado su permiso. La cara y la parte superior del cuerpo deben verse bien. Evita gafas de sol, filtros fuertes y fotos con varias personas.",
+        heading: "1. Elige una buena imagen",
+        body: "Usa una imagen clara de una mascota, un animal o un personaje virtual. El sujeto debe ocupar la mayor parte del encuadre. Evita filtros fuertes y fondos con mucho ruido. No se aceptan fotos de personas reales.",
       },
       {
         heading: "2. Elige la duración",
@@ -22,28 +22,28 @@ const pages = {
       },
       {
         heading: "3. Genera y descarga",
-        body: "Confirma que tienes permiso, reserva los créditos y envía el trabajo. Si el proveedor falla, los créditos vuelven automáticamente. Cuando termina, descarga el MP4.",
+        body: "Confirma el origen de la imagen, reserva los créditos y envía el trabajo. Si el proveedor falla, los créditos vuelven automáticamente. Cuando termina, descarga el MP4.",
       },
     ],
   },
   "tendencia-bulin-47-ia": {
     title: "Tendencia Bulin 47 AI: Qué Es y Por Qué Funciona",
     description:
-      "Entiende la tendencia Bulin 47 AI, el video de referencia y el flujo de reemplazo con una sola foto.",
+      "Entiende la tendencia Bulin 47 AI, la plantilla de movimiento y el flujo con una sola imagen.",
     intro:
-      "La tendencia conserva el movimiento y el ritmo del video original, pero cambia a la persona principal. Eso convierte un clip conocido en una versión personal.",
+      "La tendencia conserva el movimiento y el ritmo del video original, pero cambia al sujeto principal. Eso convierte un clip conocido en una versión propia.",
     sections: [
       {
         heading: "El clip original",
-        body: "El video de Bulin 47 y Kevin Wai se volvió una referencia por su energía, su ritmo y sus movimientos reconocibles. La gente empezó a crear versiones con su propia foto.",
+        body: "El video de Bulin 47 y Kevin Wai se volvió una referencia por su energía, su ritmo y sus movimientos reconocibles. La gente empezó a crear versiones con su propia imagen.",
       },
       {
-        heading: "Cómo funciona el reemplazo",
-        body: "Un modelo de referencia recibe el video y una imagen. Después sigue el movimiento y la cámara del clip original mientras reemplaza la apariencia de la persona.",
+        heading: "Cómo funciona la animación",
+        body: "Un modelo de referencia recibe la plantilla de movimiento y la imagen que subes. Después sigue el movimiento y la cámara del clip original mientras anima a tu sujeto dentro de esa escena.",
       },
       {
         heading: "Usa la herramienta con cuidado",
-        body: "No subas fotos de menores, celebridades o personas sin permiso. Publica el video con la etiqueta de contenido generado por IA cuando la plataforma lo requiera.",
+        body: "Sube solo sujetos no humanos: mascotas, animales o personajes virtuales. No subas fotos de personas reales, menores, celebridades ni figuras públicas. Publica el video con la etiqueta de contenido generado por IA cuando la plataforma lo requiera.",
       },
     ],
   },
@@ -116,7 +116,7 @@ export default async function SpanishGuide({ params }: Props) {
             <div className="section-acid rounded-lg p-7">
               <FileText className="size-6" />
               <h2 className="mt-5 text-2xl font-black leading-tight">
-                Crea tu versión con una foto.
+                Crea tu versión con una imagen.
               </h2>
               <p className="mt-3 text-sm leading-6 text-ink/65">
                 Abre el Studio, sube un retrato y elige la duración del video.

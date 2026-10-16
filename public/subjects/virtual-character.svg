@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Flat illustration of a virtual character avatar">
+  <defs>
+    <radialGradient id="sky" cx="50%" cy="34%" r="70%">
+      <stop offset="0%" stop-color="#3d2a12"/>
+      <stop offset="58%" stop-color="#161410"/>
+      <stop offset="100%" stop-color="#0a0b0a"/>
+    </radialGradient>
+    <linearGradient id="frame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff9a4d"/>
+      <stop offset="100%" stop-color="#dd5a17"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1300" fill="url(#sky)"/>
+  <g opacity="0.16" stroke="#c9ff3f" stroke-width="2">
+    <path d="M0 1084h900M0 1200h900M150 0v1300M750 0v1300"/>
+  </g>
+  <g>
+    <path d="M450 268v78" stroke="#c9ff3f" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="450" cy="250" r="30" fill="#c9ff3f"/>
+    <rect x="286" y="336" width="328" height="252" rx="72" fill="url(#frame)"/>
+    <rect x="330" y="392" width="240" height="128" rx="52" fill="#0a0b0a"/>
+    <circle cx="408" cy="456" r="21" fill="#c9ff3f"/>
+    <circle cx="492" cy="456" r="21" fill="#c9ff3f"/>
+    <path d="M410 540h80" stroke="#0a0b0a" stroke-width="12" stroke-linecap="round" opacity="0.75"/>
+    <rect x="252" y="640" width="396" height="420" rx="88" fill="#262b26"/>
+    <circle cx="450" cy="786" r="62" fill="#0a0b0a"/>
+    <circle cx="450" cy="786" r="26" fill="#c9ff3f"/>
+    <rect x="212" y="704" width="46" height="240" rx="23" fill="#262b26"/>
+    <rect x="642" y="704" width="46" height="240" rx="23" fill="#262b26"/>
+  </g>
+  <rect x="0" y="0" width="900" height="1300" fill="none"/>
+</svg>

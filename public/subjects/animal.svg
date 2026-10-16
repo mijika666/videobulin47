@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Flat illustration of a wild animal">
+  <defs>
+    <radialGradient id="sky" cx="50%" cy="34%" r="72%">
+      <stop offset="0%" stop-color="#3a1d20"/>
+      <stop offset="56%" stop-color="#141110"/>
+      <stop offset="100%" stop-color="#0a0b0a"/>
+    </radialGradient>
+    <linearGradient id="coat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff9448"/>
+      <stop offset="100%" stop-color="#d9551c"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1300" fill="url(#sky)"/>
+  <g opacity="0.14" stroke="#c9ff3f" stroke-width="2">
+    <path d="M0 1084h900M0 1200h900M150 0v1300M750 0v1300"/>
+  </g>
+  <g>
+    <path d="M256 560 236 340l206 150z" fill="url(#coat)"/>
+    <path d="M644 560l20-220-206 150z" fill="url(#coat)"/>
+    <path d="M296 496l-14-88l92 66z" fill="#8f2f16"/>
+    <path d="M604 496l14-88-92 66z" fill="#8f2f16"/>
+    <circle cx="450" cy="664" r="226" fill="url(#coat)"/>
+    <path d="M450 890c-96-1-190-46-226-118 40-52 104-84 226-84s186 32 226 84c-36 72-130 117-226 118z" fill="#fdf1e2"/>
+    <ellipse cx="368" cy="622" rx="28" ry="34" fill="#12100f"/>
+    <ellipse cx="532" cy="622" rx="28" ry="34" fill="#12100f"/>
+    <circle cx="378" cy="610" r="9" fill="#c9ff3f"/>
+    <circle cx="542" cy="610" r="9" fill="#c9ff3f"/>
+    <path d="M450 726c-26 0-46 18-46 40s20 40 46 40 46-18 46-40-20-40-46-40z" fill="#231a16"/>
+    <path d="M450 806v28" stroke="#231a16" stroke-width="10" stroke-linecap="round"/>
+    <path d="M392 1042h116l-30 132h-56z" fill="#262b26"/>
+    <path d="M450 1174v68" stroke="#262b26" stroke-width="22" stroke-linecap="round"/>
+  </g>
+</svg>

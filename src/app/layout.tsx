@@ -22,11 +22,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(absoluteUrl("/")),
   title: {
-    default: "Video Bulin 47 AI Generator From One Photo | VideoBulin47",
+    default: "Video Bulin 47 Image to Video Generator | VideoBulin47",
     template: `%s | ${APP_NAME}`,
   },
   description:
-    "Make a video bulin 47 clip from one photo. Keep the original freestyle motion and sound, then download a vertical MP4 for TikTok, Reels, or Shorts.",
+    "Turn one image into a short vertical AI video of a pet, an animal, or a virtual character. Image-to-video generation with no reference video upload, and no photographs of real people accepted.",
   applicationName: APP_NAME,
   keywords: TRENDING_SEARCHES.map((item) => item.label),
   alternates: {
@@ -41,15 +41,15 @@ export const metadata: Metadata = {
     type: "website",
     url: absoluteUrl("/"),
     siteName: APP_NAME,
-    title: "Video Bulin 47 AI Generator From One Photo",
+    title: "Video Bulin 47 Image to Video Generator",
     description:
-      "One photo. One vertical freestyle video. Built for TikTok, Reels, and Shorts.",
+      "One image in, one vertical AI video out. Built for TikTok, Reels, and Shorts.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bulin 47 AI Video Generator From One Photo",
+    title: "Bulin 47 Image to Video Generator",
     description:
-      "Upload a photo, generate a Bulin 47 AI video, and download the MP4.",
+      "Upload an image of a pet or a virtual character, generate a short vertical video, and download the MP4.",
   },
   robots: {
     index: true,

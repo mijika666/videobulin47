@@ -166,9 +166,10 @@ export default function AuthorPage() {
               <h2>Why I built VideoBulin47</h2>
               <p>
                 VideoReducer solves the video you already have. VideoBulin47
-                solves the video you want to make: it turns one photo into a
-                vertical clip for a specific trend, using a reference video to
-                carry the motion, camera work and audio.
+                solves the video you want to make: it turns one image of a
+                non-human subject into a vertical clip for a specific trend,
+                using our built-in motion reference to carry the rhythm, camera
+                work and audio.
               </p>
               <p>
                 I picked a single, well-defined format on purpose. A
@@ -229,8 +230,8 @@ export default function AuthorPage() {
             <div className="section-acid mt-4 rounded-lg p-6">
               <p className="text-xs font-black uppercase">Try the tool</p>
               <p className="mt-3 text-sm leading-6 text-ink/70">
-                One portrait, one reference clip, one vertical video. The credit
-                reservation is shown before you generate.
+                One image, one vertical video. The credit reservation is shown
+                before you generate.
               </p>
               <Link href="/studio" className="btn btn-dark mt-5 w-full">
                 Open the Studio

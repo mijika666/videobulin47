@@ -2,21 +2,21 @@ import {
   AudioLines,
   CircleDollarSign,
   Clock3,
+  ImageUp,
   LockKeyhole,
-  ScanFace,
   Smartphone,
 } from "lucide-react";
 
 const features = [
   {
-    icon: ScanFace,
-    title: "One-face workflow",
-    copy: "A single portrait is enough. No prompt engineering and no shot list.",
+    icon: ImageUp,
+    title: "One-image workflow",
+    copy: "A single image of a pet, an animal, or a virtual character is enough. No prompt engineering and no shot list.",
   },
   {
     icon: AudioLines,
-    title: "Original sound",
-    copy: "The template keeps the rhythm and audio cues that make the trend recognizable.",
+    title: "Image to video",
+    copy: "We animate the subject in your image. There is no reference video upload, and photographs of real people are not accepted.",
   },
   {
     icon: Smartphone,

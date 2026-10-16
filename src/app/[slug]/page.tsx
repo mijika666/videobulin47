@@ -226,11 +226,11 @@ export default async function ContentPageRoute({ params }: PageProps) {
               <div className="section-acid rounded-lg p-7">
                 <p className="text-xs font-black uppercase">Try the workflow</p>
                 <h2 className="mt-4 text-2xl font-black leading-tight">
-                  Turn one photo into a vertical freestyle video.
+                  Turn one image into a vertical freestyle video.
                 </h2>
                 <p className="mt-3 text-sm leading-6 text-ink/65">
                   Start with a short preview, then choose a longer render when
-                  the photo and likeness look right.
+                  the image and the motion look right.
                 </p>
                 <Link href="/studio" className="btn btn-dark mt-6 w-full">
                   Open the Studio
@@ -268,9 +268,9 @@ export default async function ContentPageRoute({ params }: PageProps) {
                 Safety reminder
               </p>
               <p className="mt-3 text-xs leading-6 text-muted">
-                Only upload a photo of yourself or a consenting adult. Do not
-                use minors, celebrities, public figures, or non-consenting
-                people.
+                Upload an image of a pet, an animal, a virtual character, or an
+                object. This service does not accept photographs of real
+                people, minors, celebrities, or public figures.
               </p>
             </div>
           </aside>

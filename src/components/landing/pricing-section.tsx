@@ -17,7 +17,7 @@ export function PricingSection() {
             <p className="text-sm leading-7 text-white/55">
               Credits do not expire. A failed render returns the reservation
               automatically. Start small, then choose a larger pack when the
-              photo works.
+              image works.
             </p>
             <Link
               href="/pricing"

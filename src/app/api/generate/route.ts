@@ -55,7 +55,7 @@ export async function POST(request: Request) {
   const input = parsed.data;
   if (!input.assetPath.startsWith(`${user.id}/`)) {
     return NextResponse.json(
-      { error: "The uploaded photo does not belong to this account." },
+      { error: "The uploaded image does not belong to this account." },
       { status: 403 },
     );
   }

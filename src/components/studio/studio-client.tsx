@@ -85,9 +85,13 @@ export function StudioClient({
   const [submitting, setSubmitting] = useState(false);
   const [polling, setPolling] = useState(false);
   const [consentWarning, setConsentWarning] = useState(false);
+  // 素材来源确认（对应 Waffo AUP 第 2.4 节「上传素材来源」）。
+  const [rights, setRights] = useState(true);
+  const [rightsWarning, setRightsWarning] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const fileUrlRef = useRef<string | null>(null);
   const consentRef = useRef<HTMLLabelElement>(null);
+  const rightsRef = useRef<HTMLLabelElement>(null);
 
   const demoMode =
     !services.supabase || !services.fal || !services.template;
@@ -203,7 +207,18 @@ export function StudioClient({
 
   async function generate() {
     if (!file) {
-      setError("Choose a photo first.");
+      setError("Choose an image first.");
+      return;
+    }
+    if (!rights) {
+      setError(
+        "Confirm the image source under step 1, then press Generate video again.",
+      );
+      setRightsWarning(true);
+      rightsRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
       return;
     }
     if (!consent) {
@@ -305,11 +320,12 @@ export function StudioClient({
           <div>
             <p className="eyebrow text-orange">Studio</p>
             <h1 className="display mt-5 text-[clamp(2.7rem,6vw,5rem)]">
-              Build your freestyle.
+              Animate your subject.
             </h1>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-muted">
-              One portrait, one reference clip, one vertical output. You will
-              see the exact credit reservation before the job is submitted.
+              One image, one vertical output. This is image-to-video
+              generation: there is no reference video to upload. You will see
+              the exact credit reservation before the job is submitted.
             </p>
           </div>
           <div className="flex items-center gap-3">
@@ -350,7 +366,7 @@ export function StudioClient({
                   <p className="text-xs font-black uppercase text-muted">
                     Step 01
                   </p>
-                  <h2 className="mt-2 text-xl font-black">Upload a portrait</h2>
+                  <h2 className="mt-2 text-xl font-black">Upload an image</h2>
                 </div>
                 <ImagePlus className="size-5 text-orange" />
               </div>
@@ -360,7 +376,7 @@ export function StudioClient({
                   <div className="relative aspect-[16/10]">
                     <Image
                       src={previewUrl}
-                      alt="Selected portrait preview"
+                      alt="Selected image preview"
                       fill
                       unoptimized
                       sizes="(max-width: 1024px) 100vw, 760px"
@@ -374,7 +390,7 @@ export function StudioClient({
                     type="button"
                     onClick={removeFile}
                     className="absolute right-4 top-4 grid size-10 place-items-center rounded-full bg-white text-ink transition hover:bg-orange hover:text-white"
-                    aria-label="Remove photo"
+                    aria-label="Remove image"
                   >
                     <Trash2 className="size-4" />
                   </button>
@@ -395,11 +411,12 @@ export function StudioClient({
                       <ImagePlus className="size-5" />
                     </span>
                     <span className="mt-4 block text-sm font-black">
-                      Drop a photo here or click to choose
+                      Drop an image here or click to choose
                     </span>
                     <span className="mt-2 block text-xs leading-5 text-muted">
-                      JPG, PNG, or WebP. Max 10MB. Use a clear, front-facing
-                      photo with one consenting adult.
+                      JPG, PNG, or WebP. Max 10MB. Pets, animals, and virtual
+                      characters only — do not upload photographs of real
+                      people.
                     </span>
                   </span>
                 </button>
@@ -413,9 +430,9 @@ export function StudioClient({
               />
               <div className="mt-5 grid gap-3 sm:grid-cols-3">
                 {[
-                  "Face and upper body visible",
+                  "One subject, clearly visible",
                   "Good light, no heavy filters",
-                  "No minors or public figures",
+                  "No real people, no minors",
                 ].map((tip) => (
                   <div
                     key={tip}
@@ -426,6 +443,39 @@ export function StudioClient({
                   </div>
                 ))}
               </div>
+
+              {/* Waffo AUP 第 2.4 节「上传素材来源」要求的用户主动确认 */}
+              <label
+                ref={rightsRef}
+                className={cn(
+                  "mt-5 flex cursor-pointer items-start gap-3 rounded-lg border bg-black/[0.02] p-4 transition",
+                  rightsWarning
+                    ? "border-orange ring-2 ring-orange/40"
+                    : "border-line",
+                )}
+              >
+                <input
+                  type="checkbox"
+                  checked={rights}
+                  onChange={(event) => {
+                    setRights(event.target.checked);
+                    if (event.target.checked) setRightsWarning(false);
+                  }}
+                  className="mt-1 size-4 accent-orange"
+                />
+                <span className="text-xs leading-6 text-muted">
+                  <span className="font-bold text-ink">
+                    Confirm the image source.
+                  </span>{" "}
+                  This image is my own material, or I have documented permission
+                  to use it. The subject is a pet, an animal, a virtual
+                  character, or an object —{" "}
+                  <span className="font-bold text-ink">
+                    not a real person
+                  </span>
+                  , and not a minor.
+                </span>
+              </label>
             </div>
 
             <div className="panel p-5 md:p-7">
@@ -523,13 +573,13 @@ export function StudioClient({
                 </select>
                 {selectedModel.usesReferenceVideo ? (
                   <span className="text-[11px] leading-5 text-muted">
-                    Drives the motion from the reference clip.
+                    Drives the motion from the built-in template.
                   </span>
                 ) : (
                   <span className="rounded-lg bg-orange/10 px-3 py-2 text-[11px] leading-5 text-orange">
-                    {selectedModel.name} uses your photo as a reference image
-                    only. It does not follow the motion clip, so the dance comes
-                    from the prompt instead of the template video.
+                    {selectedModel.name} uses your image as a reference only. It
+                    does not follow the motion template, so the movement comes
+                    from the prompt instead.
                   </span>
                 )}
               </label>
@@ -556,10 +606,11 @@ export function StudioClient({
                   <span className="font-bold text-ink">
                     Required before you can generate.
                   </span>{" "}
-                  I confirm that this is my photo or I have permission from the
-                  person shown. They are 18 or older, not a celebrity or public
-                  figure, and the video will be labeled as AI-generated when I
-                  post it.
+                  I confirm the subject is a pet, an animal, a virtual
+                  character, or an object - not a real person. I will not use
+                  the result to impersonate, forge, or mislead anyone, I will
+                  label it as AI-generated when I publish it, and I accept the
+                  Acceptable Use Policy.
                 </span>
               </label>
 
@@ -620,7 +671,7 @@ export function StudioClient({
                   <p className="mt-2 text-lg font-black text-white">
                     {currentJob
                       ? statusLabel(currentJob.status)
-                      : "Waiting for a photo"}
+                      : "Waiting for an image"}
                   </p>
                 </div>
                 <span
@@ -738,8 +789,9 @@ export function StudioClient({
               </p>
               <p className="mt-3 text-xs leading-6 text-muted">
                 Uploads are stored in a private bucket. Generated videos are
-                returned through signed URLs. Do not upload people without
-                permission.
+                returned through signed URLs. This service accepts non-human
+                subjects only - pets, animals, virtual characters, and objects.
+                Do not upload photographs of real people.
               </p>
               <div className="mt-4 flex items-center gap-2 text-xs font-bold text-muted">
                 <ShieldCheck className="size-4 text-orange" />

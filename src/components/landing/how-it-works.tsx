@@ -9,14 +9,14 @@ const steps = [
   {
     icon: ImagePlus,
     number: "01",
-    title: "Upload one portrait",
-    copy: "Choose a clear, well-lit photo of one consenting adult. Face and upper body visible works best.",
+    title: "Upload one image",
+    copy: "Choose a clear image of a pet, an animal, or a virtual character. Non-human subjects only - real people are not accepted.",
   },
   {
     icon: Sparkles,
     number: "02",
-    title: "Generate the switch",
-    copy: "Pick the length and quality. The model follows the reference motion and keeps the original rhythm.",
+    title: "Generate the video",
+    copy: "Pick the length, resolution, and model. We animate your subject and keep the original rhythm and audio.",
   },
   {
     icon: Download,
@@ -34,12 +34,13 @@ export function HowItWorks() {
           <div>
             <p className="eyebrow text-orange">How it works</p>
             <h2 className="display mt-5 text-[clamp(2.5rem,5vw,4.5rem)]">
-              Make a video bulin 47 in three steps.
+              Turn an image into a video in three steps.
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-muted lg:ml-auto">
-            No timeline, no choreography, no camera work. The reference template
-            handles the performance. Your photo handles the identity.
+            No timeline, no editing, no camera work. There is no reference video
+            to upload - you bring one image of a non-human subject, and we
+            animate it.
           </p>
         </div>
 
@@ -51,10 +52,11 @@ export function HowItWorks() {
             >
               {index === 0 ? (
                 <Image
-                  src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=85"
-                  alt="Illustrative portrait upload for a Bulin 47 AI video"
+                  src="/subjects/pet.svg"
+                  alt="Illustration of a pet image being uploaded for a Bulin 47 AI video"
                   width={700}
                   height={430}
+                  unoptimized
                   className="mb-6 h-56 w-full rounded-lg object-cover"
                 />
               ) : (

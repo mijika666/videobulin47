@@ -12,7 +12,7 @@ export function VideoShowcase() {
           <div>
             <p className="eyebrow text-acid">Video examples</p>
             <h2 className="display mt-5 max-w-3xl text-[clamp(2.6rem,5vw,4.8rem)] text-white">
-              One photo in. A full freestyle out.
+              One image in. A full freestyle out.
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-7 text-white/45">

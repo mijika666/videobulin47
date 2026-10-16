@@ -24,7 +24,7 @@ export function GET() {
   const lines = [
     "# Pricing - VideoBulin47",
     "",
-    "VideoBulin47 generates a video bulin 47 clip from one uploaded photo.",
+    "VideoBulin47 generates a video bulin 47 clip from one uploaded image of a non-human subject.",
     "Credit packs are one-time purchases. There is no subscription and no recurring charge.",
     "All prices are in USD. Waffo Pancake is the merchant of record and handles applicable tax.",
     "",

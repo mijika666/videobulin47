@@ -5,7 +5,7 @@ const rows = [
   {
     name: "VideoBulin47",
     highlight: true,
-    setup: "One photo",
+    setup: "One image",
     editing: "No editing",
     trendTemplate: "Bulin 47 reference",
     price: "From $9.99",

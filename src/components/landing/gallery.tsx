@@ -3,19 +3,16 @@ import { Play, Sparkles } from "lucide-react";
 
 const examples = [
   {
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85",
-    label: "Selfie mode",
+    image: "/subjects/virtual-character.svg",
+    label: "Virtual character",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85",
-    label: "Group chat",
+    image: "/subjects/pet.svg",
+    label: "Pet",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=900&q=85",
-    label: "Creator post",
+    image: "/subjects/animal.svg",
+    label: "Animal",
   },
 ];
 
@@ -27,12 +24,13 @@ export function Gallery() {
           <div>
             <p className="eyebrow text-orange">Output preview</p>
             <h2 className="display mt-5 max-w-2xl text-[clamp(2.5rem,5vw,4.5rem)]">
-              One format. Different people.
+              One format. Any subject.
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-7 text-muted">
-            Concept previews show how a single portrait becomes a full-frame
-            social clip. Real renders appear in your private account.
+            Concept previews show how a single image of a non-human subject
+            becomes a full-frame social clip. Real renders appear in your
+            private account.
           </p>
         </div>
         <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -50,6 +48,7 @@ export function Gallery() {
                   src={example.image}
                   alt={`${example.label} concept preview for a Bulin 47 AI video`}
                   fill
+                  unoptimized
                   sizes="(max-width: 768px) 100vw, 360px"
                   className="object-cover"
                 />

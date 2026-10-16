@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Flat illustration of a pet cat">
+  <defs>
+    <radialGradient id="sky" cx="50%" cy="32%" r="72%">
+      <stop offset="0%" stop-color="#123040"/>
+      <stop offset="56%" stop-color="#101512"/>
+      <stop offset="100%" stop-color="#0a0b0a"/>
+    </radialGradient>
+    <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f6dcc2"/>
+      <stop offset="100%" stop-color="#e2b184"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1300" fill="url(#sky)"/>
+  <g opacity="0.14" stroke="#c9ff3f" stroke-width="2">
+    <path d="M0 1084h900M0 1200h900M150 0v1300M750 0v1300"/>
+  </g>
+  <g>
+    <path d="M266 566 262 356l198 132z" fill="url(#fur)"/>
+    <path d="M634 566l4-210-198 132z" fill="url(#fur)"/>
+    <path d="M300 512l-4-92l84 62z" fill="#c98f68"/>
+    <path d="M600 512l4-92-84 62z" fill="#c98f68"/>
+    <circle cx="450" cy="672" r="228" fill="url(#fur)"/>
+    <ellipse cx="366" cy="628" rx="30" ry="38" fill="#0f1210"/>
+    <ellipse cx="534" cy="628" rx="30" ry="38" fill="#0f1210"/>
+    <circle cx="376" cy="614" r="10" fill="#c9ff3f"/>
+    <circle cx="544" cy="614" r="10" fill="#c9ff3f"/>
+    <path d="M450 720l-28 30h56z" fill="#e07a5f"/>
+    <path d="M450 750v34" stroke="#c98f68" stroke-width="10" stroke-linecap="round"/>
+    <path d="M386 792c22 30 106 30 128 0" stroke="#c98f68" stroke-width="12" stroke-linecap="round" fill="none"/>
+    <g stroke="#f6dcc2" stroke-width="9" stroke-linecap="round" opacity="0.85">
+      <path d="M206 676h-84M206 716h-96M696 676h84M696 716h96"/>
+    </g>
+    <path d="M450 900c-104 0-188 62-188 138v142h376V1038c0-76-84-138-188-138z" fill="#262b26"/>
+    <circle cx="450" cy="1032" r="34" fill="#c9ff3f"/>
+  </g>
+</svg>

@@ -11,7 +11,7 @@ export function FinalCta() {
           </div>
           <div className="relative grid gap-9 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
-              <p className="eyebrow">Ready when your photo is</p>
+              <p className="eyebrow">Ready when your image is</p>
               <h2 className="display mt-5 max-w-3xl text-[clamp(2.6rem,5vw,5rem)]">
                 Make the version they send to the group chat.
               </h2>

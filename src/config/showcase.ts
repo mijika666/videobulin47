@@ -19,8 +19,8 @@ export type ShowcaseVideo = {
 export const SHOWCASE_VIDEOS: ShowcaseVideo[] = [
   {
     id: "freestyle-1",
-    label: "One photo result",
-    note: "Your face, the original freestyle.",
+    label: "Generated result",
+    note: "One image in, the freestyle rhythm out.",
     src: "/showcase/1.mp4",
     sourceLabel: "Open the Studio",
     sourceUrl: "/studio",

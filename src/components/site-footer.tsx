@@ -25,8 +25,9 @@ export function SiteFooter() {
         <div>
           <Logo dark />
           <p className="mt-5 max-w-sm text-sm leading-6 text-white/60">
-            One photo. One freestyle transformation. Build a vertical AI video
-            for TikTok, Instagram Reels, and YouTube Shorts.
+            One image. One vertical AI video. Turn a pet, an animal, or a
+            virtual character into a clip for TikTok, Instagram Reels, and
+            YouTube Shorts.
           </p>
           <p className="mt-6 max-w-md text-xs leading-5 text-white/40">
             VideoBulin47 is an independent fan-made tool. Not affiliated with,
