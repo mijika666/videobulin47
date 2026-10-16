@@ -188,15 +188,15 @@ SUBJECT CONSISTENCY
 - Keep the subject sharp and consistent for the whole clip. No morphing, warping, melting or blurring.
 - Only the subject from @Element1 is shown. Do not introduce or replicate any other figure from @Video1.
 
-CROWD - NO REAL PEOPLE
-- People in @Video1 are background references only. Never copy their faces, bodies or identity.
-- Replace every bystander, guard and onlooker with a clearly stylised virtual character: cartoon or 3D-render style, invented features, no resemblance to any real person.
+CROWD - NOBODY FROM THE TEMPLATE
+- Never reuse or copy the faces, bodies or identity of anyone visible in @Video1.
+- Replace every bystander, guard and onlooker with a newly generated person, in the same photoreal style and lighting as the room, with invented faces that match nobody real.
 - Keep their positions, gestures, motion blur and how they cross frame, so the room still reads as busy.
-- No photoreal human being appears. Every figure other than @Element1 is fictional.
+- The finished video contains none of the people who appeared in @Video1.
 
 REALISM - match the reference look
 - Realistic vertical 9:16 footage with a handheld phone-camera feel: slight camera shake, imperfect framing, changing exposure, motion blur, low-light noise and social-media compression.
-- Match the lighting and colour temperature of @Video1 so the subject sits naturally in the room, while the crowd stays stylised.
+- Match the lighting and colour temperature of @Video1 so every figure sits naturally in the room.
 - Not cinematic, not studio lit.
 
 QUALITY
@@ -205,7 +205,7 @@ QUALITY
 
 DO NOT
 - distorted shape, subject drift, a different subject, warped body, extra or missing limbs, flicker, sudden cuts.
-- photoreal bystanders or figures resembling real people from @Video1.
+- any figure copied from @Video1, or any face resembling a person who appears in it.
 - No text, subtitles, captions, logos, watermarks, UI overlays or borders.
 - Do not change or mute the original audio.
 
@@ -232,25 +232,24 @@ SUBJECT CONSISTENCY
 - Keep the subject sharp and consistent for the whole clip. No morphing, warping, melting or blurring.
 - Only the subject from @Image1 is shown. Do not introduce or replicate any other figure from @Video1.
 
-CROWD - REPLACE EVERY REAL PERSON
-- The people visible in @Video1 are background references only. Never copy their faces, bodies or identity.
-- Replace every bystander, guard and onlooker with a clearly stylised virtual character: cartoon or 3D-render style, invented features, no resemblance to any real person.
-- Keep their positions, gestures, motion blur and the way they cross the frame, so the room still reads as busy.
-- The finished video contains no photoreal human being. Every figure other than @Image1 is a fictional character.
+CROWD - NOBODY FROM THE TEMPLATE
+- Never reuse or copy the faces, bodies or identity of anyone visible in @Video1.
+- Replace every bystander, guard and onlooker with a newly generated person, in the same photoreal style and lighting as the room, with invented faces that match nobody real.
+- Keep their positions, gestures, motion blur and how they cross frame, so the room still reads as busy.
+- The finished video contains none of the people who appeared in @Video1.
 
 REALISM - match the reference look
 - Realistic vertical 9:16 footage with a handheld phone-camera feel: slight camera shake, imperfect framing, changing exposure, motion blur, low-light noise and social-media compression.
-- Match the lighting and colour temperature of @Video1 so the subject sits naturally in the room, while the crowd stays stylised.
+- Match the lighting and colour temperature of @Video1 so every figure sits naturally in the room.
 - Not cinematic, not studio lit.
 
 QUALITY
 - Correct anatomy for the subject, stable limbs, no extra or missing body parts.
-- Match the light direction and colour temperature of @Video1.
 - Subject fully in frame, head not cropped.
 
 DO NOT
 - distorted shape, subject drift, a different subject, warped body, extra or missing limbs, flicker, sudden cuts.
-- photoreal bystanders, or any figure that resembles a real person from @Video1.
+- any figure copied from @Video1, or any face resembling a person who appears in it.
 - No text, subtitles, captions, logos, watermarks, UI overlays or borders.
 - Do not change or mute the original audio.
 
@@ -287,15 +286,15 @@ Keep the original scene, background, lighting and colours unchanged.
 The subject must match Image 1: shape, silhouette, proportions, colours, markings and distinguishing features, and stay sharp and consistent for the whole clip.
 Do not redesign the subject and do not introduce or replicate any other figure from Video 1.
 
-Crowd: the people in Video 1 are background references only - never copy their faces, bodies or identity. Replace every bystander, guard and onlooker with a clearly stylised virtual character in cartoon or 3D-render style with invented features, keeping their positions, gestures, motion blur and the way they cross the frame so the room still reads as busy. The finished video contains no photoreal human being; every figure other than the subject from Image 1 is a fictional character.
+Crowd: never reuse or copy the faces, bodies or identity of anyone visible in Video 1. Replace every bystander, guard and onlooker with a newly generated person in the same photoreal style and lighting as the room, with invented faces that match nobody real, keeping their positions, gestures, motion blur and the way they cross the frame so the room still reads as busy. The finished video contains none of the people who appeared in Video 1.
 
-Realism: realistic vertical 9:16 footage with a handheld phone-camera feel: slight camera shake, imperfect framing, changing exposure, motion blur, low-light noise and social-media compression. Match the lighting of Video 1 so the subject sits naturally in the room, while the crowd stays stylised. Not cinematic, not studio lit.
+Realism: realistic vertical 9:16 footage with a handheld phone-camera feel: slight camera shake, imperfect framing, changing exposure, motion blur, low-light noise and social-media compression. Match the lighting of Video 1 so every figure sits naturally in the room. Not cinematic, not studio lit.
 
 The subject moves and reacts naturally. Keep the original audio and stay in sync with the beat.
 
 Correct anatomy for the subject, stable limbs, no extra or missing body parts. Subject fully in frame, not cropped.
 
-Do not produce: distorted shape, subject drift, a different subject, warped body, extra or missing limbs, flicker, sudden cuts, photoreal bystanders, any figure resembling a real person from Video 1, text, subtitles, captions, logos, watermarks or borders. Do not change or mute the music.
+Do not produce: distorted shape, subject drift, a different subject, warped body, extra or missing limbs, flicker, sudden cuts, any figure copied from Video 1, any face resembling a person who appears in it, text, subtitles, captions, logos, watermarks or borders. Do not change or mute the music.
 `.trim();
 
 // 按时长挑选参考片段：5 秒给 1 个、10 秒给 2 个、15 秒给 3 个。
@@ -343,5 +342,5 @@ Follow the choreography, timing and energy of the clips, but keep one subject an
 // negative_prompt 字段，这些禁止项已经内嵌在上面两条提示词的 DO NOT 段落里，
 // 效果等价；如果确认某个端点支持 negative_prompt，可以直接把这段传进去。
 export const NEGATIVE_PROMPT = `
-blurry subject, changing appearance, different subject, distorted shape, warped body, extra or missing limbs, flickering, sudden cuts, unnatural movement, plastic texture, unrealistic lighting, perfect studio quality, fake background, photoreal bystanders, real people in the crowd, replica of a real person, low quality AI artifacts, text, subtitles, captions, logos, watermarks
+blurry subject, changing appearance, different subject, distorted shape, warped body, extra or missing limbs, flickering, sudden cuts, unnatural movement, plastic texture, unrealistic lighting, perfect studio quality, fake background, copied faces from the reference clip, reused bystanders from the template, replica of a template person, low quality AI artifacts, text, subtitles, captions, logos, watermarks
 `.trim();

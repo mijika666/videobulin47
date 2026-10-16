@@ -5,12 +5,12 @@ export const HOMEPAGE_ANSWERS = [
   {
     question: "What is a video bulin 47?",
     answer:
-      "A video bulin 47 is a short vertical clip built on the viral Bulin 47 freestyle. VideoBulin47 generates one from a single image: upload a pet, an animal, or a virtual character, and we animate it. There is no reference video to upload, and photographs of real people are not accepted.",
+      "A video bulin 47 is a short vertical clip built on the viral Bulin 47 freestyle. VideoBulin47 generates one from a single image: upload your own photo, a pet, an animal, or a virtual character and we animate it. Nobody from the source footage is reused - every other person in the shot is newly generated.",
   },
   {
     question: "How do you make a video bulin 47 from an image?",
     answer:
-      "Upload one clear image of a non-human subject, choose the clip length, resolution and AI model, then generate. We animate your subject and keep the original rhythm and audio. The finished vertical MP4 is saved to your account and ready for TikTok, Reels or Shorts.",
+      "Upload one clear image that is yours, choose the clip length, resolution and AI model, then generate. We animate your subject into the scene and keep the movement in sync with the beat. The finished vertical MP4 is saved to your account and ready for TikTok, Reels or Shorts.",
   },
   {
     question: "How much does a video bulin 47 cost?",
@@ -20,7 +20,7 @@ export const HOMEPAGE_ANSWERS = [
   {
     question: "Which AI models generate the video?",
     answer:
-      "Generation runs on third-party models served through fal.ai: Seedance 2.5, MiniMax H3, and Kling O3 Reference or Kling O3 Reference Pro. All of them drive the motion from your reference clip and keep the original audio. You pick the model in the Studio before you generate.",
+      "Generation runs on third-party models served through fal.ai: Seedance 2.5, MiniMax H3, and Kling O3 Reference or Kling O3 Reference Pro. All of them drive the movement from the motion template. You pick the model in the Studio before you generate.",
   },
 ] as const;
 

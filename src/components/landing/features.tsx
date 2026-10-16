@@ -11,12 +11,12 @@ const features = [
   {
     icon: ImageUp,
     title: "One-image workflow",
-    copy: "A single image of a pet, an animal, or a virtual character is enough. No prompt engineering and no shot list.",
+    copy: "A single image is enough - yourself, your pet, an animal, or a virtual character. No prompt engineering and no shot list.",
   },
   {
     icon: AudioLines,
     title: "Image to video",
-    copy: "We animate the subject in your image, and every other figure in the shot is a generated virtual character. Photographs of real people are not accepted.",
+    copy: "We animate the subject in your image, and nobody who appeared in the source footage is reused. Every other person in the shot is newly generated.",
   },
   {
     icon: Smartphone,

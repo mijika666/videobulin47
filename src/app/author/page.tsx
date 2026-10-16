@@ -166,10 +166,11 @@ export default function AuthorPage() {
               <h2>Why I built VideoBulin47</h2>
               <p>
                 VideoReducer solves the video you already have. VideoBulin47
-                solves the video you want to make: it turns one image of a
-                non-human subject into a vertical clip for a specific trend,
-                using our built-in motion reference to carry the rhythm, camera
-                work and audio.
+                solves the video you want to make: it turns one image into a
+                vertical clip for a specific trend, using our built-in motion
+                reference to carry the rhythm, camera work and audio. Nobody
+                from that reference footage is reused - every other person in
+                the shot is newly generated.
               </p>
               <p>
                 I picked a single, well-defined format on purpose. A

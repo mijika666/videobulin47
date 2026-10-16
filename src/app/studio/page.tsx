@@ -9,7 +9,7 @@ import { absoluteUrl } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Bulin 47 AI Video Studio",
   description:
-    "Upload one image of a pet, an animal, or a virtual character, reserve credits, and generate a Bulin 47 AI video from the Studio.",
+    "Upload your own image, reserve credits, and generate a Bulin 47 AI video from the Studio.",
   alternates: { canonical: absoluteUrl("/studio") },
 };
 

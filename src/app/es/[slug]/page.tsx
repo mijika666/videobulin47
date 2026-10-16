@@ -8,13 +8,13 @@ const pages = {
   "como-hacer-video-bulin-47-ia": {
     title: "Cómo Hacer un Video de Bulin 47 AI Desde Una Foto",
     description:
-      "Guía paso a paso para crear un video de Bulin 47 AI. Sube una imagen de un sujeto no humano, elige duración y descarga un MP4 vertical.",
+      "Guía paso a paso para crear un video de Bulin 47 AI. Sube tu propia imagen, elige duración y descarga un MP4 vertical.",
     intro:
       "El flujo es sencillo: una imagen clara, una plantilla de movimiento y una salida vertical. No necesitas editar ni grabar la coreografía.",
     sections: [
       {
         heading: "1. Elige una buena imagen",
-        body: "Usa una imagen clara de una mascota, un animal o un personaje virtual. El sujeto debe ocupar la mayor parte del encuadre. Evita filtros fuertes y fondos con mucho ruido. No se aceptan fotos de personas reales.",
+        body: "Usa tu propia imagen: tu foto, una mascota, un animal o un personaje virtual. El sujeto debe ocupar la mayor parte del encuadre. Evita filtros fuertes y fondos con mucho ruido. No subas fotos de otras personas.",
       },
       {
         heading: "2. Elige la duración",
@@ -43,7 +43,7 @@ const pages = {
       },
       {
         heading: "Usa la herramienta con cuidado",
-        body: "Sube solo sujetos no humanos: mascotas, animales o personajes virtuales. No subas fotos de personas reales, menores, celebridades ni figuras públicas. Publica el video con la etiqueta de contenido generado por IA cuando la plataforma lo requiera.",
+        body: "Sube solo imágenes propias: tu foto, una mascota, un animal o un personaje virtual. No subas fotos de otras personas, menores, celebridades ni figuras públicas. Publica el video con la etiqueta de contenido generado por IA cuando la plataforma lo requiera.",
       },
     ],
   },
@@ -119,7 +119,7 @@ export default async function SpanishGuide({ params }: Props) {
                 Crea tu versión con una imagen.
               </h2>
               <p className="mt-3 text-sm leading-6 text-ink/65">
-                Abre el Studio, sube un retrato y elige la duración del video.
+                Abre el Studio, sube tu imagen y elige la duración del video.
               </p>
               <Link href="/studio" className="btn btn-dark mt-6 w-full">
                 Abrir el Studio

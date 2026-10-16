@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: `%s | ${APP_NAME}`,
   },
   description:
-    "Turn one image into a short vertical AI video of a pet, an animal, or a virtual character. Image-to-video generation with no reference video upload, and no photographs of real people accepted.",
+    "Turn one image into a short vertical AI video. Upload your own photo, a pet, an animal, or a virtual character. Image-to-video generation with no reference video upload, and nobody from the source footage reused.",
   applicationName: APP_NAME,
   keywords: TRENDING_SEARCHES.map((item) => item.label),
   alternates: {
