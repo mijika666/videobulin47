@@ -143,8 +143,8 @@ export function Hero() {
               <div key={set} className="flex shrink-0">
                 {[
                   "ONE IMAGE",
-                  "ORIGINAL MOTION",
-                  "ORIGINAL SOUND",
+                  "VIRTUAL CAST",
+                  "NO REAL PEOPLE",
                   "VERTICAL 9:16",
                   "NO EDITING",
                   "AI VIDEO",

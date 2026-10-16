@@ -16,7 +16,7 @@ const features = [
   {
     icon: AudioLines,
     title: "Image to video",
-    copy: "We animate the subject in your image. There is no reference video upload, and photographs of real people are not accepted.",
+    copy: "We animate the subject in your image, and every other figure in the shot is a generated virtual character. Photographs of real people are not accepted.",
   },
   {
     icon: Smartphone,

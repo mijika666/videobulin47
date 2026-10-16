@@ -165,7 +165,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Built for mobile posting",
         paragraphs: [
-          "Every render is prepared for a vertical 9:16 feed. Download the MP4 and upload it directly to TikTok, Instagram Reels, or YouTube Shorts. Keeping the original audio helps the clip feel connected to the trend.",
+          "Every render is prepared for a vertical 9:16 feed. Download the MP4 and upload it directly to TikTok, Instagram Reels, or YouTube Shorts. The export stays in sync with the beat of the scene, so the clip lands correctly in a feed.",
         ],
       },
       {
@@ -199,6 +199,7 @@ export const contentPages: Record<string, ContentPage> = {
         heading: "What stays the same",
         paragraphs: [
           "The motion template keeps the freestyle timing, background action, and overall camera language. Your image supplies the subject that the model animates inside that motion.",
+          "Every other figure in the frame is a generated virtual character. The finished clip is not built from footage of real people, and no real person's face is reproduced.",
         ],
       },
       {
@@ -342,14 +343,14 @@ export const contentPages: Record<string, ContentPage> = {
     eyebrow: "Audio guide",
     title: "How to Add the Bulin 47 Sound to Your AI Video",
     description:
-      "Learn how the original sound is handled in a Bulin 47 AI video and what to do when the audio is missing after export.",
+      "Learn how audio is handled in a Bulin 47 AI video, and what to do when a clip needs a licensed sound before you publish it.",
     intro:
-      "The model can preserve the original reference audio when the template includes it. If the platform strips or mutes the audio, add the licensed sound inside the social app before publishing.",
+      "An export carries the audio track that came with the motion template. If you want the track that is trending on a platform, add it from that app's licensed sound library before you publish.",
     sections: [
       {
-        heading: "Keep the original audio",
+        heading: "Audio in the export",
         paragraphs: [
-          "VideoBulin47 submits the template with an audio-preservation flag. That tells the provider to carry the reference sound into the generated file.",
+          "VideoBulin47 asks the provider to keep the template's audio track, so the movement stays in sync with the beat that was used to build the clip.",
         ],
       },
       {

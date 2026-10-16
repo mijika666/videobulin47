@@ -10,13 +10,13 @@ const steps = [
     icon: ImagePlus,
     number: "01",
     title: "Upload one image",
-    copy: "Choose a clear image of a pet, an animal, or a virtual character. Non-human subjects only - real people are not accepted.",
+    copy: "Choose a clear image of a pet, an animal, or a virtual character. Non-human subjects only - images of real people are not accepted.",
   },
   {
     icon: Sparkles,
     number: "02",
     title: "Generate the video",
-    copy: "Pick the length, resolution, and model. We animate your subject and keep the original rhythm and audio.",
+    copy: "Pick the length, resolution, and model. Your subject is animated into the scene, and every other figure in the shot is a generated virtual character rather than a real person.",
   },
   {
     icon: Download,
@@ -38,9 +38,10 @@ export function HowItWorks() {
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-muted lg:ml-auto">
-            No timeline, no editing, no camera work. There is no reference video
-            to upload - you bring one image of a non-human subject, and we
-            animate it.
+            No timeline, no editing, no camera work. You bring one image of a
+            non-human subject, we animate it into a stylised vertical scene,
+            and every other character in the frame is generated rather than
+            filmed.
           </p>
         </div>
 

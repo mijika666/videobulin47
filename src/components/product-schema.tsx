@@ -54,7 +54,7 @@ export function ProductSchema() {
       "Image-to-video animation with no reference video upload",
       "Seedance 2.5, MiniMax H3, Kling O3 Reference and Kling O3 Reference Pro",
       "5, 10 and 15 second clips at 720p or 1080p",
-      "No watermark, original sound included",
+      "No watermark; jobs and downloads stay in your account history",
       "Credits never expire and failed renders are refunded automatically",
     ],
     image: absoluteUrl("/opengraph-image"),

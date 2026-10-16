@@ -14,7 +14,7 @@ export function GET() {
     "- Input: one image of a non-human subject (JPG, PNG or WebP, up to 10MB).",
     "- No reference video upload: motion comes from the platform's built-in clip library and the prompt.",
     "- Output: a vertical 9:16 MP4, 5, 10 or 15 seconds, at 720p or 1080p.",
-    "- No watermark. The original sound is kept.",
+    "- No watermark. Jobs and downloads stay in your account history.",
     "- Failed renders return the reserved credits automatically; purchased credits never expire.",
     "",
     "## Models",
