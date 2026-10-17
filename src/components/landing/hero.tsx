@@ -19,7 +19,7 @@ export function Hero() {
       <div className="container-shell grid min-h-[680px] items-center gap-14 py-14 lg:min-h-[760px] lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
         <div className="relative z-10">
           <p className="eyebrow text-acid">
-            Image-to-video generator
+            AI character replacement for one prepared clip
           </p>
           <h1 className="display mt-6 max-w-3xl text-[clamp(3rem,6.2vw,5.8rem)] text-white">
             Turn one portrait{" "}
@@ -30,6 +30,10 @@ export function Hero() {
             that person into the prepared Bulin 47 freestyle template — the
             choreography, camera work and audio stay — and return a vertical
             9:16 MP4.
+          </p>
+          <p className="mt-4 max-w-xl text-sm leading-6 text-white/45">
+            Independent fan-made tool. Not affiliated with or endorsed by Bulin
+            47.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/studio" className="btn btn-primary">
