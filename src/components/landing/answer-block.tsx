@@ -5,12 +5,12 @@ export const HOMEPAGE_ANSWERS = [
   {
     question: "What is a video bulin 47?",
     answer:
-      "A video bulin 47 is a short vertical clip built on the viral Bulin 47 freestyle. VideoBulin47 generates one from a single image: upload a pet, an animal, or a virtual character and we animate it. Nobody from the source footage is reused - every other person in the shot is newly generated.",
+      "A video bulin 47 is a short vertical clip built on the viral Bulin 47 freestyle. VideoBulin47 makes one from a single portrait: the prepared template keeps the choreography, camera work and audio, and the person in your photo becomes the lead performer.",
   },
   {
     question: "How do you make a video bulin 47 from an image?",
     answer:
-      "Upload one clear image of a non-human subject, choose the clip length, resolution and AI model, then generate. We animate your subject into the scene and keep the movement in sync with the beat. The finished vertical MP4 is saved to your account and ready for TikTok, Reels or Shorts.",
+      "Upload one clear portrait of an adult you have permission to use, choose the clip length, resolution and AI model, then generate. The template keeps the movement in sync with the beat, and the finished vertical MP4 is saved to your account and ready for TikTok, Reels or Shorts.",
   },
   {
     question: "How much does a video bulin 47 cost?",

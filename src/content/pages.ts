@@ -32,7 +32,7 @@ const commonFaqs: ContentFaq[] = [
   {
     question: "What image works best?",
     answer:
-      "Use one sharp, well-lit image of a pet, an animal, a virtual character, or an object. The subject should fill most of the frame. Avoid heavy filters, cluttered backgrounds, and any photograph of a real person.",
+      "Use one bright, front-facing portrait of a single adult you have permission to use, with their face and upper body visible. A simple background helps. Avoid group photos, heavy filters, sunglasses, deep shadows and low-resolution crops.",
   },
   {
     question: "What happens if a generation fails?",
@@ -50,6 +50,21 @@ const commonFaqs: ContentFaq[] = [
       "Unused credit packs can be refunded in full within 7 days of purchase. Credits spent on a completed video are not refundable. EU, UK, and Australian first-time buyers keep their statutory withdrawal rights. See the Refund Policy for the full process.",
   },
   {
+    question: "Do I need permission to upload someone else's photo?",
+    answer:
+      "Yes. You may upload a portrait of yourself, or of an adult who has given you documented permission to appear in an AI-generated video. Celebrities and public figures are not accepted even with permission, and content involving anyone under 18 is prohibited. The Studio will not submit a job until you confirm that you own the image or hold that permission.",
+  },
+  {
+    question: "Do I get a licence to the original audio?",
+    answer:
+      "No. Your generated video keeps the template's audio track, but that is a technical feature, not a licence. The audio belongs to its creators, and there may also be an official released track. Platforms can mute, restrict or claim videos that use music without clearance, so for monetised use replace the audio with a track from the platform's licensed sound library.",
+  },
+  {
+    question: "Can I use a video I made here commercially?",
+    answer:
+      "Our Terms allow you to use your Output for lawful purposes, but the Output may include third-party rights - the source template, the music, and the people visible in the scene. Clearing those rights is your responsibility. For paid ads, brand promotion, merchandise or anything implying official endorsement, obtain proper clearance first.",
+  },
+  {
     question: "Which AI models power the video generation?",
     answer:
       "VideoBulin47 runs third-party video models served through the fal.ai inference platform: Seedance 2.5 (ByteDance), MiniMax H3 (MiniMax), and Kling O3 Reference and Kling O3 Reference Pro (Kuaishou). Every model follows the built-in motion reference to drive the movement and can keep the original audio. You pick the model in the Studio before you generate, and each job records which model produced it.",
@@ -60,19 +75,19 @@ export const contentPages: Record<string, ContentPage> = {
   "how-to-make-bulin-47-ai-video": {
     slug: "how-to-make-bulin-47-ai-video",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     eyebrow: "Step-by-step guide",
     title: "How to Make a Bulin 47 AI Video From One Photo",
     description:
-      "Learn how to make a Bulin 47 AI video from one image. Upload a pet, an animal, or a virtual character, choose the clip length, generate the video, and post it to TikTok, Reels, or Shorts.",
+      "Learn how to make a Bulin 47 AI video from one portrait. Upload a photo of an adult you have permission to use, choose the clip length, generate the video, and post it to TikTok, Reels, or Shorts.",
     intro:
       "The fastest way to join the trend is to start with one clear image. VideoBulin47 keeps the freestyle motion, camera movement, and rhythm, then animates the subject you uploaded inside that scene.",
     sections: [
       {
         heading: "1. Pick the right image",
         paragraphs: [
-          "Use one clear image of a pet, an animal, or a virtual character. The best results come from a sharp image with even lighting where the subject fills most of the frame. Avoid busy filters and images where another subject overlaps yours.",
-          "This service does not accept photographs of real people, including yourself, celebrities, politicians, and minors. You must be 18 or older to use the Service.",
+          "Use one clear portrait of a single adult. The best results come from a bright, front-facing image with even lighting where both the face and the upper body are visible. Avoid busy filters, sunglasses, and photos where another person overlaps the subject.",
+          "You must be 18 or older, and you may only upload a portrait you own or have documented permission to use. Celebrities, public figures without consent, and anyone under 18 are not accepted.",
         ],
       },
       {
@@ -107,13 +122,13 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-ai-trend": {
     slug: "bulin-47-ai-trend",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     eyebrow: "Trend explainer",
     title: "Bulin 47 AI Trend: Why One Photo Is Enough",
     description:
       "Understand the Bulin 47 AI trend, the original freestyle format, and why creators animate one image into their own version for TikTok and Reels.",
     intro:
-      "The Bulin 47 AI trend keeps the recognizable freestyle rhythm while swapping in a subject you supply. Because that subject is always a pet, an animal, or a virtual character, no real performer is copied.",
+      "The Bulin 47 AI trend keeps the recognizable freestyle rhythm while replacing the lead performer with the person from a single portrait. The scene, filming style and sound stay as they were.",
     sections: [
       {
         heading: "What the trend is",
@@ -138,7 +153,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Use it responsibly",
         paragraphs: [
-          "Upload non-human subjects only: pets, animals, virtual characters, or objects. Photographs of real people are not accepted, and results must never be used to impersonate or mislead anyone. Label synthetic media when you post it.",
+          "Upload only a portrait you own or have documented permission to use. Celebrities, public figures without consent, and anyone under 18 are not allowed. Never present a generated clip as real footage, and label it as AI-generated when you post it.",
         ],
       },
     ],
@@ -148,11 +163,11 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-ai-video": {
     slug: "bulin-47-ai-video",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     eyebrow: "Product guide",
     title: "Bulin 47 AI Video Generator",
     description:
-      "Create a Bulin 47 AI video online. Upload one image of a non-human subject, drive the movement from the built-in motion template, and download a vertical MP4 for TikTok, Reels, and Shorts.",
+      "Create a Bulin 47 AI video online. Upload one portrait, keep the original choreography and sound, and download a vertical MP4 for TikTok, Reels, and Shorts.",
     intro:
       "VideoBulin47 is a one-image AI video generator for the Bulin 47 freestyle trend. It removes the need to film, learn choreography, or edit a timeline.",
     sections: [
@@ -181,7 +196,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-template": {
     slug: "bulin-47-template",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     eyebrow: "Template guide",
     title: "Bulin 47 AI Template for TikTok and Reels",
     description:
@@ -211,7 +226,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Rights and permissions",
         paragraphs: [
-          "Before publishing a public template, the operator needs the rights required for the source video and music. Users confirm that each image they upload is their own material, and that it shows no real person.",
+          "Before publishing a public template, the operator needs the rights required for the source video and music. Users confirm that each portrait they upload is their own, or that they hold documented permission from the person in it.",
         ],
       },
     ],
@@ -221,11 +236,11 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-meme": {
     slug: "bulin-47-meme",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     eyebrow: "Ideas",
     title: "Bulin 47 AI Meme Ideas",
     description:
-      "Get clean Bulin 47 AI meme ideas for pets, virtual characters, and short-form video. Keep the joke easy to read and the subject non-human.",
+      "Get clean Bulin 47 AI meme ideas for friend groups and short-form video. Keep the joke easy to read and only use portraits you have permission for.",
     intro:
       "The best versions of this trend are easy to understand without setup. The reveal does the work. Keep the joke short and make your subject the star.",
     sections: [
@@ -250,8 +265,8 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Safety rules",
         bullets: [
-          "Upload images of non-human subjects only",
-          "Never upload photographs of real people, minors, celebrities, or public figures",
+          "Use only portraits you own or have permission to use",
+          "Never upload celebrities, public figures without consent, or anyone under 18",
           "Label the video as AI-generated",
           "Do not use the result to impersonate or mislead",
         ],
@@ -263,7 +278,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-ai-free": {
     slug: "bulin-47-ai-free",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     eyebrow: "Pricing",
     title: "Is Bulin 47 AI Free?",
     description:
@@ -300,7 +315,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-original-video": {
     slug: "bulin-47-original-video",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     eyebrow: "Context",
     title: "The Original Bulin 47 Video and Why AI Versions Exist",
     description:
@@ -329,7 +344,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Make your own version",
         paragraphs: [
-          "If you have a clear image of a pet, an animal, or a virtual character, the Studio can create a new vertical video from the motion template.",
+          "If you have a clear portrait of an adult who has agreed to appear, the Studio can create a new vertical video from the motion template.",
         ],
       },
     ],
@@ -339,7 +354,7 @@ export const contentPages: Record<string, ContentPage> = {
   "how-to-add-bulin-47-sound": {
     slug: "how-to-add-bulin-47-sound",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     eyebrow: "Audio guide",
     title: "How to Add the Bulin 47 Sound to Your AI Video",
     description:
@@ -351,6 +366,7 @@ export const contentPages: Record<string, ContentPage> = {
         heading: "Audio in the export",
         paragraphs: [
           "VideoBulin47 asks the provider to keep the template's audio track, so the movement stays in sync with the beat that was used to build the clip.",
+          "Keeping the sound is a technical feature, not a licence. The audio belongs to its creators, and VideoBulin47 cannot grant you rights to it. For personal sharing the risk is lower; if you plan to monetise or run ads, remove the original audio in an editor and add a track from the platform's licensed library.",
         ],
       },
       {
@@ -372,7 +388,7 @@ export const contentPages: Record<string, ContentPage> = {
   "dame-hombro": {
     slug: "dame-hombro",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     eyebrow: "Search guide",
     title: "Dame Hombro Bulin 47 AI Video",
     description:
@@ -389,7 +405,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Create with one image",
         paragraphs: [
-          "Upload one clear image of a non-human subject, select the clip length, and generate a vertical video. The template supplies the motion and rhythm.",
+          "Upload one clear portrait, select the clip length, and generate a vertical video. The template supplies the motion and rhythm.",
         ],
       },
       {
@@ -405,7 +421,7 @@ export const contentPages: Record<string, ContentPage> = {
   "higgsfield-bulin-47-ai": {
     slug: "higgsfield-bulin-47-ai",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     eyebrow: "Comparison",
     title: "Higgsfield vs VideoBulin47 for the Bulin 47 Trend",
     description:
@@ -441,7 +457,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-viral-video": {
     slug: "bulin-47-viral-video",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     eyebrow: "Viral video",
     title: "Bulin 47 Viral Video: Why the Freestyle Took Over",
     description:
@@ -480,7 +496,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-freestyle-lyrics": {
     slug: "bulin-47-freestyle-lyrics",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     eyebrow: "Freestyle guide",
     title: "Bulin 47 Freestyle Lyrics, Meaning, and Sound Guide",
     description:
@@ -509,7 +525,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Create the video",
         paragraphs: [
-          "Upload one clear image of a non-human subject, choose the clip length, and let the template handle the motion and rhythm. The result is a vertical AI video made for short-form feeds.",
+          "Upload one clear portrait, choose the clip length, and let the template handle the motion and rhythm. The result is a vertical AI video made for short-form feeds.",
         ],
       },
     ],
@@ -519,7 +535,7 @@ export const contentPages: Record<string, ContentPage> = {
   "kevin-wai-bulin-47": {
     slug: "kevin-wai-bulin-47",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     eyebrow: "Creator context",
     title: "Kevin Wai and the Bulin 47 Freestyle Clip",
     description:
@@ -548,7 +564,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Create your own version",
         paragraphs: [
-          "Upload an image of a non-human subject, keep the movement of the template, and label the output as AI-generated when you post it.",
+          "Upload a portrait you have permission to use, keep the movement of the template, and label the output as AI-generated when you post it.",
         ],
       },
     ],
@@ -558,7 +574,7 @@ export const contentPages: Record<string, ContentPage> = {
   "quien-es-bulin-47": {
     slug: "quien-es-bulin-47",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     lang: "es",
     eyebrow: "Guía del artista",
     title: "Quién es Bulin 47: Edad, Freestyle y Video Viral",
@@ -598,7 +614,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-ai-vs-dreamina": {
     slug: "bulin-47-ai-vs-dreamina",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     eyebrow: "Comparison",
     title: "Bulin 47 AI vs Dreamina: Which Workflow Fits the Trend?",
     description:
@@ -640,7 +656,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-ai-vs-capcut": {
     slug: "bulin-47-ai-vs-capcut",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     eyebrow: "Comparison",
     title: "Bulin 47 AI vs CapCut: Generate First or Edit First?",
     description:
@@ -676,7 +692,7 @@ export const contentPages: Record<string, ContentPage> = {
   "bulin-47-ai-vs-kling": {
     slug: "bulin-47-ai-vs-kling",
     kind: "guide",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     eyebrow: "Model guide",
     title: "Bulin 47 AI and Kling: The Model Behind the Motion",
     description:
@@ -719,7 +735,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Product",
         paragraphs: [
-          "VideoBulin47 creates a vertical AI video from one image of a non-human subject and a built-in motion template. The completed MP4 is available in your account.",
+          "VideoBulin47 creates a vertical AI video from one portrait and a prepared motion template. The completed MP4 is available in your account.",
         ],
       },
       {
@@ -731,7 +747,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "Safety",
         paragraphs: [
-          "Photographs of real people are not accepted. That includes minors, public figures, celebrities, and yourself. Nobody who appears in the source footage is reused. Do not use the service to impersonate or deceive.",
+          "Upload only a portrait you own or have documented permission to use. Celebrities, public figures without consent, and anyone under 18 are not allowed. Do not present a generated clip as real footage, and do not use the service to impersonate or deceive.",
           "Non-consensual intimate imagery (NCII) is banned outright. Do not create, alter, or share sexual or intimate depictions of a real person without their consent, including nonconsensual sexual deepfakes, nudified images, revenge imagery, or sextortion material. Reports of NCII are removed on a priority basis and the account behind them is terminated.",
         ],
       },
@@ -744,22 +760,34 @@ export const contentPages: Record<string, ContentPage> = {
     eyebrow: "About",
     title: "About VideoBulin47",
     description:
-      "VideoBulin47 is an independent fan-made AI video tool for animating one image of a pet, an animal, or a virtual character into a Bulin 47 freestyle clip.",
+      "VideoBulin47 is an independent fan-made AI video tool that recasts the Bulin 47 freestyle with the person from your portrait.",
     intro:
       "VideoBulin47 is a small web app for a specific trend. It is not an official artist page, music service, or social network.",
     sections: [
       {
         heading: "What we do",
         paragraphs: [
+          "VideoBulin47 performs character replacement, sometimes called recasting. You supply one portrait and the platform supplies one prepared motion template. The template keeps the choreography, camera work, framing and audio of the original moment; the portrait supplies the performer who appears on screen.",
           "We connect a reference-video AI model, a private upload flow, and a simple credit system. The goal is to make one specific video format fast and predictable.",
         ],
       },
       {
         heading: "Models we use",
         paragraphs: [
-          "Video generation is powered by third-party video models served through the fal.ai inference platform. The current models are Seedance 2.5 (built by ByteDance), MiniMax H3 (built by MiniMax), and Kling O3 Reference and Kling O3 Reference Pro (built by Kuaishou).",
-          "Every model uses the built-in motion template to drive the movement and can keep the original audio. Uploads and generated videos stay in private storage buckets.",
-          "You choose the model in the Studio before you generate, and every job stores the model that produced it. We disclose the model names here so you know exactly which system is processing your image, rather than only naming the inference provider.",
+          "Video generation is powered by third-party video models served through the fal.ai inference platform. The endpoints enabled in production are minimax/h3/reference-to-video (MiniMax H3), bytedance/seedance-2.5/us/reference-to-video (Seedance 2.5, built by ByteDance), fal-ai/kling-video/o3/standard/video-to-video/reference and fal-ai/kling-video/o3/pro/video-to-video/reference (Kling O3 Reference and Reference Pro, built by Kuaishou).",
+          "Every model drives the movement from the prepared motion template and can keep the original audio. Portraits and generated videos stay in private storage buckets and are served over signed, time-limited links.",
+          "You choose the model in the Studio before you generate, and every job stores the model that produced it. We name the endpoints here, in the Acceptable Use Policy and in the Studio, rather than only naming the inference provider.",
+        ],
+      },
+      {
+        heading: "Who can appear in a video",
+        bullets: [
+          "Yourself - yes. This is the intended use.",
+          "An adult friend, relative or colleague - only with their clear permission.",
+          "A celebrity or public figure - no. It falls under non-consensual likeness use.",
+          "Anyone under 18 - no.",
+          "A pet or an object - not a supported use. The model is built for a portrait of one adult person.",
+          "A character you do not own the rights to - risky. Rights-infringing content is prohibited.",
         ],
       },
       {
@@ -785,7 +813,7 @@ export const contentPages: Record<string, ContentPage> = {
       "The terms governing access to VideoBulin47, accounts, credit purchases, the underlying AI models, AI generation, and acceptable use.",
     intro:
       "By using VideoBulin47, you agree to these terms. If you do not agree, do not use the service.",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     sections: [
       {
         heading: "1. Acceptance of terms",
@@ -798,7 +826,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "2. The service",
         paragraphs: [
-          "2.1 What we provide. VideoBulin47 is a hosted interface that turns one uploaded image of a non-human subject into a vertical AI-generated video using a built-in motion template. The Service is a digital software-as-a-service product delivered over the internet.",
+          "2.1 What we provide. VideoBulin47 is a hosted interface that performs character replacement. It takes one uploaded portrait and one prepared motion template and generates a vertical AI video in which the person from the portrait performs the template's choreography. The Service is a digital software-as-a-service product delivered over the internet.",
           "2.2 Nature of the service. The Service is a digital, intangible product. Access is granted immediately after your payment is confirmed. Because delivery is immediate, refunds are subject to the limits in Section 7.",
           "2.3 AI model dependency. We rely on third-party AI model providers. Video generation is performed by the Seedance 2.5 model (built by ByteDance), the MiniMax H3 model (built by MiniMax), and the Kling O3 Reference and Kling O3 Reference Pro models (built by Kuaishou), each served through the fal.ai inference platform. Output quality and availability depend on those models, and the Service may be affected by their uptime and behavior. We will notify users of significant outages.",
         ],
@@ -856,9 +884,10 @@ export const contentPages: Record<string, ContentPage> = {
         heading: "9. AI content and intellectual property",
         paragraphs: [
           "9.1 Output ownership. Subject to these Terms, the AI content generated from your input (the \"Output\") belongs to you, and you may use it for any lawful purpose permitted by Section 10.",
-          "9.2 Input license. By submitting content to the Service (\"Input\"), you grant VideoBulin47 a limited, non-exclusive license to use that Input only to provide the Service to you. We will not use your Input to train AI models without your explicit consent.",
-          "9.3 Third-party AI models. The Service uses third-party AI model providers, namely ByteDance (Seedance), MiniMax, and Kuaishou (Kling), served through fal.ai. Output may be influenced by those providers' models. We do not guarantee any specific output quality and are not responsible for content produced by a third-party model.",
-          "9.4 AI output accuracy. AI-generated content may contain errors or inaccuracies. You are responsible for reviewing and verifying Output before relying on it.",
+          "9.2 Input license and permissions. By submitting content to the Service (\"Input\"), you grant VideoBulin47 a limited, non-exclusive license to use that Input only to provide the Service to you. You represent that you own the portrait you upload or hold documented permission from the person shown, and that the person is an adult who has agreed to appear in an AI-generated video. We will not use your Input to train AI models without your explicit consent.",
+          "9.3 Third-party rights in the Output. Output is generated from a prepared motion template that contains third-party material. The Output may therefore be subject to third-party rights, including rights in the source template, the music and audio, the people who remain in the scene, and the names or marks associated with the original moment. Those rights are not ours to grant, and clearing them for your intended use is your responsibility. Nothing in these Terms gives you a licence to the underlying recording, its soundtrack, the artist's name or likeness, or any bystander's likeness.",
+          "9.4 Third-party AI models. The Service uses third-party AI model providers, namely ByteDance (Seedance), MiniMax, and Kuaishou (Kling), served through fal.ai. Output may be influenced by those providers' models. We do not guarantee any specific output quality and are not responsible for content produced by a third-party model.",
+          "9.5 AI output accuracy. AI-generated content may contain errors or inaccuracies. You are responsible for reviewing and verifying Output before relying on it.",
         ],
       },
       {
@@ -917,7 +946,7 @@ export const contentPages: Record<string, ContentPage> = {
         heading: "16. Contact",
         paragraphs: [
           "For any question about these Terms or billing, contact support@videobulin47.net with a clear subject line: Billing, Refund, Account, Privacy, or Legal. We are an email-only support operation and monitor messages on business days.",
-          "By using the Service, you confirm that you have read and agree to these Terms. Last updated: October 14, 2026.",
+          "By using the Service, you confirm that you have read and agree to these Terms. Last updated: October 17, 2026.",
         ],
       },
     ],
@@ -931,7 +960,7 @@ export const contentPages: Record<string, ContentPage> = {
       "How VideoBulin47 collects, uses, stores, shares, and deletes account, payment, upload, and generation data, including the AI models that process your image.",
     intro:
       "VideoBulin47 respects your privacy. This policy explains what we collect when you use the service, how we use and share it, and the rights you have.",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     sections: [
       {
         heading: "1. Data controller",
@@ -973,7 +1002,7 @@ export const contentPages: Record<string, ContentPage> = {
         bullets: [
           "Service providers, bound by confidentiality obligations: Supabase (authentication, database, private storage), fal.ai (model inference), Waffo Pancake (checkout, tax, payment processing), and Vercel (hosting).",
           "Payment card data is handled exclusively by our PCI-DSS compliant payment processor, Waffo Pancake, and is never stored on our servers.",
-          "AI model processing: when you generate a video, your uploaded image and, for the models that use it, the motion template are transmitted to fal.ai and then to the underlying model provider you selected - ByteDance (Seedance), MiniMax, or Kuaishou (Kling) - solely to produce your video.",
+          "AI model processing: when you generate a video, your uploaded portrait and, for the models that use it, the motion template are transmitted to fal.ai and then to the underlying model provider you selected - ByteDance (Seedance), MiniMax, or Kuaishou (Kling) - solely to produce your video.",
           "Legal and regulatory requirements: in response to a lawful request from a court or authority, including cooperation on reports of non-consensual intimate imagery (NCII) or child-safety concerns.",
           "Business transactions: in a merger or acquisition, with advance notice and continued protection.",
           "With your consent: for any other purpose only with your explicit prior consent.",
@@ -983,7 +1012,7 @@ export const contentPages: Record<string, ContentPage> = {
         heading: "6. Data security",
         bullets: [
           "Transport encryption: TLS / HTTPS for all traffic.",
-          "Storage security: uploaded images and generated videos are stored in a private storage bucket and served through expiring signed URLs.",
+          "Storage security: uploaded portraits and generated videos are stored in a private storage bucket and served through expiring signed URLs.",
           "Access control: least-privilege access, with secrets held in the hosting platform rather than in source code.",
           "Payment isolation: card data never reaches our servers.",
         ],
@@ -1033,7 +1062,7 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "14. Contact us",
         paragraphs: [
-          "Privacy and data requests: support@videobulin47.net (subject line: Privacy). General support: support@videobulin47.net. VideoBulin47, https://www.videobulin47.net. This policy is provided for information and is not legal advice. Last updated: October 14, 2026.",
+          "Privacy and data requests: support@videobulin47.net (subject line: Privacy). General support: support@videobulin47.net. VideoBulin47, https://www.videobulin47.net. This policy is provided for information and is not legal advice. Last updated: October 17, 2026.",
         ],
       },
     ],
@@ -1047,7 +1076,7 @@ export const contentPages: Record<string, ContentPage> = {
       "Refund rules for credit packs: unused credits, failed generations, duplicate charges, and statutory withdrawal rights.",
     intro:
       "We want the credit system to be clear. Failed generations are refunded automatically, and unused credits can be refunded in full within 7 days of purchase.",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     sections: [
       {
         heading: "1. Refundable situations",
@@ -1098,10 +1127,10 @@ export const contentPages: Record<string, ContentPage> = {
     eyebrow: "Legal",
     title: "Acceptable Use Policy",
     description:
-      "Content standards, moderation, reporting and enforcement for the VideoBulin47 image-to-video service, including the zero-tolerance list, source-of-material rules and the deepfake prohibition.",
+      "Content standards, moderation, reporting, enforcement and model disclosure for the VideoBulin47 character-replacement service, including the zero-tolerance list, source-of-material rules and the consent requirement.",
     intro:
-      "VideoBulin47 is an image-to-video generator for non-human subjects. This policy sets out what you may not generate, how we moderate content, how to report a problem, and what happens when the rules are broken.",
-    updated: "October 16, 2026",
+      "VideoBulin47 performs consensual character replacement. This policy sets out what you may not generate, how we moderate content, how to report a problem, and what happens when the rules are broken.",
+    updated: "October 17, 2026",
     sections: [
       {
         heading: "1. Scope",
@@ -1162,17 +1191,20 @@ export const contentPages: Record<string, ContentPage> = {
       {
         heading: "2.4 Source of uploaded material",
         paragraphs: [
-          "The Service is built for non-human subjects: pets, animals, virtual characters, and objects. Uploading a photograph of a real person - including yourself, a public figure, a celebrity, or a minor - is prohibited.",
-          "Before you upload, you must confirm that the image is your own material, or that you hold documented permission from whoever owns it. Uploading someone else's photograph without permission is prohibited.",
-          "Holding permission does not make deepfake content allowable. The zero-tolerance list in section 2.1 applies regardless of consent.",
+          "You may upload a portrait of yourself, or a portrait of an adult who has given you documented permission to use their image in an AI-generated video. Every use of someone else's likeness requires their consent.",
+          "The following are prohibited: portraits of celebrities or public figures; portraits of anyone under 18; portraits of any person who has not consented; images you neither own nor have permission to use; and portraits of a person who has asked you not to use their image.",
+          "Before you upload, you must confirm in the Studio that the portrait is yours or that you hold documented permission from the person shown, and that the person is an adult. A submission cannot proceed without that confirmation.",
+          "Holding permission does not make content allowable under section 2.1. The zero-tolerance list applies regardless of any consent you claim to hold.",
         ],
       },
       {
-        heading: "2.5 Deepfake prohibition",
+        heading: "2.5 Consent and deepfake prohibition",
         paragraphs: [
-          "The Service has no face-swap feature, no swap entry point, and no swap menu item. It does not accept reference video uploads. It cannot replace one real person's face or identity with another's.",
-          "Nobody who appears in the motion template is reproduced. Every other person in the output is newly generated, and no face from the source footage is carried into the result.",
-          "Using the Service to create a deepfake - by uploading a real person's photograph, or by prompting the model toward a specific real individual - violates this policy and results in account termination.",
+          "The Service performs character replacement: it places the person from your portrait into a prepared motion template. The result is a synthetic depiction of a real person, and it is permitted only with that person's consent.",
+          "Consensual character replacement - your own portrait, or a portrait of an adult who has given you documented permission - is the intended use of the Service. The prohibitions in this policy target non-consensual and deceptive use, not consensual creative use.",
+          "Placing anyone whose permission you do not have into the scene - a celebrity, a public figure, a colleague, a family member or any private individual - is a deepfake and is prohibited. It results in account termination.",
+          "Generation is configured to replace the people visible in the source template with newly generated performers, rather than reproducing the identity of anyone in the source footage. Model behaviour can vary between runs, so review the Output before you publish it.",
+          "The Service does not accept reference video uploads. Generated clips must never be presented as real footage, or as an authentic recording of the person shown.",
         ],
       },
       {
@@ -1180,7 +1212,7 @@ export const contentPages: Record<string, ContentPage> = {
         paragraphs: [
           "We run a layered moderation process: automated screening at the model endpoint, a self-declaration check before every generation, and human review of reports and appeals.",
           "3.1 Automated screening. Every generation request runs through the safety checker built into the model endpoint we call. If the checker flags the output, the generation is cancelled and the reserved credits are returned to you.",
-          "3.2 Source confirmation. Before a job is submitted you must confirm, in the Studio, that the image is your own material or used with documented permission, and that the subject is not a real person. A submission cannot proceed without that confirmation.",
+          "3.2 Source confirmation. Before a job is submitted you must confirm, in the Studio, that the portrait is yours or is used with documented permission from the person shown, and that the person is an adult. A submission cannot proceed without that confirmation.",
           "3.3 Human review. Content reported by a user or a rights holder is reviewed by a person. Reviewers are bound by confidentiality.",
           "3.4 Severity levels. L1 critical - child safety and terrorism: immediate ban and referral to authorities. L2 high risk: priority review, removal, account suspension. L3 medium risk: human review, warning, removal. L4 low risk: report-driven, warning and a request to change the content.",
         ],
@@ -1200,7 +1232,19 @@ export const contentPages: Record<string, ContentPage> = {
         ],
       },
       {
-        heading: "6. Response times",
+        heading: "6. Model disclosure",
+        paragraphs: [
+          "Video generation runs on third-party models served through the fal.ai inference platform. We name the endpoints rather than only the provider, so you know exactly which system processes your portrait.",
+        ],
+        bullets: [
+          "minimax/h3/reference-to-video - MiniMax H3, built by MiniMax",
+          "bytedance/seedance-2.5/us/reference-to-video - Seedance 2.5, built by ByteDance",
+          "fal-ai/kling-video/o3/standard/video-to-video/reference - Kling O3 Reference, built by Kuaishou",
+          "fal-ai/kling-video/o3/pro/video-to-video/reference - Kling O3 Reference Pro, built by Kuaishou",
+        ],
+      },
+      {
+        heading: "7. Response times",
         paragraphs: [
           "We aim to meet the targets below. If a case needs longer, we tell the reporter why.",
         ],
@@ -1212,7 +1256,7 @@ export const contentPages: Record<string, ContentPage> = {
         ],
       },
       {
-        heading: "7. Enforcement actions",
+        heading: "8. Enforcement actions",
         bullets: [
           "Content warning - a written warning asking you to delete or amend the content, for a first minor breach.",
           "Content removal - the offending item is taken down, for confirmed L3 and L4 cases.",
@@ -1223,19 +1267,19 @@ export const contentPages: Record<string, ContentPage> = {
         ],
       },
       {
-        heading: "8. Appeals",
+        heading: "9. Appeals",
         paragraphs: [
           "If you believe an enforcement action was wrong, email support@videobulin47.net within 14 days with the subject line Appeal. A reviewer who was not involved in the original decision re-examines the case, normally within 10 business days.",
         ],
       },
       {
-        heading: "9. Transparency and changes",
+        heading: "10. Transparency and changes",
         paragraphs: [
           "We may update this policy. Material changes are announced at least 15 days before they take effect. Continuing to use the Service means you accept the updated policy.",
         ],
       },
       {
-        heading: "10. Contact",
+        heading: "11. Contact",
         paragraphs: [
           "Content safety, reports, and appeals: support@videobulin47.net. VideoBulin47 is operated by an individual operator based in Nanning, Guangxi, China.",
         ],
@@ -1251,7 +1295,7 @@ export const contentPages: Record<string, ContentPage> = {
       "Submit a copyright, likeness, or non-consensual intimate imagery removal request for content hosted or generated through VideoBulin47.",
     intro:
       "If you believe your rights are being infringed, send a complete notice so we can review and act.",
-    updated: "October 14, 2026",
+    updated: "October 17, 2026",
     sections: [
       {
         heading: "What to include",

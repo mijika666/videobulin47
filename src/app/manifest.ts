@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "VideoBulin47",
     short_name: "Bulin47 AI",
     description:
-      "Animate a pet, an animal, or a virtual character into a Bulin 47 AI video for TikTok, Reels, and Shorts.",
+      "Recast the Bulin 47 freestyle with the person from your portrait, ready for TikTok, Reels, and Shorts.",
     start_url: "/",
     display: "standalone",
     background_color: "#f4f0e8",

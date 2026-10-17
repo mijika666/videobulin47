@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: `%s | ${APP_NAME}`,
   },
   description:
-    "Turn one image of a pet, an animal, or a virtual character into a short vertical AI video. Image-to-video generation with no reference video upload, and nobody from the source footage reused.",
+    "Turn one portrait into the Bulin 47 freestyle video. Upload a photo of an adult you have permission to use, and the prepared template carries the choreography, camera work and audio.",
   applicationName: APP_NAME,
   keywords: TRENDING_SEARCHES.map((item) => item.label),
   alternates: {
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bulin 47 Image to Video Generator",
     description:
-      "Upload an image of a pet or a virtual character, generate a short vertical video, and download the MP4.",
+      "Upload one portrait, generate a short vertical video, and download the MP4.",
   },
   robots: {
     index: true,

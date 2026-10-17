@@ -320,12 +320,14 @@ export function StudioClient({
           <div>
             <p className="eyebrow text-orange">Studio</p>
             <h1 className="display mt-5 text-[clamp(2.7rem,6vw,5rem)]">
-              Animate your subject.
+              Recast the moment.
             </h1>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-muted">
-              One image, one vertical output. This is image-to-video
-              generation: there is no reference video to upload. You will see
-              the exact credit reservation before the job is submitted.
+              One portrait, one prepared template, one vertical output. Upload
+              a photo and the template carries the choreography, camera work
+              and audio while the person you supplied becomes the performer.
+              You will see the exact credit reservation before the job is
+              submitted.
             </p>
           </div>
           <div className="flex items-center gap-3">
@@ -414,8 +416,8 @@ export function StudioClient({
                       Drop an image here or click to choose
                     </span>
                     <span className="mt-2 block text-xs leading-5 text-muted">
-                      JPG, PNG, or WebP. Max 10MB. Pets, animals, and virtual
-                      characters only.
+                      JPG, PNG, or WebP. Max 10MB. One clear portrait of one
+                      adult person you have permission to use.
                     </span>
                   </span>
                 </button>
@@ -429,9 +431,9 @@ export function StudioClient({
               />
               <div className="mt-5 grid gap-3 sm:grid-cols-3">
                 {[
-                  "One subject, clearly visible",
+                  "One adult, clearly visible",
                   "Good light, no heavy filters",
-                  "No real people, no minors",
+                  "No celebrities, no minors",
                 ].map((tip) => (
                   <div
                     key={tip}
@@ -466,11 +468,13 @@ export function StudioClient({
                   <span className="font-bold text-ink">
                     Confirm the image source.
                   </span>{" "}
-                  This image is my own material, or I have documented permission
-                  to use it. The subject is a pet, an animal, a virtual
-                  character, or an object —{" "}
-                  <span className="font-bold text-ink">not a real person</span>
-                  , and not a minor.
+                  I own this photo, or I have documented permission from the
+                  person in it. That person is an adult and has agreed to appear
+                  in an AI-generated video. This is{" "}
+                  <span className="font-bold text-ink">
+                    not a celebrity, not a public figure
+                  </span>
+                  , and not someone who has not consented.
                 </span>
               </label>
             </div>
@@ -603,11 +607,12 @@ export function StudioClient({
                   <span className="font-bold text-ink">
                     Required before you can generate.
                   </span>{" "}
-                  I confirm the subject is a pet, an animal, a virtual
-                  character, or an object - not a real person. I will not use
-                  the result to impersonate, forge, or mislead anyone, I will
-                  label it as AI-generated when I publish it, and I accept the
-                  Acceptable Use Policy.
+                  I confirm I have permission to use this portrait and that the
+                  person is an adult. I understand this is a consensual
+                  character replacement - not a deepfake, and not for
+                  impersonation or deception. I will not use the result to
+                  mislead anyone, I will label it as AI-generated when I
+                  publish it, and I accept the Acceptable Use Policy.
                 </span>
               </label>
 
@@ -786,8 +791,9 @@ export function StudioClient({
               </p>
               <p className="mt-3 text-xs leading-6 text-muted">
                 Uploads are stored in a private bucket. Generated videos are
-                returned through signed URLs. This service accepts non-human
-                subjects only - pets, animals, virtual characters, and objects.
+                returned through signed URLs. Upload only an image you own or
+                have permission to use. Celebrities, public figures without
+                consent, and anyone under 18 are not accepted.
               </p>
               <div className="mt-4 flex items-center gap-2 text-xs font-bold text-muted">
                 <ShieldCheck className="size-4 text-orange" />

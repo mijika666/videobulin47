@@ -56,7 +56,7 @@ export default function Image() {
               maxWidth: 980,
             }}
           >
-            Animate your pet in the Bulin 47 freestyle.
+            Recast the Bulin 47 freestyle.
           </div>
           <div
             style={{
@@ -65,7 +65,7 @@ export default function Image() {
               fontWeight: 700,
             }}
           >
-            One image. One vertical AI video. Ready for the feed.
+            One portrait. One vertical AI video. Ready for the feed.
           </div>
         </div>
         <div style={{ fontSize: 22, color: "rgba(255,255,255,0.45)" }}>

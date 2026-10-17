@@ -48,10 +48,10 @@ export function ProductSchema() {
     operatingSystem: "Web",
     url: absoluteUrl("/"),
     description:
-      "Video bulin 47 generator. Turn one uploaded image of a pet, animal or virtual character into a vertical 9:16 video with motion and sound. Image-to-video only: no reference video upload, and nobody from the source footage is reused.",
+      "Video bulin 47 generator. Recast the Bulin 47 freestyle with the person from one uploaded portrait and download a vertical 9:16 video. No reference video upload.",
     featureList: [
-      "Turn one image of a non-human subject into a vertical 9:16 video",
-      "Image-to-video animation with no reference video upload",
+      "Turn one portrait into the Bulin 47 freestyle video",
+      "Character replacement with no reference video upload",
       "Seedance 2.5, MiniMax H3, Kling O3 Reference and Kling O3 Reference Pro",
       "5, 10 and 15 second clips at 720p or 1080p",
       "No watermark; jobs and downloads stay in your account history",

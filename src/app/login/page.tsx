@@ -42,7 +42,7 @@ export default async function LoginPage({
             <div className="phone-frame ml-auto">
               <Image
                 src="/subjects/virtual-character.svg"
-                alt="Account preview: a virtual character animated into a vertical video"
+                alt="Account preview: a portrait recast into a vertical video"
                 fill
                 unoptimized
                 sizes="310px"

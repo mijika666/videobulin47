@@ -25,9 +25,9 @@ export function SiteFooter() {
         <div>
           <Logo dark />
           <p className="mt-5 max-w-sm text-sm leading-6 text-white/60">
-            One image. One vertical AI video. Turn a pet, an animal, or a
-            virtual character into a clip for TikTok, Instagram Reels, and
-            YouTube Shorts.
+            One portrait. One vertical AI video. Recast the Bulin 47 freestyle
+            with the person from your photo, ready for TikTok, Instagram Reels,
+            and YouTube Shorts.
           </p>
           <p className="mt-6 max-w-md text-xs leading-5 text-white/40">
             VideoBulin47 is an independent fan-made tool. Not affiliated with,

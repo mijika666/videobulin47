@@ -11,12 +11,12 @@ const features = [
   {
     icon: ImageUp,
     title: "One-image workflow",
-    copy: "A single image of a pet, an animal, or a virtual character is enough. No prompt engineering and no shot list.",
+    copy: "One clear portrait is enough. No prompt engineering and no shot list.",
   },
   {
     icon: AudioLines,
-    title: "Image to video",
-    copy: "We animate the subject in your image, and nobody who appeared in the source footage is reused. Every other person in the shot is newly generated.",
+    title: "Recast, not re-shoot",
+    copy: "The prepared template carries the original choreography, camera work and sound. Only the lead performer changes.",
   },
   {
     icon: Smartphone,
@@ -36,7 +36,7 @@ const features = [
   {
     icon: LockKeyhole,
     title: "Private buckets",
-    copy: "Uploads and finished videos are stored in private Supabase buckets.",
+    copy: "Portraits and finished videos are stored in private Supabase buckets and served over signed links.",
   },
 ];
 

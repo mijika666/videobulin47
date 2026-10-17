@@ -9,20 +9,20 @@ const steps = [
   {
     icon: ImagePlus,
     number: "01",
-    title: "Upload one image",
-    copy: "Choose a clear image of a pet, an animal, or a virtual character. Non-human subjects only.",
+    title: "Upload one portrait",
+    copy: "Choose a bright, front-facing photo of one adult you have permission to use. Group photos, heavy filters and sunglasses make the result worse.",
   },
   {
     icon: Sparkles,
     number: "02",
-    title: "Generate the video",
-    copy: "Pick the length, resolution, and model. Your subject is animated into the scene, and every other person in the shot is newly generated rather than taken from the source footage.",
+    title: "Pick a cut length",
+    copy: "Choose the duration and the model. The template supplies the choreography, camera movement and framing, while your photo supplies the performer.",
   },
   {
     icon: Download,
     number: "03",
     title: "Download and post",
-    copy: "Get a vertical MP4 from your account, then post it to TikTok, Reels, or Shorts.",
+    copy: "Download the vertical MP4 from your account. Label it as AI-generated when you publish it, and follow the platform's rules for music and likeness rights.",
   },
 ];
 
@@ -38,10 +38,9 @@ export function HowItWorks() {
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-8 text-muted lg:ml-auto">
-            No timeline, no editing, no camera work. You bring one image of a
-            pet, an animal, or a virtual character, we animate it into a
-            stylised vertical scene, and nobody from the source footage appears
-            in the result.
+            No timeline, no editing and no prompt writing. You bring one
+            portrait, the prepared template carries the choreography, camera
+            work and audio, and nothing is posted on your behalf.
           </p>
         </div>
 

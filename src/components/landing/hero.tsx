@@ -22,13 +22,14 @@ export function Hero() {
             Image-to-video generator
           </p>
           <h1 className="display mt-6 max-w-3xl text-[clamp(3rem,6.2vw,5.8rem)] text-white">
-            Turn one image{" "}
-            <span className="block text-acid">into a vertical video.</span>
+            Turn one portrait{" "}
+            <span className="block text-acid">into the freestyle video.</span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-8 text-white/65 md:text-lg">
-            Upload a photo of a pet, an animal, or a virtual character. We
-            animate it into a vertical 9:16 MP4, and every other person in the
-            shot is newly generated.
+            Upload a portrait of one adult you have permission to use. We place
+            that person into the prepared Bulin 47 freestyle template — the
+            choreography, camera work and audio stay — and return a vertical
+            9:16 MP4.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/studio" className="btn btn-primary">
@@ -45,9 +46,9 @@ export function Hero() {
           </div>
           <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-xs font-bold text-white/55">
             {[
-              "Image to video",
+              "One portrait",
               "Vertical 9:16",
-              "Non-human subjects only",
+              "Consensual use only",
               "Failure refunds",
             ].map((item) => (
               <span key={item} className="inline-flex items-center gap-2">
@@ -64,10 +65,10 @@ export function Hero() {
               Input
             </p>
             <p className="mt-2 text-sm font-bold text-white">
-              1 pet or character image
+              1 portrait
             </p>
             <p className="mt-1 text-xs leading-5 text-white/45">
-              Non-human subjects only.
+              One adult, with permission.
             </p>
           </div>
           <div className="phone-frame">
@@ -142,9 +143,9 @@ export function Hero() {
             {[0, 1].map((set) => (
               <div key={set} className="flex shrink-0">
                 {[
-                  "ONE IMAGE",
-                  "VIRTUAL CAST",
-                  "NON-HUMAN SUBJECTS",
+                  "ONE PORTRAIT",
+                  "PREPARED TEMPLATE",
+                  "AI CHARACTER RECAST",
                   "VERTICAL 9:16",
                   "NO EDITING",
                   "AI VIDEO",

@@ -4,15 +4,15 @@ import { Play, Sparkles } from "lucide-react";
 const examples = [
   {
     image: "/subjects/virtual-character.svg",
-    label: "Virtual character",
+    label: "Example 01",
   },
   {
     image: "/subjects/pet.svg",
-    label: "Pet",
+    label: "Example 02",
   },
   {
     image: "/subjects/animal.svg",
-    label: "Animal",
+    label: "Example 03",
   },
 ];
 
@@ -24,13 +24,12 @@ export function Gallery() {
           <div>
             <p className="eyebrow text-orange">Output preview</p>
             <h2 className="display mt-5 max-w-2xl text-[clamp(2.5rem,5vw,4.5rem)]">
-              One format. Any subject.
+              One format. Any look.
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-7 text-muted">
-            Concept previews show how a single image of a non-human subject
-            becomes a full-frame social clip. Real renders appear in your
-            private account.
+            Concept previews show how a single portrait becomes a full-frame
+            social clip. Real renders appear in your private account.
           </p>
         </div>
         <div className="mt-12 grid gap-5 md:grid-cols-3">

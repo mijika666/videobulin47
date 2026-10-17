@@ -268,9 +268,9 @@ export default async function ContentPageRoute({ params }: PageProps) {
                 Safety reminder
               </p>
               <p className="mt-3 text-xs leading-6 text-muted">
-                Upload an image of a pet, an animal, a virtual character, or an
-                object. This service does not accept photographs of real
-                people, minors, celebrities, or public figures.
+                Upload only a portrait you own or have documented permission to
+                use. The person shown must be an adult - celebrities and public
+                figures without consent are not accepted.
               </p>
             </div>
           </aside>
