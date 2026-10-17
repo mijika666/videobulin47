@@ -10,8 +10,7 @@ import {
   WandSparkles,
 } from "lucide-react";
 
-const heroImage =
-  "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=88";
+const heroImage = "/showcase/hero.jpg";
 
 export function Hero() {
   return (
@@ -19,7 +18,7 @@ export function Hero() {
       <div className="container-shell grid min-h-[680px] items-center gap-14 py-14 lg:min-h-[760px] lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
         <div className="relative z-10">
           <p className="eyebrow text-acid">
-            AI character replacement for one prepared clip
+            AI character replacement
           </p>
           <h1 className="display mt-6 max-w-3xl text-[clamp(3rem,6.2vw,5.8rem)] text-white">
             Turn one portrait{" "}
@@ -78,7 +77,7 @@ export function Hero() {
           <div className="phone-frame">
             <Image
               src={heroImage}
-              alt="Illustrative pet image used in the image-to-video workflow"
+              alt="AI-generated preview of a recast Bulin 47 freestyle video"
               fill
               priority
               sizes="(max-width: 768px) 260px, 310px"
@@ -86,12 +85,12 @@ export function Hero() {
             />
             <div className="absolute inset-0 bg-black/15" />
             <div className="absolute left-4 right-4 top-8 flex items-center justify-between">
-              <span className="rounded-full bg-orange px-3 py-1.5 text-[10px] font-black uppercase text-white">
+              <span className="rounded-full bg-acid px-3 py-1.5 text-[10px] font-black uppercase text-white">
                 Trend preview
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-full bg-black/55 px-3 py-1.5 text-[10px] font-bold text-white backdrop-blur">
                 <Clock3 className="size-3" />
-                15 sec
+                9:16 vertical
               </span>
             </div>
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-5 pb-6 pt-24">
@@ -106,7 +105,7 @@ export function Hero() {
                     Brought to life.
                   </p>
                 </div>
-                <span className="grid size-12 shrink-0 place-items-center rounded-full bg-white text-ink">
+                <span className="grid size-12 shrink-0 place-items-center rounded-full bg-white text-[#0a0506]">
                   <Play className="size-5 fill-current" />
                 </span>
               </div>
@@ -126,11 +125,11 @@ export function Hero() {
                 ))}
               </div>
             </div>
-            <div className="absolute right-4 top-1/3 rounded-lg bg-white p-2.5 text-ink shadow-xl">
+            <div className="absolute right-4 top-1/3 rounded-lg bg-white p-2.5 text-[#0a0506] shadow-xl">
               <WandSparkles className="size-5 text-orange" />
             </div>
           </div>
-          <div className="absolute -right-4 top-24 hidden w-44 rotate-2 rounded-lg bg-acid p-4 text-ink shadow-2xl md:block">
+          <div className="absolute -right-4 top-24 hidden w-44 rotate-2 rounded-lg bg-acid p-4 text-white shadow-2xl md:block">
             <p className="text-[10px] font-black uppercase">Output</p>
             <p className="mt-2 text-sm font-black">
               9:16 MP4
@@ -175,7 +174,7 @@ export function Hero() {
 
 export function HeroFloatingNote() {
   return (
-    <div className="fixed bottom-5 left-1/2 z-30 hidden -translate-x-1/2 items-center gap-3 rounded-full border border-white/10 bg-ink px-4 py-3 text-xs font-bold text-white shadow-2xl lg:flex">
+    <div className="fixed bottom-5 left-1/2 z-30 hidden -translate-x-1/2 items-center gap-3 rounded-full border border-line-strong bg-panel px-4 py-3 text-xs font-bold text-white shadow-2xl lg:flex">
       <LockKeyhole className="size-4 text-acid" />
       Uploads are stored in a private bucket.
     </div>

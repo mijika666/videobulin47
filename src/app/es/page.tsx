@@ -95,7 +95,7 @@ export default function SpanishHome() {
                   <br />
                   Todo el freestyle.
                 </p>
-                <span className="mt-4 grid size-11 place-items-center rounded-full bg-white text-ink">
+                <span className="mt-4 grid size-11 place-items-center rounded-full bg-white text-[#0a0506]">
                   <Play className="size-5 fill-current" />
                 </span>
               </div>

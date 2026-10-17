@@ -100,12 +100,12 @@ export function LoginForm({ nextPath = "/studio" }: { nextPath?: string }) {
           type="button"
           onClick={signInWithGoogle}
           disabled={loading !== null}
-          className="btn btn-dark h-14 w-full text-base"
+          className="btn btn-primary h-14 w-full text-base"
         >
           {loading === "google" ? (
             <LoaderCircle className="size-4 animate-spin" />
           ) : (
-            <span className="grid size-5 place-items-center rounded bg-white text-xs font-black text-ink">
+            <span className="grid size-5 place-items-center rounded bg-white text-xs font-black text-[#0a0506]">
               G
             </span>
           )}
@@ -140,7 +140,7 @@ export function LoginForm({ nextPath = "/studio" }: { nextPath?: string }) {
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
                   placeholder="you@example.com"
-                  className="h-12 w-full rounded-lg border border-line bg-white pl-10 pr-4 text-sm outline-none transition focus:border-ink"
+                  className="field pl-10"
                 />
               </span>
             </label>

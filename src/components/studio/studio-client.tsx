@@ -56,12 +56,12 @@ function statusLabel(status?: string) {
 }
 
 function statusTone(status?: string) {
-  if (status === "completed") return "bg-acid text-ink";
-  if (status === "failed") return "bg-orange text-white";
+  if (status === "completed") return "bg-ok text-[#08240f]";
+  if (status === "failed") return "bg-acid text-white";
   if (status === "processing" || status === "queued") {
-    return "bg-sky text-ink";
+    return "bg-sky text-white";
   }
-  return "bg-black/5 text-muted";
+  return "bg-panel text-muted";
 }
 
 export function StudioClient({
@@ -374,7 +374,7 @@ export function StudioClient({
               </div>
 
               {previewUrl ? (
-                <div className="relative mt-6 overflow-hidden rounded-lg border border-line bg-ink">
+                <div className="relative mt-6 overflow-hidden rounded-lg border border-line bg-panel">
                   <div className="relative aspect-[16/10]">
                     <Image
                       src={previewUrl}
@@ -385,13 +385,13 @@ export function StudioClient({
                       className="object-contain"
                     />
                   </div>
-                  <div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1.5 text-[10px] font-black uppercase text-ink">
+                  <div className="absolute left-4 top-4 rounded-full bg-acid px-3 py-1.5 text-[10px] font-black uppercase text-white">
                     Ready to upload
                   </div>
                   <button
                     type="button"
                     onClick={removeFile}
-                    className="absolute right-4 top-4 grid size-10 place-items-center rounded-full bg-white text-ink transition hover:bg-orange hover:text-white"
+                    className="absolute right-4 top-4 grid size-10 place-items-center rounded-full border border-line-strong bg-panel text-ink transition hover:border-acid hover:text-white"
                     aria-label="Remove image"
                   >
                     <Trash2 className="size-4" />
@@ -406,10 +406,10 @@ export function StudioClient({
                     event.preventDefault();
                     chooseFile(event.dataTransfer.files[0] ?? null);
                   }}
-                  className="mt-6 grid min-h-64 w-full place-items-center rounded-lg border border-dashed border-ink/25 bg-black/[0.02] p-6 text-center transition hover:border-orange hover:bg-orange/[0.03]"
+                  className="mt-6 grid min-h-64 w-full place-items-center rounded-lg border border-dashed border-line-strong bg-panel/40 p-6 text-center transition hover:border-acid hover:bg-acid/[0.06]"
                 >
                   <span>
-                    <span className="mx-auto grid size-12 place-items-center rounded-lg bg-acid text-ink">
+                    <span className="mx-auto grid size-12 place-items-center rounded-lg bg-acid text-white">
                       <ImagePlus className="size-5" />
                     </span>
                     <span className="mt-4 block text-sm font-black">
@@ -449,7 +449,7 @@ export function StudioClient({
               <label
                 ref={rightsRef}
                 className={cn(
-                  "mt-5 flex cursor-pointer items-start gap-3 rounded-lg border bg-black/[0.02] p-4 transition",
+                  "mt-5 flex cursor-pointer items-start gap-3 rounded-lg border bg-white/[0.03] p-4 transition",
                   rightsWarning
                     ? "border-orange ring-2 ring-orange/40"
                     : "border-line",
@@ -462,7 +462,7 @@ export function StudioClient({
                     setRights(event.target.checked);
                     if (event.target.checked) setRightsWarning(false);
                   }}
-                  className="mt-1 size-4 accent-orange"
+                  className="mt-1 size-4 accent-[#ff2e3b]"
                 />
                 <span className="text-xs leading-6 text-muted">
                   <span className="font-bold text-ink">
@@ -502,8 +502,8 @@ export function StudioClient({
                         className={cn(
                           "rounded-lg border px-3 py-3 text-left transition",
                           duration === value
-                            ? "border-ink bg-ink text-white"
-                            : "border-line bg-white hover:border-ink/40",
+                            ? "border-acid bg-acid text-white"
+                            : "border-line bg-card hover:border-acid/50",
                         )}
                       >
                         <span className="block text-sm font-black">
@@ -512,7 +512,7 @@ export function StudioClient({
                         <span
                           className={cn(
                             "mt-1 block text-[10px] font-bold",
-                            duration === value ? "text-white/50" : "text-muted",
+                            duration === value ? "text-white/75" : "text-muted",
                           )}
                         >
                           {calculateCreditsForRender({
@@ -538,8 +538,8 @@ export function StudioClient({
                         className={cn(
                           "rounded-lg border px-3 py-3 text-left transition",
                           resolution === value
-                            ? "border-ink bg-ink text-white"
-                            : "border-line bg-white hover:border-ink/40",
+                            ? "border-acid bg-acid text-white"
+                            : "border-line bg-card hover:border-acid/50",
                         )}
                       >
                         <span className="block text-sm font-black">
@@ -548,7 +548,7 @@ export function StudioClient({
                         <span
                           className={cn(
                             "mt-1 block text-[10px] font-bold",
-                            resolution === value ? "text-white/50" : "text-muted",
+                            resolution === value ? "text-white/75" : "text-muted",
                           )}
                         >
                           {value === "720p" ? "Mobile ready" : "Sharper output"}
@@ -564,7 +564,7 @@ export function StudioClient({
                 <select
                   value={modelId}
                   onChange={(event) => chooseModel(event.target.value)}
-                  className="h-12 rounded-lg border border-line bg-white px-3 text-sm outline-none focus:border-ink"
+                  className="field pr-9"
                 >
                   {MODELS.map((model) => (
                     <option key={model.id} value={model.id}>
@@ -588,7 +588,7 @@ export function StudioClient({
               <label
                 ref={consentRef}
                 className={cn(
-                  "mt-6 flex cursor-pointer items-start gap-3 rounded-lg border bg-black/[0.02] p-4 transition",
+                  "mt-6 flex cursor-pointer items-start gap-3 rounded-lg border bg-white/[0.03] p-4 transition",
                   consentWarning
                     ? "border-orange ring-2 ring-orange/40"
                     : "border-line",
@@ -601,7 +601,7 @@ export function StudioClient({
                     setConsent(event.target.checked);
                     if (event.target.checked) setConsentWarning(false);
                   }}
-                  className="mt-1 size-4 accent-orange"
+                  className="mt-1 size-4 accent-[#ff2e3b]"
                 />
                 <span className="text-xs leading-6 text-muted">
                   <span className="font-bold text-ink">
@@ -616,7 +616,7 @@ export function StudioClient({
                 </span>
               </label>
 
-              <div className="mt-6 flex flex-col gap-4 rounded-lg bg-ink p-5 text-white sm:flex-row sm:items-center sm:justify-between">
+              <div className="mt-6 flex flex-col gap-4 rounded-lg border border-line-strong bg-panel p-5 text-white sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="text-xs font-bold text-white/45">Estimated use</p>
                   <p className="mt-1 text-2xl font-black">
@@ -758,7 +758,7 @@ export function StudioClient({
                       key={job.id}
                       href={job.output_url || "/studio"}
                       target={job.output_url ? "_blank" : undefined}
-                      className="flex items-center justify-between gap-3 rounded-lg border border-line p-3 transition hover:border-ink/30"
+                      className="flex items-center justify-between gap-3 rounded-lg border border-line p-3 transition hover:border-acid/50"
                     >
                       <span>
                         <span className="block text-xs font-black">
@@ -802,9 +802,9 @@ export function StudioClient({
             </div>
 
             {!userEmail ? (
-              <div className="rounded-lg bg-acid p-5 text-ink">
+              <div className="rounded-lg bg-acid p-5 text-white">
                 <p className="text-sm font-black">Keep your credits safe</p>
-                <p className="mt-2 text-xs leading-6 text-ink/65">
+                <p className="mt-2 text-xs leading-6 text-white/80">
                   Sign in with Google or email to save your wallet and render
                   history.
                 </p>

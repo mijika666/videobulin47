@@ -228,7 +228,7 @@ export default async function ContentPageRoute({ params }: PageProps) {
                 <h2 className="mt-4 text-2xl font-black leading-tight">
                   Turn one image into a vertical freestyle video.
                 </h2>
-                <p className="mt-3 text-sm leading-6 text-ink/65">
+                <p className="mt-3 text-sm leading-6 text-white/80">
                   Start with a short preview, then choose a longer render when
                   the image and the motion look right.
                 </p>

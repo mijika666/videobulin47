@@ -48,7 +48,7 @@ export function ComparisonPreview() {
         </div>
 
         <div className="mt-10 overflow-hidden rounded-lg border border-line bg-card">
-          <div className="hidden grid-cols-[1.2fr_1fr_1fr_1.2fr_0.8fr] border-b border-line bg-black/[0.03] px-5 py-4 text-[10px] font-black uppercase text-muted md:grid">
+          <div className="hidden grid-cols-[1.2fr_1fr_1fr_1.2fr_0.8fr] border-b border-line bg-white/[0.03] px-5 py-4 text-[10px] font-black uppercase text-muted md:grid">
             <span>Workflow</span>
             <span>Setup</span>
             <span>Editing</span>
@@ -61,8 +61,8 @@ export function ComparisonPreview() {
               href={row.href}
               className={
                 row.highlight
-                  ? "grid gap-4 border-b border-ink bg-ink px-5 py-5 text-white last:border-b-0 md:grid-cols-[1.2fr_1fr_1fr_1.2fr_0.8fr] md:items-center"
-                  : "grid gap-4 border-b border-line px-5 py-5 transition last:border-b-0 hover:bg-black/[0.02] md:grid-cols-[1.2fr_1fr_1fr_1.2fr_0.8fr] md:items-center"
+                  ? "grid gap-4 border-b border-acid/40 bg-panel px-5 py-5 text-white last:border-b-0 md:grid-cols-[1.2fr_1fr_1fr_1.2fr_0.8fr] md:items-center"
+                  : "grid gap-4 border-b border-line px-5 py-5 transition last:border-b-0 hover:bg-white/[0.03] md:grid-cols-[1.2fr_1fr_1fr_1.2fr_0.8fr] md:items-center"
               }
             >
               <span className="flex items-center gap-3 text-sm font-black">

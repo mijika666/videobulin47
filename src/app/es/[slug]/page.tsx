@@ -118,7 +118,7 @@ export default async function SpanishGuide({ params }: Props) {
               <h2 className="mt-5 text-2xl font-black leading-tight">
                 Crea tu versión con una imagen.
               </h2>
-              <p className="mt-3 text-sm leading-6 text-ink/65">
+              <p className="mt-3 text-sm leading-6 text-white/80">
                 Abre el Studio, sube una imagen y elige la duración del video.
               </p>
               <Link href="/studio" className="btn btn-dark mt-6 w-full">

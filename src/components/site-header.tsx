@@ -60,7 +60,7 @@ export function SiteHeader() {
   const signedIn = authReady && email !== null;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-black/10 bg-paper/90 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-line bg-paper/90 backdrop-blur-xl">
       <div className="container-shell flex h-16 items-center justify-between">
         <Logo />
         <nav className="hidden items-center gap-7 md:flex">
@@ -80,7 +80,7 @@ export function SiteHeader() {
               href="/account"
               className="inline-flex items-center gap-2 text-sm font-bold text-ink"
             >
-              <span className="grid size-8 place-items-center rounded-full border border-line bg-white">
+              <span className="grid size-8 place-items-center rounded-full border border-line bg-panel">
                 <UserRound className="size-4" />
               </span>
               Account
@@ -90,7 +90,7 @@ export function SiteHeader() {
               Sign in
             </Link>
           )}
-          <Link href="/studio" className="btn btn-dark">
+          <Link href="/studio" className="btn btn-primary">
             <Sparkles className="size-4" />
             Create video
           </Link>
@@ -116,7 +116,7 @@ export function SiteHeader() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-3 text-sm font-bold hover:bg-black/5"
+              className="rounded-lg px-3 py-3 text-sm font-bold hover:bg-white/5"
             >
               {link.label}
             </Link>

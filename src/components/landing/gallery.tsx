@@ -38,7 +38,7 @@ export function Gallery() {
               key={example.label}
               className={
                 index === 1
-                  ? "panel bg-ink p-4 text-white md:-translate-y-5"
+                  ? "panel panel-raised p-4 text-white md:-translate-y-5"
                   : "panel p-4"
               }
             >
@@ -55,7 +55,7 @@ export function Gallery() {
                 <div className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1.5 text-[10px] font-black uppercase text-ink">
                   Concept preview
                 </div>
-                <span className="absolute bottom-4 right-4 grid size-12 place-items-center rounded-full bg-acid text-ink">
+                <span className="absolute bottom-4 right-4 grid size-12 place-items-center rounded-full bg-acid text-white">
                   <Play className="size-5 fill-current" />
                 </span>
               </div>

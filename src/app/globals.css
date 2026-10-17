@@ -1,16 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f0e8;
-  --foreground: #10120e;
-  --ink: #090a09;
-  --paper: #f4f0e8;
-  --muted: #66695f;
-  --line: #d8d3c7;
-  --acid: #c9ff3f;
-  --orange: #ff5722;
-  --sky: #65d7ff;
-  --card: #fffdf8;
+  color-scheme: dark;
+
+  --background: #0a0506;
+  --foreground: #f7efe8;
+
+  --ink: #f7efe8;
+  --paper: #130a0b;
+  --card: #170c0d;
+  --panel: #231214;
+
+  --muted: #a8958d;
+  --dim: #8a766e;
+
+  --line: #2c1e20;
+  --line-strong: #4a2e31;
+
+  /* Token names are kept from the previous palette so every existing
+     utility keeps working; only the values changed. */
+  --acid: #ff2e3b;
+  --orange: #ffb547;
+  --sky: #ff4a55;
+  --ok: #5fd08a;
+
+  --red-glow: 0 10px 30px -10px #ff2e3bcc;
 }
 
 @theme inline {
@@ -19,13 +33,17 @@
   --color-ink: var(--ink);
   --color-paper: var(--paper);
   --color-muted: var(--muted);
+  --color-dim: var(--dim);
   --color-line: var(--line);
   --color-acid: var(--acid);
   --color-orange: var(--orange);
   --color-sky: var(--sky);
+  --color-ok: var(--ok);
   --color-card: var(--card);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-panel: var(--panel);
+  --font-sans: var(--font-onest);
+  --font-mono: var(--font-plex-mono);
+  --font-display: var(--font-big-shoulders);
 }
 
 * {
@@ -41,15 +59,15 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-onest), system-ui, -apple-system, "Segoe UI", sans-serif;
   letter-spacing: 0;
   max-width: 100%;
   overflow-x: clip;
 }
 
 ::selection {
-  background: var(--acid);
-  color: var(--ink);
+  background: #ff2e3b80;
+  color: #ffffff;
 }
 
 a,
@@ -74,8 +92,9 @@ textarea {
 }
 
 .display {
+  font-family: var(--font-big-shoulders), "Arial Narrow", Impact, sans-serif;
   font-weight: 800;
-  line-height: 0.95;
+  line-height: 0.92;
   letter-spacing: 0;
   overflow-wrap: anywhere;
 }
@@ -83,37 +102,47 @@ textarea {
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  flex-wrap: wrap;
+  max-width: 100%;
+  min-width: 0;
+  gap: 6px;
+  border: 1px solid color-mix(in srgb, currentColor 34%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, currentColor 10%, transparent);
+  padding: 5px 11px;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 500;
   line-height: 1;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
-.eyebrow::before {
-  width: 20px;
-  height: 2px;
-  content: "";
-  background: currentColor;
+.section-dark > .container-shell,
+.container-shell > * {
+  min-width: 0;
 }
 
 .btn {
   display: inline-flex;
-  min-height: 46px;
+  min-height: 48px;
   align-items: center;
   justify-content: center;
   gap: 9px;
   border: 1px solid transparent;
-  border-radius: 8px;
-  padding: 0 18px;
-  font-size: 14px;
-  font-weight: 800;
+  border-radius: 12px;
+  padding: 0 20px;
+  font-size: 15px;
+  font-weight: 700;
   line-height: 1;
+  letter-spacing: 0.01em;
   text-decoration: none;
   transition:
     transform 160ms ease,
     background-color 160ms ease,
     border-color 160ms ease,
+    box-shadow 200ms ease,
     color 160ms ease;
 }
 
@@ -127,42 +156,87 @@ textarea {
 
 .btn-primary {
   background: var(--acid);
-  color: var(--ink);
+  color: #ffffff;
+  box-shadow: var(--red-glow);
 }
 
 .btn-primary:hover {
-  background: #d6ff6d;
+  background: #ff4a55;
+  box-shadow: 0 14px 40px -10px #ff2e3bf2;
 }
 
 .btn-dark {
-  background: var(--ink);
-  color: #ffffff;
+  border-color: var(--line-strong);
+  background: var(--panel);
+  color: var(--foreground);
 }
 
 .btn-dark:hover {
-  background: #252822;
+  background: #2c1719;
+  border-color: var(--acid);
 }
 
 .btn-outline {
-  border-color: var(--line);
+  border-color: var(--line-strong);
   background: transparent;
   color: var(--foreground);
 }
 
 .btn-outline:hover {
-  background: #e9e4da;
+  border-color: var(--acid);
+  background: #ff2e3b14;
 }
 
 .btn-white {
-  border-color: rgba(255, 255, 255, 0.22);
-  background: #ffffff;
-  color: var(--ink);
+  border-color: var(--line-strong);
+  background: #ffffff0d;
+  color: var(--foreground);
+}
+
+.btn-white:hover {
+  border-color: var(--acid);
+  background: #ff2e3b1a;
 }
 
 .panel {
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 14px;
   background: var(--card);
+}
+
+.panel-raised {
+  border-color: var(--line-strong);
+  background: var(--panel);
+}
+
+.field {
+  height: 46px;
+  width: 100%;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--background);
+  padding: 0 12px;
+  color: var(--ink);
+  font-size: 15px;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.field:focus,
+.field:focus-visible {
+  border-color: var(--acid);
+  outline: 0;
+  box-shadow: 0 0 0 3px #ff2e3b33;
+}
+
+.field::placeholder {
+  color: var(--dim);
+}
+
+select option {
+  background: var(--card);
+  color: var(--ink);
 }
 
 .phone-frame {
@@ -209,13 +283,16 @@ textarea {
 }
 
 .section-dark {
-  background: var(--ink);
-  color: #ffffff;
+  background:
+    radial-gradient(115% 80% at 82% -10%, #ff2e3b24, transparent 62%),
+    var(--background);
+  color: var(--foreground);
 }
 
 .section-acid {
-  background: var(--acid);
-  color: var(--ink);
+  background: linear-gradient(180deg, #ff3b47, #ff2e3b);
+  color: #ffffff;
+  box-shadow: var(--red-glow);
 }
 
 .marquee-track {
@@ -240,7 +317,7 @@ textarea {
 
 .prose-custom p,
 .prose-custom li {
-  color: #4c5049;
+  color: var(--muted);
   font-size: 16px;
   line-height: 1.8;
 }
@@ -279,10 +356,18 @@ textarea {
 
 @media (max-width: 767px) {
   .container-shell {
-    width: min(100% - 24px, 1180px);
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 14px;
   }
 
   .phone-frame {
     max-width: 260px;
+  }
+
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
   }
 }

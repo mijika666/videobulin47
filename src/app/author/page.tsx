@@ -229,7 +229,7 @@ export default function AuthorPage() {
 
             <div className="section-acid mt-4 rounded-lg p-6">
               <p className="text-xs font-black uppercase">Try the tool</p>
-              <p className="mt-3 text-sm leading-6 text-ink/70">
+              <p className="mt-3 text-sm leading-6 text-white/85">
                 One image, one vertical video. The credit reservation is shown
                 before you generate.
               </p>

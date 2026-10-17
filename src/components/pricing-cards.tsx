@@ -10,12 +10,12 @@ export function PricingCards() {
           key={pack.id}
           className={
             pack.badge
-              ? "relative overflow-hidden rounded-lg border-2 border-ink bg-ink p-7 text-white shadow-2xl"
+              ? "relative overflow-hidden rounded-lg border-2 border-acid bg-panel p-7 text-white shadow-2xl"
               : "panel relative overflow-hidden p-7 text-ink"
           }
         >
           {pack.badge ? (
-            <div className="absolute right-0 top-0 rounded-bl-lg bg-acid px-4 py-2 text-[10px] font-black uppercase text-ink">
+            <div className="absolute right-0 top-0 rounded-bl-lg bg-acid px-4 py-2 text-[10px] font-black uppercase text-white">
               {pack.badge}
             </div>
           ) : null}

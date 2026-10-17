@@ -42,7 +42,7 @@ const features = [
 
 export function Features() {
   return (
-    <section className="border-y border-line bg-[#ebe6dc] py-20 md:py-28">
+    <section className="border-y border-line bg-paper py-20 md:py-28">
       <div className="container-shell">
         <div className="max-w-3xl">
           <p className="eyebrow text-orange">Why this workflow</p>

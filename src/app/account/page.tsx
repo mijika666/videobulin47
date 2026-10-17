@@ -63,13 +63,13 @@ function statusLabel(status?: VideoJobStatus | string) {
 }
 
 function statusTone(status?: string) {
-  if (status === "completed") return "bg-acid text-ink";
+  if (status === "completed") return "bg-ok text-[#08240f]";
   if (status === "failed") return "bg-orange text-white";
   if (status === "queued" || status === "processing") {
-    return "bg-sky text-ink";
+    return "bg-sky text-white";
   }
-  if (status === "refunded") return "bg-black/10 text-muted";
-  return "bg-black/5 text-muted";
+  if (status === "refunded") return "bg-white/10 text-muted";
+  return "bg-white/5 text-muted";
 }
 
 function packName(packId: string) {

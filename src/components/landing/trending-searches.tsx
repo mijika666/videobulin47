@@ -4,7 +4,7 @@ import { PRIMARY_KEYWORD, TRENDING_SEARCHES } from "@/config/keywords";
 
 export function TrendingSearches() {
   return (
-    <section className="border-y border-line bg-[#ebe6dc] py-20 md:py-24">
+    <section className="border-y border-line bg-paper py-20 md:py-24">
       <div className="container-shell">
         <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
           <div>
@@ -24,7 +24,7 @@ export function TrendingSearches() {
               <Link
                 key={`${item.label}-${item.slug}`}
                 href={item.slug ? `/${item.slug}` : "/"}
-                className="group flex items-center justify-between gap-4 rounded-lg border border-line bg-card px-4 py-4 transition hover:border-ink/30 hover:bg-white"
+                className="group flex items-center justify-between gap-4 rounded-lg border border-line bg-card px-4 py-4 transition hover:border-acid/50 hover:bg-panel"
               >
                 <span className="flex items-center gap-3">
                   <Search className="size-4 shrink-0 text-orange" />
